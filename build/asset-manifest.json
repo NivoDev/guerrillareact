@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/static/css/main.43e820b1.chunk.css",
+    "main.js": "/static/js/main.646a2501.chunk.js",
+    "main.js.map": "/static/js/main.646a2501.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.d69d2251.js",
+    "runtime-main.js.map": "/static/js/runtime-main.d69d2251.js.map",
+    "static/js/2.3f3e93a1.chunk.js": "/static/js/2.3f3e93a1.chunk.js",
+    "static/js/2.3f3e93a1.chunk.js.map": "/static/js/2.3f3e93a1.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.43e820b1.chunk.css.map": "/static/css/main.43e820b1.chunk.css.map",
+    "static/js/2.3f3e93a1.chunk.js.LICENSE.txt": "/static/js/2.3f3e93a1.chunk.js.LICENSE.txt",
+    "static/media/Guerrilla-White-LOGO.78edc22a.png": "/static/media/Guerrilla-White-LOGO.78edc22a.png",
+    "static/media/index.css": "/static/media/mobilebackground.d89c1372.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.d69d2251.js",
+    "static/js/2.3f3e93a1.chunk.js",
+    "static/css/main.43e820b1.chunk.css",
+    "static/js/main.646a2501.chunk.js"
+  ]
+}
