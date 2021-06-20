@@ -1,0 +1,51 @@
+.card{
+  width: 600px;
+  margin: 40px auto;
+  color: #444;
+  position: relative;
+  overflow: hidden ;
+  z-index: 1;
+  box-shadow: 2px 2px 0 0 rgb(112, 163, 102);
+}
+  .card::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    opacity: .4;
+    background-color: #94be90;
+}
+
+
+h2{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+    font-family: Roboto Slab;
+}
+
+img{
+    float: left;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 50px;
+    position: relative;
+    z-index: 1;
+    animation: grow 0.6s;
+}
+.bio{
+    position: relative;
+    margin: 20px;
+    font-family: Merriweather Sans;
+    -webkit-animation: fadeInLeft 500ms ease-in-out; /* Chrome, Safari, Opera */
+    animation: typewriter 6s steps(150) forwards;
+}
+.p{
+    animation: typewriter 6s steps(150) forwards;
+    color:#000000;
+
+}

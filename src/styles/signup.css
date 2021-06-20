@@ -1,0 +1,21 @@
+form{
+    color:white;
+    z-index: 100;
+    width: 300px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+h1{
+    color:white;
+    text-align:center;
+    font-size: 150%;
+}
+input{
+    width:40%;
+    line-height:20px;
+    border-radius: 10px;
+    height:20px;
+    color:white;
+}

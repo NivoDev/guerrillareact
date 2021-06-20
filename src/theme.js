@@ -1,0 +1,1 @@
+export const cardColor = "rgb (148, 149 ,144 )"
