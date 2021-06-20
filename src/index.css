@@ -1,6 +1,6 @@
 
 
-body {
+body{
   margin: 0;
   padding: 0;
   width: 100vw;
@@ -19,13 +19,15 @@ body {
 
 }
 @media (max-width: 768px){
-  body{
+  body {
     box-sizing: border-box;
     background-image: url("/src/images/mobilebackground.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    overflow-x: hidden;
+
   }
 }
 

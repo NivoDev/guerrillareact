@@ -24,8 +24,10 @@ export const Navigator = ()=>{
 }
 const LogoPlacer= styled.div`
     display;flex;
-    margin-left:2rem;
-    justify-content:center;
+    position:relative;
+    margin:0;
+    padding:0;
+    justify-content:space-around;
     align-items: center;
     @media (min-width: 768px){
        display:none;
@@ -33,14 +35,18 @@ const LogoPlacer= styled.div`
 
 const Nav = styled.div`
     background: #000;
-    width: 100%;
+    width:100%;
     display:flex;
     position:sticky;
     align-items: center;
     top:0;
     left:0;
+    right:0;
+    justify-content:space-between;
+    padding:25px 0;
     z-index:10000;
     @media (min-width: 768px){
+        position:relative;
         justify-content:space-around;
         align-items: center;
         padding:10px 0;
@@ -59,6 +65,7 @@ const NavLink = styled(Link)`
         color:#94be90;
     }
     @media (max-width: 768px) {
+        z-index:100000;
         visibility: hidden;
         
 `;

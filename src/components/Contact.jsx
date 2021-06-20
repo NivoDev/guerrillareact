@@ -99,7 +99,7 @@ return (
                   <p className='message-chars-left'>{messageCharsLeft}</p>
               </Label>
               <ReCAPTCHA
-                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+                sitekey="6Lf7XUcbAAAAAIdi-1HVwY6mpPXpN08jhQKxoEfc"
               onChange={handleOnChange}
             />
             <Input type="submit" disabled={!isVerified}/>

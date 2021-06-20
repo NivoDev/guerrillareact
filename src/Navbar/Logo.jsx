@@ -17,6 +17,7 @@ const Img = styled.img`
     font-family: Roboto Slab;
     width:180px;
     height:180px;
+    margin:-30% 0;
     position: relative;
     max-width: 250px ;
     animation: fadeIn 4s ease forwards;

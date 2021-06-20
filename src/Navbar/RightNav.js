@@ -2,11 +2,11 @@ import React from 'react';
 import { Link } from 'react-router-dom'
 import styled from 'styled-components';
 const Nav = styled.div`
-    width: 100%;
+    width: 100vw;
     display:flex;
     flex-direction:column;
     align-items: center;
-    z-index:20; 
+    z-index:99999; 
     `;
 
 const Ul = styled.ul`
@@ -17,6 +17,7 @@ const Ul = styled.ul`
     justify-content: space-between;
         @media (max-width: 768px) {
             justify-content: space-between;
+            z-index:11; 
             flex-flow: column nowrap;
             background-color: #0D2538;
             position: fixed;

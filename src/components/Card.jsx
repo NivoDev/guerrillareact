@@ -13,10 +13,7 @@ const Card = () => {
                 They publish their music on Nutek Records with a bright future of quality releases and pure dance floor material.
                 Guerrilla sound combines  cultural influences with massive kick & bass sections and top notch production quality.
 
-                Stay Tuned on Guerrilla’s channels:
-                Spotify | Youtube | Instagram
-                Facebook | Soundcloud | Itunes
-                Deezer | Twitter | Amazon
+                Stay Tuned on Guerrilla’s channels
             </Par>
         </Bio>
     )
