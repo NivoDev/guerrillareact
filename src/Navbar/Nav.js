@@ -2,15 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom'
 import Burger  from './Burger'
-import Logo from './Logo.jsx';
+import LogoSmall from './LogoSmall';
+
 export const Navigator = ()=>{
     return(
         <Nav>     
-            <LogoPlacer>
-                <Logo />
-            </LogoPlacer>   
             <NavLink to='/' activestyle>
-                Guerrilla
+                <LogoSmall />
+            </NavLink>   
+            <NavLink to='/about' activestyle>
+                About
             </NavLink>
             <NavLink to='/music' activestyle>
                 Music
@@ -22,17 +23,7 @@ export const Navigator = ()=>{
         </Nav>
     )
 }
-const LogoPlacer= styled.div`
-    display;flex;
-    position:relative;
-    margin:0;
-    padding:0;
-    justify-content:space-around;
-    align-items: center;
-    @media (min-width: 768px){
-       display:none;
-    `;
-
+// 
 const Nav = styled.div`
     background: #000;
     display:flex;
@@ -55,7 +46,7 @@ const Nav = styled.div`
 
 const NavLink = styled(Link)`
     color:#fff;
-    display:flex;
+    display:inline;
     align-items:center;
     margin:auto;
     padding:0rem 6rem;

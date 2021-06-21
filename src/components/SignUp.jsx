@@ -43,14 +43,14 @@ return (
 <Main>
     <form noValidate onSubmit={handleSubmit(onSubmit2)}>
         <h1>Sign in to our newsletter</h1>
-    <Input htmlFor="email" placeholder="Your emails" style={{
+    <Input htmlFor="email" placeholder="Your email" style={{
             fontWeight: "italic",
             color: "#000"
           }}
      {...register('email', { 
         required: true ,
         name:"email",
-        minLength: { value:8, message: 'Please enter a valid emails'},
+        minLength: { value:8, message: 'Please enter a valid email'},
         id: { email } ,
         pattern:{
             value: email_regex, 
@@ -70,6 +70,7 @@ export default SignUp
 
 const Main = styled.div`
     display:flex;
+    position:relative;
     width:80vw;
     flex-direction: column;
     align-items: center;
@@ -88,13 +89,13 @@ const Input = styled.input`
     font-size:large;
     border-radius: 10px;
     color:white;
-    width:50%;
+    width:80%;
     height:20px;
     z-index:11;
     position:relative;
 
     @media only screen and ( max-width: 1200px ){
-        width: 75% !important;
+        width: 80% !important;
         
     }
 `;

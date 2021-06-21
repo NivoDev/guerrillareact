@@ -48,9 +48,12 @@ const NavLink = styled(Link)`
 const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
-         <Nav>        
-            <NavLink to='/' onClick={!open}>
-                About us
+         <Nav>     
+         <NavLink to='/'>
+                Home page
+            </NavLink>   
+            <NavLink to='/about'>
+                About
             </NavLink>
             <NavLink to='/music' >
                 Music

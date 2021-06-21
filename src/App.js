@@ -1,9 +1,10 @@
 import React , {useState, useEffect }from 'react';
 import {BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import { Home } from './components/Home'
+import { About } from './components/About'
 import { Music } from './components/Music';
 import { Contact } from './components/Contact';
 import  { Navigator }  from './Navbar/Nav';
+import { HomePage } from './components/HomePage';
 import { Footer } from './components/Footer';
 import Loader  from './components/Loader.js'
 
@@ -25,8 +26,11 @@ function App() {
       <Router>
         <Navigator />      
         <Switch>
-          <Route exact path="/">
-            <Home />
+        <Route exact path="/">
+            <HomePage />
+            </Route>
+            <Route path="/about">
+            <About />
             </Route>
             <Route path="/music">
             <Music />

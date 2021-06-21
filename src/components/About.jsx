@@ -2,32 +2,32 @@ import React, { useState } from "react";
 import styled from 'styled-components/';
 import '../styles/bio.css';
 import Card from './Card'
-import SignUp from './SignUp'
-import ThankYou from './ThankYou'
+import Logo from '../Navbar/Logo';
 
 
-
-export const Home = ()=> {
+export const About = ()=> {
     
-    const [isSubmitted, setIsSubmitted] = useState(false)
-
-    function onSubmit(){
-        setIsSubmitted(true);
-        
-    }
     return (
         <Div>
-            <Title>About us</Title>
+           <LogoPlacer>
+               <Logo />
+           </LogoPlacer>
             <Main>
                 <Card />
-                {!isSubmitted ?
-                    <SignUp onSubmit={onSubmit}/> :
-                    <ThankYou />
-                }
             </Main>
         </Div>
     )
 };
+const LogoPlacer= styled.div`
+    display;flex;
+    position:relative;
+    margin:0;
+    padding:0;
+
+    @media (min-width: 768px){
+       display:none;
+    `;
+
 const Div = styled.div`
     display:flex;
     justify-content: center;

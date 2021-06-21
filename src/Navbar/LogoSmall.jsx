@@ -1,7 +1,7 @@
 import React from 'react'
 import logo from '../images/Guerrilla-White-LOGO.png';
 import styled from 'styled-components';
-const Logo = () => {
+const LogoSmall = () => {
     return (
         <div>
             <Img src={logo}/>
@@ -9,13 +9,13 @@ const Logo = () => {
     )
 }
 
-export default Logo
+export default LogoSmall
 const Img = styled.img`
     margin: 0;
     display:flex;
     font-family: Roboto Slab;
-    width:250px;
-    height:250px;
+    width:120px;
+    height:120px;
     margin:5px;
     margin:-30% 0;
     position: relative;

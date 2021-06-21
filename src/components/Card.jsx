@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components/';
-import Logo from '../Navbar/Logo';
+// import Logo from '../Navbar/Logo';
 
 const Card = () => {
     return (
