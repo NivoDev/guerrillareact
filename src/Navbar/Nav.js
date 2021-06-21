@@ -9,13 +9,13 @@ export const Navigator = ()=>{
             <LogoPlacer>
                 <Logo />
             </LogoPlacer>   
-            <NavLink to='/' activeStyle>
+            <NavLink to='/' activestyle>
                 Guerrilla
             </NavLink>
-            <NavLink to='/music' activeStyle>
+            <NavLink to='/music' activestyle>
                 Music
             </NavLink>
-            <NavLink to='/contact' activeStyle>
+            <NavLink to='/contact' activestyle>
                 Contact
             </NavLink>   
             <Burger />  
@@ -24,7 +24,7 @@ export const Navigator = ()=>{
 }
 const LogoPlacer= styled.div`
     display;flex;
-    position:relative;
+    position:absolute;
     margin:0;
     padding:0;
     justify-content:space-around;
@@ -35,9 +35,8 @@ const LogoPlacer= styled.div`
 
 const Nav = styled.div`
     background: #000;
-    width:100%;
     display:flex;
-    position:sticky;
+    position:fixed sticky;
     align-items: center;
     top:0;
     left:0;
@@ -45,11 +44,11 @@ const Nav = styled.div`
     justify-content:space-between;
     padding:25px 0;
     z-index:10000;
-    @media (min-width: 768px){
+    @media (max-width: 768px){
         position:relative;
         justify-content:space-around;
         align-items: center;
-        padding:10px 0;
+        padding:25px 0;
     }
     `;
 
@@ -66,7 +65,7 @@ const NavLink = styled(Link)`
     }
     @media (max-width: 768px) {
         z-index:100000;
-        visibility: hidden;
+        display:none;
         
 `;
 

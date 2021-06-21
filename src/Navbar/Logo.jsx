@@ -13,7 +13,6 @@ export default Logo
 const Img = styled.img`
     margin: 0;
     display:flex;
-    flex:1;
     font-family: Roboto Slab;
     width:180px;
     height:180px;
