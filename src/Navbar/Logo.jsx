@@ -14,8 +14,9 @@ const Img = styled.img`
     margin: 0;
     display:flex;
     font-family: Roboto Slab;
-    width:180px;
-    height:180px;
+    width:200px;
+    height:200px;
+    margin:5px;
     margin:-30% 0;
     position: relative;
     max-width: 250px ;

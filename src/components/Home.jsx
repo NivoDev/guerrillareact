@@ -17,7 +17,7 @@ export const Home = ()=> {
     }
     return (
         <Div>
-            {/* <Title>About us</Title> */}
+            <Title>About us</Title>
             <Main>
                 <Card />
                 {!isSubmitted ?
@@ -41,13 +41,13 @@ const Main = styled.div`
     flex-direction: column;
     `;
 
-// const Title = styled.h1`
-// display:flex;
-// color:white;
-// padding-top:10px;
-// justify-content: center;
-// align-items: center;
-// font-family: Roboto Slab;
-// font-size: 50px;
-// `;
+const Title = styled.h1`
+display:flex;
+color:white;
+padding-top:10px;
+justify-content: center;
+align-items: center;
+font-family: Roboto Slab;
+font-size: 50px;
+`;
 

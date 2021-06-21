@@ -5,7 +5,7 @@ import Logo from '../Navbar/Logo';
 const Card = () => {
     return (
         <Bio>
-            <Logo width={200}/>
+            {/* <Logo width={200}/> */}
             <Profile src= "https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.6435-9/121373857_1034993933613342_6748677683208343110_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=1p1Q6Oc8EP8AX8SjQta&_nc_ht=scontent.fsdv2-1.fna&oh=be5188f5699f9c0a557238ad51b6ef70&oe=60DD8551"/>
             <Par>
                 Guerrilla is an emerging duo formed by Niv Rozanowich and Tomer Segev.

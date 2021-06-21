@@ -89,9 +89,10 @@ const Foot = styled.div`
     right:0;
     left:0;
     justify-content: center;
+    height:100%;
 `;
 const Social = styled.a`
     color:white;
-    padding:.5em;
-    font-size:30px
+    padding:.4em;
+    font-size:27px
 `;

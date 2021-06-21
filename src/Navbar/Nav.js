@@ -24,7 +24,7 @@ export const Navigator = ()=>{
 }
 const LogoPlacer= styled.div`
     display;flex;
-    position:absolute;
+    position:relative;
     margin:0;
     padding:0;
     justify-content:space-around;

@@ -49,13 +49,13 @@ const RightNav = ({ open }) => {
   return (
     <Ul open={open}>
          <Nav>        
-            <NavLink to='/' activeStyle>
+            <NavLink to='/' onClick={!open}>
                 About us
             </NavLink>
-            <NavLink to='/music' activeStyle>
+            <NavLink to='/music' >
                 Music
             </NavLink>
-            <NavLink to='/contact' activeStyle>
+            <NavLink to='/contact' >
                 Contact
             </NavLink>   
         </Nav>
