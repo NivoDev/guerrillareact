@@ -17,7 +17,7 @@ export const HomePage = () => {
                     border:"none", 
                     overflow:"hidden"
                 }}
-                scrolling="yes" 
+                scrolling="no" 
                 frameborder="none" 
                 allowfullscreen="true" 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">

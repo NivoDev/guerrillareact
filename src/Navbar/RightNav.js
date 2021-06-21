@@ -45,20 +45,21 @@ const NavLink = styled(Link)`
         
 `;
 
-const RightNav = ({ open }) => {
-  return (
+const RightNav = ({ open,toggle }) => {
+  
+    return (
     <Ul open={open}>
          <Nav>     
-         <NavLink to='/'>
+         <NavLink to='/' onClick={toggle}>
                 Home page
             </NavLink>   
-            <NavLink to='/about'>
+            <NavLink to='/about' onClick={toggle}>
                 About
             </NavLink>
-            <NavLink to='/music' >
+            <NavLink to='/music' onClick={toggle}>
                 Music
             </NavLink>
-            <NavLink to='/contact' >
+            <NavLink to='/contact' onClick={toggle}>
                 Contact
             </NavLink>   
         </Nav>

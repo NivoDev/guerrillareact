@@ -3,16 +3,17 @@ import styled from 'styled-components';
 import RightNav from './RightNav';
 
 const Burger = () => {
-    const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
+  const toggle = () => setOpen(!open);
     
     return (
       <>
-        <StyledBurger open={open} onClick={() => setOpen(!open)}>
+        <StyledBurger toggle={toggle} onClick={toggle}>
           <div />
           <div />
           <div />
         </StyledBurger>
-        <RightNav open={open}/>
+        <RightNav open={open} toggle={toggle}/>
       </>
     )
   }
