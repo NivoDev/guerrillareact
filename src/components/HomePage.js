@@ -8,16 +8,17 @@ export const HomePage = () => {
                <Logo />
            </LogoPlacer>
             <iframe 
-                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fguerrillamusicofficial&tabs=timeline&width=800&height=500&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1337322356737912"
-                width={500}
-                height={500}
+                src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fguerrillamusicofficial&tabs=timeline&width=400&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1337322356737912"
                 style={{
+                    padding:"30px 0",
+                    minWidth:"400px",
+                    height:"500px",
                     display:"flex",
-                    border:"10px solid white", 
+                    border:"none", 
                     overflow:"hidden"
                 }}
-                scrolling="no" 
-                frameborder="0" 
+                scrolling="yes" 
+                frameborder="none" 
                 allowfullscreen="true" 
                 allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share">
             </iframe>
