@@ -7,7 +7,7 @@ export const HomePage = () => {
             <LogoPlacer>
                <Logo />
            </LogoPlacer>
-            <iframe 
+            <iframe  title="Facebook-Page"
                 src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2Fguerrillamusicofficial&tabs=timeline&width=400&height=400&small_header=true&adapt_container_width=true&hide_cover=false&show_facepile=true&appId=1337322356737912"
                 style={{
                     padding:"30px 0",

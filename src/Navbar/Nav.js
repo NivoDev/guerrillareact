@@ -7,16 +7,16 @@ import LogoSmall from './LogoSmall';
 export const Navigator = ()=>{
     return(
         <Nav>     
-            <NavLink to='/' activestyle>
+            <NavLink to='/' activestyle="true">
                 <LogoSmall />
             </NavLink>   
-            <NavLink to='/about' activestyle>
+            <NavLink to='/about' activestyle="true">
                 About
             </NavLink>
-            <NavLink to='/music' activestyle>
+            <NavLink to='/music' activestyle="true">
                 Music
             </NavLink>
-            <NavLink to='/contact' activestyle>
+            <NavLink to='/contact' activestyle="true">
                 Contact
             </NavLink>   
             <Burger />  
@@ -45,6 +45,7 @@ const Nav = styled.div`
 
 
 const NavLink = styled(Link)`
+    -webkit-tap-highlight-color: transparent;
     color:#fff;
     display:inline;
     align-items:center;

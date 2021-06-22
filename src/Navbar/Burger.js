@@ -8,7 +8,7 @@ const Burger = () => {
     
     return (
       <>
-        <StyledBurger toggle={toggle} onClick={toggle}>
+        <StyledBurger open={open} toggle={toggle} onClick={toggle}>
           <div />
           <div />
           <div />

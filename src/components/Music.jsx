@@ -12,7 +12,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-HjjCimXzSPNCbQBj-B1YYSw-t500x500.jpg" alt="prophecy"></img>
                         <SongName> Prophecy <br></br><Date>12 Oct 2020</Date></SongName>    
                         </Link>
-                        <IFrame src="https://open.spotify.com/embed/track/2JKeuzEejAoXyWUpewmmRt" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></IFrame>
+                        <IFrame title="Prophecy" src="https://open.spotify.com/embed/track/2JKeuzEejAoXyWUpewmmRt" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></IFrame>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -21,7 +21,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-IkSy7D1qCs4Ee33o-NpGR0g-t500x500.jpg" alt="boom"></img>
                         <SongName> Boom <br></br><Date>12 Oct 2020</Date></SongName>    
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/5jqgeFJJkCE5oG1rYQynK3" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Boom" src="https://open.spotify.com/embed/track/5jqgeFJJkCE5oG1rYQynK3" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -30,16 +30,16 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-UuiRQ5USIqrqc1zc-g9jJlQ-t500x500.jpg" alt="my-lsd"></img>
                         <SongName> BLiSS - MyLSD Song (Guerrilla Remix) <br></br><Date>21 Sep 2020</Date></SongName>    
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/3OiojVDHQMqrOtj7qboyx1" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="My-LSD-Song" src="https://open.spotify.com/embed/track/3OiojVDHQMqrOtj7qboyx1" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
                     <Song>
                         <Link href="https://www.nutekrecords.com/nutek/painkiller_-_flam_n_co_(guerilla_remix).php" target="_blank" rel="noreferrer">
                         <img src="https://i1.sndcdn.com/artworks-vIoE4ZYzEHBz8uDF-Ut96tw-t500x500.jpg" alt="flamenco"></img>
-                        <SongName> Painkiller - Flamenco (Guerrilla Remix) <br></br><Date>06 Jul 2020</Date></SongName>
+                        <SongName> Painkiller - Flam & co (Guerrilla Remix) <br></br><Date>06 Jul 2020</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/0rPxlj3WjQ75GWmPPJPsat" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Flamenco" src="https://open.spotify.com/embed/track/0rPxlj3WjQ75GWmPPJPsat" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -48,7 +48,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-GENRSZWb8GTdhOKs-WMSQiQ-t500x500.jpg" alt="into-the-future"></img>
                         <SongName> Into The Future <br></br><Date>30 Mar 2020</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/5lmNgxhqAtWzMAmrwTPbQV" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Into-The-Future" src="https://open.spotify.com/embed/track/5lmNgxhqAtWzMAmrwTPbQV" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -57,7 +57,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-S37qoyXeBZ7Ptrl7-gwn1eA-t500x500.jpg" alt="azax-remix"></img>
                         <SongName> Azax - The Beast (Guerrilla Remix) <br></br><Date>17 Feb 2020</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/7g3uiRJVaemWMd2Fuqo8RD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="The-Beast" src="https://open.spotify.com/embed/track/7g3uiRJVaemWMd2Fuqo8RD" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -66,7 +66,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-000640539271-no70cz-t500x500.jpg" alt="stardust"></img>
                         <SongName> Stardust (Ft. Formation)<br></br><Date>20 Nov 2019</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/2Dcjox08TAnNzGMEt9fi2H" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Stardust" src="https://open.spotify.com/embed/track/2Dcjox08TAnNzGMEt9fi2H" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -75,7 +75,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-000598321364-ttxhs2-t500x500.jpg" alt="te-queiro"></img>
                         <SongName> Te Queiro<br></br><Date>16 Sep 2019</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/0cTj0KQp3sEAArXRHJl87u" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Te-Quiero" src="https://open.spotify.com/embed/track/0cTj0KQp3sEAArXRHJl87u" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -84,7 +84,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-000598323872-xmn244-t500x500.jpg" alt="cosmic-connection"></img>
                         <SongName> Cosmic Connection <br></br><Date>16 Sep 2019</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/7qvXilE0A1PdiQCakfhvns" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Cosmic-Connection" src="https://open.spotify.com/embed/track/7qvXilE0A1PdiQCakfhvns" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -93,7 +93,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-000552802752-4xgiol-t500x500.jpg" alt="desert-flow"></img>
                         <SongName>Desert Flow <br></br><Date>01 July 2019</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/3C4MG07Dr5ZZZPynZE0Lip" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Desert-Flow" src="https://open.spotify.com/embed/track/3C4MG07Dr5ZZZPynZE0Lip" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -102,7 +102,7 @@ export const Music = ()=> {
                         <img src="https://i1.sndcdn.com/artworks-000553126104-ia496l-t500x500.jpg" alt="jinni"/>
                         <SongName>Jinni <br></br><Date>01 July 2019</Date></SongName>
                         </Link>
-                        <iframe src="https://open.spotify.com/embed/track/21UP9l4mav2rRLPUYEpKeL" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Jinni" src="https://open.spotify.com/embed/track/21UP9l4mav2rRLPUYEpKeL" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -110,7 +110,7 @@ export const Music = ()=> {
                         <Link href="https://nutekrecords.com/asia/guerrilla_-_fata_morgana.php" target="_blank" rel="noreferrer">
                         <img src="https://i1.sndcdn.com/artworks-000531093432-wlsbjr-t500x500.jpg" alt="fata-morgana"></img>
                         <SongName>Fata Morgana <br></br><Date>27 May 2019</Date></SongName></Link>
-                        <iframe src="https://open.spotify.com/embed/track/5MgDmV8XC5NXESEaQTKhz7" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Fata-Morgana" src="https://open.spotify.com/embed/track/5MgDmV8XC5NXESEaQTKhz7" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
                 <Wrapper>
@@ -118,7 +118,7 @@ export const Music = ()=> {
                         <Link href="https://distrokid.com/hyperfollow/guerrilla/f7kg" target="_blank" rel="noreferrer">
                         <img src="https://i1.sndcdn.com/artworks-000465873012-ls67bs-t500x500.jpg" alt="attactica"></img>
                         <SongName>Attactica <br></br><Date>01 Jan 2019</Date></SongName></Link>
-                        <iframe src="https://open.spotify.com/embed/track/7JDGSWrmkvCDZcopOHuZvK" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                        <iframe title="Attactica" src="https://open.spotify.com/embed/track/7JDGSWrmkvCDZcopOHuZvK" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>
                 </Wrapper>
         </Main>

@@ -18,7 +18,6 @@ export const Contact = ()=> {
   const email_regex = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
   const [contactNumber, setContactNumber] = useState("000000");
-  console.log(watch("example"));
 
   const generateContactNumber = () => {
     const numStr = "000000" + (Math.random() * 1000000 | 0);
@@ -33,14 +32,16 @@ export const Contact = ()=> {
   }
 
   const onSubmit = data => {
-    setIsSubmitted(true);
     generateContactNumber()
-    sendForm('default_service', 'template_yyxyh5a' , '#contact-form')
+    console.log({data}) 
+    sendForm("service_y1gtueh","template_yyxyh5a", '#contact-form')
     .then(function(response) {
         console.log('SUCCESS!', response.status, response.text);
+        setIsSubmitted(true);
         // alert("Thank you for contact us!")
     }, function(error){
         console.log('FAILD...', error)
+        alert("Your message hasn't been sent")
         
     })};
 return (
@@ -56,18 +57,21 @@ return (
         />
           <Label>Your name: <br></br>
           {errors.user_name && errors.user_name.type === "required" && (
-          <div className="error" role="alert">Name is required<br/></div>
+          <div className="error">Name is required<br/></div>
           )}
-            <input type="text" 
-            
-            {...register("user_name", { required: true ,
+            <input type="text"
+            {...register("user_name", { 
+              required: true ,
               minLength:{
-                value:"2", 
+                value:"2",
                 message:'Name is too short'
                 }})}
-            placeHolder="Name"
-            maxLength='20'
-            aria-invalid={errors.user_name ? "true" : "false"}/>
+              placeholder="Name"
+              maxLength='20'
+              aria-invalid={
+                errors.user_name ? "true" : "false"
+              }
+              />
             <br></br>
             <ErrorMessage errors={errors} name="user_name" />
           </Label>
@@ -81,7 +85,7 @@ return (
               placeholder="Email"
               aria-invalid={errors.user_name ? "true" : "false"}
               /><br></br>
-              <ErrorMessage errors={errors} name="user_email" />
+              <ErrorMessage errors={errors} role="alert" name="user_email" />
               </Label>
               <Label>Your message: <br></br>
               {errors.message && errors.message.type === "required" && (
@@ -89,17 +93,16 @@ return (
               )}
                 <textarea type="textarea"
                   name="message"
-                
-                autoComplete="off"
+                  autoComplete="off"
                   maxLength="150"
                   placeholder="Your message"
                   {...register("message", { required: true })}
                   /> <br></br>             
-                  <ErrorMessage errors={errors} name="message" />
+                  <ErrorMessage errors={errors} role="alert" name="message" />
                   <p className='message-chars-left'>{messageCharsLeft}</p>
               </Label>
               <ReCAPTCHA
-                sitekey="6Lf7XUcbAAAAAIdi-1HVwY6mpPXpN08jhQKxoEfc"
+                sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
               onChange={handleOnChange}
             />
             <Input type="submit" disabled={!isVerified}/>
@@ -112,6 +115,8 @@ return (
   </>
 )
 };
+// my recaptcha site key
+// 6Lf7XUcbAAAAAIdi-1HVwY6mpPXpN08jhQKxoEfc
 const Input = styled.input`
     font-size:large;
     border-radius: 10px;

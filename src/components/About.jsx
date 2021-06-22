@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from 'styled-components/';
 import '../styles/bio.css';
 import Card from './Card'
@@ -40,14 +40,4 @@ const Main = styled.div`
     align-items: center;
     flex-direction: column;
     `;
-
-const Title = styled.h1`
-display:flex;
-color:white;
-padding-top:10px;
-justify-content: center;
-align-items: center;
-font-family: Roboto Slab;
-font-size: 50px;
-`;
 

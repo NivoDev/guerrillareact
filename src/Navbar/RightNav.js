@@ -32,6 +32,7 @@ const Ul = styled.ul`
     
     `;
 const NavLink = styled(Link)`
+    -webkit-tap-highlight-color: transparent;
     color:#fff;
     display:flex;
     align-items:center;
