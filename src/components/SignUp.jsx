@@ -15,10 +15,10 @@ const SignUp = ({onSubmit}) => {
     
     const handleChange = (e) =>{
         setData({...data, email: e.target.value });
-        
+        console.log(e)
     }
     const onSubmit2= async (e)=>{
-
+        
         onSubmit()
         try{   
             const response = await fetch(
@@ -43,18 +43,18 @@ return (
 <Main>
     <form noValidate onSubmit={handleSubmit(onSubmit2)}>
         <h1>Sign in to our newsletter</h1>
-    <Input htmlFor="email" placeholder="Your email" style={{
+    <Input placeholder="Your email" style={{
             fontWeight: "italic",
             color: "#000"
           }}
      {...register('email', { 
         required: true ,
-        name:"email",
         minLength: { value:8, message: 'Please enter a valid email'},
         id: { email } ,
         pattern:{
             value: email_regex, 
-            message: 'Please enter a valid email'},
+            message: 'Please enter a valid email'
+        },
         onClick:{handleChange}
         }
         )} 

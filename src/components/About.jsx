@@ -9,6 +9,7 @@ export const About = ()=> {
     
     return (
         <Div>
+            <Title>About</Title>
            <LogoPlacer>
                <Logo />
            </LogoPlacer>
@@ -21,8 +22,7 @@ export const About = ()=> {
 const LogoPlacer= styled.div`
     display;flex;
     position:relative;
-    margin:0;
-    padding:0;
+    padding-top:20px;
 
     @media (min-width: 768px){
        display:none;
@@ -35,9 +35,19 @@ const Div = styled.div`
     align-items: center;
 `;
 const Main = styled.div`
-    display:relative;
-    justify-content: center;
+    display:flex;
     align-items: center;
     flex-direction: column;
     `;
 
+    const Title = styled.h1`
+    padding-top:10px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Roboto Slab;
+    font-size: 50px;
+    @media (max-width: 768px) {
+        display:none;
+    }
+    `;

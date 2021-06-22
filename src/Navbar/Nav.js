@@ -10,11 +10,11 @@ export const Navigator = ()=>{
             <NavLink to='/' activestyle="true">
                 <LogoSmall />
             </NavLink>   
-            <NavLink to='/about' activestyle="true">
-                About
-            </NavLink>
             <NavLink to='/music' activestyle="true">
                 Music
+            </NavLink>
+            <NavLink to='/about' activestyle="true">
+                About
             </NavLink>
             <NavLink to='/contact' activestyle="true">
                 Contact
@@ -48,6 +48,7 @@ const NavLink = styled(Link)`
     -webkit-tap-highlight-color: transparent;
     color:#fff;
     display:inline;
+    justify-content: center;
     align-items:center;
     margin:auto;
     padding:0rem 6rem;

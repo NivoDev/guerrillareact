@@ -28,14 +28,12 @@ export const HomePage = () => {
 const Main = styled.div`
     display:flex;
     flex-flow:column;
-    justify-content:center;
     align-items:center;
 `;
 const LogoPlacer= styled.div`
     display;flex;
     position:relative;
-    margin:0;
-    padding:0;
+    padding-top:20px;
     `;
 
 

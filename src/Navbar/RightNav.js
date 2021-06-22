@@ -52,13 +52,13 @@ const RightNav = ({ open,toggle }) => {
     <Ul open={open}>
          <Nav>     
          <NavLink to='/' onClick={toggle}>
-                Home page
+                Home
             </NavLink>   
-            <NavLink to='/about' onClick={toggle}>
-                About
-            </NavLink>
             <NavLink to='/music' onClick={toggle}>
                 Music
+            </NavLink>
+            <NavLink to='/about' onClick={toggle}>
+                About
             </NavLink>
             <NavLink to='/contact' onClick={toggle}>
                 Contact

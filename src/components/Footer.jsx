@@ -21,7 +21,7 @@ export const Footer = () => {
            <Social href="https://www.instagram.com/guerrillatrance" target="_blank"><GrInstagram /> </Social>
            <Social href="https://www.youtube.com/channel/UC7L3nLa8wIVy8hPHAWap_9w" target="_blank"><GrYoutube /> </Social>
            <Social href="https://www.nutekrecords.com/nutek/guerilla.php">
-                    <svg className="nutekLogo" version="1.0" xmlns="http://www.w3.org/2000/svg"
+                <svg className="nutekLogo" version="1.0" xmlns="http://www.w3.org/2000/svg"
                     width="30pt" height="30pt" viewBox="0 0 581.000000 473.000000"
                     preserveAspectRatio="xMidYMid meet">
 
@@ -54,7 +54,6 @@ export const Footer = () => {
                     -6 853 c-4 469 -9 856 -13 859 -3 4 -25 -17 -48 -46z"/>
                     </g>
                 </svg>
-
             </Social> 
            <Social href="https://open.spotify.com/artist/1M3dLhsbP7HfxUHCxNCQq6" target="_blank"><FaSpotify /> </Social>
            <Social href="https://music.apple.com/il/artist/guerrilla/305147041" target="_blank"><FaItunesNote /> </Social>
@@ -95,5 +94,7 @@ const Social = styled.a`
 `;
 
 const Socials = styled.div`
-display:flex;
+    display:flex;
+    justify-content: center;
+    align-items: center;
 `;

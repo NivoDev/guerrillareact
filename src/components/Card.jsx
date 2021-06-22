@@ -8,10 +8,10 @@ const Card = () => {
             {/* <Logo width={200}/> */}
             <Profile src= "https://scontent.fsdv2-1.fna.fbcdn.net/v/t1.6435-9/121373857_1034993933613342_6748677683208343110_n.jpg?_nc_cat=101&ccb=1-3&_nc_sid=09cbfe&_nc_ohc=1p1Q6Oc8EP8AX8SjQta&_nc_ht=scontent.fsdv2-1.fna&oh=be5188f5699f9c0a557238ad51b6ef70&oe=60DD8551"/>
             <Par>
-                Guerrilla is an emerging duo formed by Niv Rozanowich and Tomer Segev.
-                Since few years that they are producing psy trance music together, constructing their original sound and unique formula.
-                They publish their music on Nutek Records with a bright future of quality releases and pure dance floor material.
-                Guerrilla sound combines  cultural influences with massive kick & bass sections and top notch production quality.
+                Guerrilla is an emerging duo formed <br/>by Niv Rozanowich and Tomer Segev.<br/>
+                Since few years that they are producing psy trance music together, constructing their original sound and unique formula.<br/>
+                They publish their music on Nutek Records with a bright future of quality releases and pure dance floor material.<br/>
+                Guerrilla sound combines  cultural influences with massive kick & bass sections and top notch production quality.<br/>
 
                 Stay Tuned on Guerrilla’s channels
             </Par>
@@ -80,13 +80,15 @@ const Profile = styled.img`
 
 const Par = styled.h1`
     position: relative;
-    font-family: "Source Code Pro", monospace;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 1.5px;
     display:flex;
+    flex-flow: nowrap;
     color:white;
-    font-size: 16px;
-    max-width:350px;
-    justify-content: center;
-    align-items: center;
+    font-size: 20px;
+    max-width:600px;
+    width:80%;
+    line-height:25px;
     transform: translateY(10rem);
     animation: fadeInUp 4s ease forwards;
         @keyframes fadeInUp {
