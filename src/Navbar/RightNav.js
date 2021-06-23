@@ -19,8 +19,7 @@ const Ul = styled.ul`
             justify-content: space-between;
             z-index:11; 
             flex-flow: column nowrap;
-            background-color: #0D2538;
-            position: fixed;
+            background-image: linear-gradient(to right bottom, #0d2538, #192844, #2d284d, #452650, #5c214d);            position: fixed;
             transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
             top: 0;
             right: 0;
