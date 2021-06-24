@@ -25,10 +25,49 @@ export const About = ()=> {
                         <IFrame title="Prophecy" src="https://open.spotify.com/embed/track/2JKeuzEejAoXyWUpewmmRt" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></IFrame>
                     </Song>
                 </Wrapper>
+                <br/>
+                <P>
+                    Stay tuned on Guerrilla's channels
+                </P>
             </Main>
         </Div>
     )
 };
+
+const P = styled.h1`
+position: relative;
+    font-family: 'Rubik', sans-serif;
+    letter-spacing: 1.5px;
+    display:flex;
+    flex-direction: column;
+    flex-flow: wrap;
+    color:white;
+    // text-transform:uppercase;
+    font-weight:bold;
+    font-size: 20px;
+    align-items: center;
+    justify-content: center;
+    max-width:600px;
+    width:80%;
+    line-height:25px;
+    transform: translateY(2rem);
+    animation: fadeInUp 4s ease forwards;
+    a{
+        padding:10px;
+        -webkit-tap-highlight-color: transparent;
+        font-size: 24px;
+        text-decoration:none;
+        position:relative;
+        color:white;
+        cursor:pointer;
+        
+    }
+        @keyframes fadeInUp {
+                to {
+                opacity: 1;
+                transform: translateY(0);
+                }
+    `;
 const LogoPlacer= styled.div`
     display;flex;
     position:relative;
