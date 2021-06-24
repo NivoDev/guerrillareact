@@ -13,9 +13,9 @@ export const Navigator = ()=>{
             <NavLink to='/music' activestyle="true">
                 Music
             </NavLink>
-            <NavLink to='/about' activestyle="true">
+            {/* <NavLink to='/about' activestyle="true">
                 About
-            </NavLink>
+            </NavLink> */}
             <NavLink to='/contact' activestyle="true">
                 Contact
             </NavLink>   
