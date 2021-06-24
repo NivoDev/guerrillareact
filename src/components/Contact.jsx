@@ -126,6 +126,9 @@ const Input = styled.input`
     z-index:11;
     height:20px;
     position:relative;
+    &:focus {
+      outline: none;
+    }
 
     @media ( max-width: 760px ){
         width: 45% !important; 
@@ -145,6 +148,9 @@ const Div = styled.div`
   flex-direction: column;
   justify-content:center;
   align-items:center;
+    &:focus {
+      outline: none;
+    }
 `;
 
 const Title = styled.h1`
