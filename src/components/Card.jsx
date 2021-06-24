@@ -11,10 +11,11 @@ const Card = () => {
                 Guerrilla is an emerging duo formed <br/>by Niv Rozanowich and Tomer Segev.<br/>
                 Since few years that they are producing psy trance music together, constructing their original sound and unique formula.<br/>
                 They publish their music on Nutek Records with a bright future of quality releases and pure dance floor material.<br/>
-                Guerrilla sound combines  cultural influences with massive kick & bass sections and top notch production quality.<br/>
-
-                Stay Tuned on Guerrilla’s channels:
-                <a href="https://open.spotify.com/artist/1M3dLhsbP7HfxUHCxNCQq6" rel="noreferrer" target="_blank"> Spotify </a>  
+                Guerrilla sound combines  cultural influences with massive kick & bass sections and top notch production.<br/>
+                <br/> 
+                Check out our new Album Stream & Download here
+                
+                {/* <a href="https://open.spotify.com/artist/1M3dLhsbP7HfxUHCxNCQq6" rel="noreferrer" target="_blank"> Spotify </a>  
                 <a href="https://www.youtube.com/channel/UC7L3nLa8wIVy8hPHAWap_9w" rel="noreferrer" target="_blank"> Youtube </a>  
                 <a href="https://www.instagram.com/guerrillatrance" target="_blank" rel="noreferrer"> Instagram </a>  
                 <a href="https://www.facebook.com/guerrillamusicofficial" rel="noreferrer" target="_blank"> Facebook </a>  
@@ -23,7 +24,7 @@ const Card = () => {
                 <a href="https://twitter.com/GuerrilaTrance" rel="noreferrer" target="_blank"> Twitter </a>  
                 <a href="https://www.deezer.com/fr/artist/252884" rel="noreferrer"target="_blank"> Deezer </a>  
                 <a href="https://music.amazon.com/artists/B001TQFGQ2/guerrilla" rel="noreferrer" target="_blank"> Amazon </a>  
-                <a href="https://www.beatport.com/artist/guerrilla/520256" rel="noreferrer" target="_blank"> Beatport </a>
+                <a href="https://www.beatport.com/artist/guerrilla/520256" rel="noreferrer" target="_blank"> Beatport </a> */}
             </Par>
         </Bio>
     )
@@ -34,7 +35,6 @@ export default Card
 const Bio = styled.div`
     width: 100%;
     margin: 1em auto;
-    padding: 10px;
     color:white;
     position: relative;
     overflow: hidden ;
