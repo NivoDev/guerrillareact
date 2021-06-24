@@ -56,9 +56,9 @@ const RightNav = ({ open,toggle }) => {
             <NavLink to='/music' onClick={toggle}>
                 Music
             </NavLink>
-            <NavLink to='/about' onClick={toggle}>
+            {/* <NavLink to='/about' onClick={toggle}>
                 About
-            </NavLink>
+            </NavLink> */}
             <NavLink to='/contact' onClick={toggle}>
                 Contact
             </NavLink>   

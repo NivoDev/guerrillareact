@@ -24,20 +24,21 @@ function App() {
         <Loader />
         ) : (
       <Router>
-        {/* <Navigator />       */}
+        <Navigator />      
         <Switch>
         <Route exact path="/">
             {/* <HomePage /> */}<About />
-            </Route>
-            {/* <Route path="/about">
-            
             </Route>
             <Route path="/music">
             <Music />
             </Route>
             <Route path="/contact">
             <Contact />
-            </Route> */}
+            </Route> 
+            {/* <Route path="/about">
+            
+            </Route>
+            */}
         </Switch>
         <Footer />
       </Router>

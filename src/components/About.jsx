@@ -47,8 +47,10 @@ const Div = styled.div`
 `;
 const Main = styled.div`
     display:flex;
+    justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding:15px;
     `;
 
     // const Title = styled.h1`
