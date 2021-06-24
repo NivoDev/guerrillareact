@@ -14,15 +14,15 @@ const Card = () => {
                 Guerrilla sound combines  cultural influences with massive kick & bass sections and top notch production quality.<br/>
 
                 Stay Tuned on Guerrilla’s channels:
-                <a href="https://open.spotify.com/artist/1M3dLhsbP7HfxUHCxNCQq6" rel="noreferrer" target="_blank"> Spotify </a> | 
-                <a href="https://www.youtube.com/channel/UC7L3nLa8wIVy8hPHAWap_9w" rel="noreferrer" target="_blank"> Youtube </a> | 
-                <a href="https://www.instagram.com/guerrillatrance" target="_blank" rel="noreferrer"> Instagram </a> | 
-                <a href="https://www.facebook.com/guerrillamusicofficial" rel="noreferrer" target="_blank"> Facebook </a> | 
-                <a href="https://soundcloud.com/guerrillatrance" rel="noreferrer" target="_blank"> Soundcloud </a> | 
-                <a href="https://music.apple.com/il/artist/guerrilla/305147041" rel="noreferrer" target="_blank"> Itunes </a> | 
-                <a href="https://twitter.com/GuerrilaTrance" rel="noreferrer" target="_blank"> Twitter </a> | 
-                <a href="https://www.deezer.com/fr/artist/252884" rel="noreferrer"target="_blank"> Deezer </a> | 
-                <a href="https://music.amazon.com/artists/B001TQFGQ2/guerrilla" rel="noreferrer" target="_blank"> Amazon </a> | 
+                <a href="https://open.spotify.com/artist/1M3dLhsbP7HfxUHCxNCQq6" rel="noreferrer" target="_blank"> Spotify </a>  
+                <a href="https://www.youtube.com/channel/UC7L3nLa8wIVy8hPHAWap_9w" rel="noreferrer" target="_blank"> Youtube </a>  
+                <a href="https://www.instagram.com/guerrillatrance" target="_blank" rel="noreferrer"> Instagram </a>  
+                <a href="https://www.facebook.com/guerrillamusicofficial" rel="noreferrer" target="_blank"> Facebook </a>  
+                <a href="https://soundcloud.com/guerrillatrance" rel="noreferrer" target="_blank"> Soundcloud </a>  
+                <a href="https://music.apple.com/il/artist/guerrilla/305147041" rel="noreferrer" target="_blank"> Itunes </a>  
+                <a href="https://twitter.com/GuerrilaTrance" rel="noreferrer" target="_blank"> Twitter </a>  
+                <a href="https://www.deezer.com/fr/artist/252884" rel="noreferrer"target="_blank"> Deezer </a>  
+                <a href="https://music.amazon.com/artists/B001TQFGQ2/guerrilla" rel="noreferrer" target="_blank"> Amazon </a>  
                 <a href="https://www.beatport.com/artist/guerrilla/520256" rel="noreferrer" target="_blank"> Beatport </a>
             </Par>
         </Bio>
@@ -107,7 +107,9 @@ const Par = styled.h1`
     transform: translateY(10rem);
     animation: fadeInUp 4s ease forwards;
     a{
-        padding:0 10px;
+        padding:10px;
+        -webkit-tap-highlight-color: transparent;
+        font-size: 24px;
         text-decoration:none;
         position:relative;
         color:white;
