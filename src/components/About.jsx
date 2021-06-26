@@ -18,11 +18,11 @@ export const About = ()=> {
                 <Card />
                 <Wrapper>
                     <Song>
-                        <Link href="https://distrokid.com/hyperfollow/guerrilla/prophecy" target="_blank" rel="noreferrer">
+                        <Link href="https://fanlink.to/NUCD060" target="_blank" rel="noreferrer">
                         <img src={GeneticsImg} alt="genetics-album"></img>
                         <SongName> Genetics - Album <br></br><Date>02 July 2021</Date></SongName>    
                         </Link>
-                        <IFrame title="Prophecy" src="https://open.spotify.com/embed/track/2JKeuzEejAoXyWUpewmmRt" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></IFrame>
+                        {/* <IFrame title="Genetics-album" src="https://open.spotify.com/embed/track/2JKeuzEejAoXyWUpewmmRt" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></IFrame> */}
                     </Song>
                 </Wrapper>
                 <br/>

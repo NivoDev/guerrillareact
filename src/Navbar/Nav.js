@@ -27,7 +27,7 @@ export const Navigator = ()=>{
 const Nav = styled.div`
     background: #000;
     display:flex;
-    position:fixed sticky;
+    position:sticky;
     align-items: center;
     top:0;
     left:0;
@@ -36,7 +36,7 @@ const Nav = styled.div`
     padding:25px 0;
     z-index:10000;
     @media (max-width: 768px){
-        position:relative;
+        position:sticky;
         justify-content:space-around;
         align-items: center;
         padding:25px 0;
