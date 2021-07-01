@@ -28,7 +28,7 @@ export const Music = ()=> {
                     <Song>
                         <Link href="https://www.nutekrecords.com/nutek/bliss_-_the_mutation_challenge.php" target="_blank" rel="noreferrer">
                         <img src="https://i1.sndcdn.com/artworks-UuiRQ5USIqrqc1zc-g9jJlQ-t500x500.jpg" alt="my-lsd"></img>
-                        <SongName> BLiSS - MyLSD Song (Guerrilla Remix) <br></br><Date>21 Sep 2020</Date></SongName>    
+                        <SongName> BLiSS - My LSD Song (Guerrilla Remix) <br></br><Date>21 Sep 2020</Date></SongName>    
                         </Link>
                         <iframe title="My-LSD-Song" src="https://open.spotify.com/embed/track/3OiojVDHQMqrOtj7qboyx1" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
                     </Song>

@@ -158,12 +158,7 @@ const Wrapper = styled.div`
         // border: 3px solid #333333;
         // border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
         letter-spacing: 0.1ch;
-   a{
-       pointer:cursor;
-       text-decoration:none;
-       font-size: 25px;
-       color:#fff;
-   }
+   
 `;
 
 // const Main = styled.div`
@@ -195,12 +190,14 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     min-width:80%;
+    width:350px;
     max-height:550px;
    
     &::before {
         content: "";
         position: absolute;
         top: 0;
+        
         z-index:-8;
         bottom: 0;
         left: 0;
