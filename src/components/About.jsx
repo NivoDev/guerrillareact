@@ -190,7 +190,7 @@ const Wrapper = styled.div`
     flex-direction: column;
     align-items: center;
     min-width:80%;
-    width:350px;
+    width:300px;
     max-height:550px;
    
     &::before {
