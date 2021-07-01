@@ -19,7 +19,7 @@ body{
     background-repeat: no-repeat;
 
 }
-@media (max-width: 768px){
+/* @media (max-width: 768px){
   body {
     box-sizing: border-box;
     background-image: url("/src/images/mobilebackground.jpg");
@@ -29,6 +29,6 @@ body{
     background-repeat: no-repeat;
   
 
-  }
-}
+  } */
+/* } */
 
