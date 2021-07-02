@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components/';
 // import Logo from '../Navbar/Logo';
-import ProfileImg from '../images/OUTSIDE-NUTEK.png'
+import ProfileImg from '../images/profileLow.jpg'
 
 const Card = () => {
     return (
