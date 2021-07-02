@@ -18,7 +18,7 @@ export const About = ()=> {
                 <Card />
                 <Wrapper>
                     <Song>
-                        <Link href="https://fanlink.to/NUCD060" target="_blank" rel="noreferrer">
+                        <Link href="https://nutekrecords.com/nutek/genetics.php" target="_blank" rel="noreferrer">
                         <img src={GeneticsImg} alt="genetics-album"></img>
                         <SongName> Genetics - Album <br></br><Date>02 July 2021</Date></SongName>    
                         </Link>
