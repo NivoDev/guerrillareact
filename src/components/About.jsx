@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import '../styles/bio.css';
 import Card from './Card'
 import Logo from '../Navbar/Logo';
-import GeneticsImg from '../images/releases-images/genetics album 3000.jpg'
+import GeneticsImg from '../images/releases-images/artwork-3000x3000.png'
 
 
 export const About = ()=> {
