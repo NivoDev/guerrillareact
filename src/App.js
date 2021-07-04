@@ -36,6 +36,7 @@ function App() {
           <meta name="og:title" content='Guerrilla - Music' />
           <meta name="og:description" content='Guerrilla is an emerging duo formed
           by Niv Rozanowich and Tomer Segev.' />
+          <meta name="fb:app_id" content="1337322356737912" />
 
         </Helmet>
         <Navigator />      
