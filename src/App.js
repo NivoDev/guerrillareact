@@ -32,7 +32,7 @@ function App() {
           <meta name="description" content="Guerrilla is an emerging duo formed
           by Niv Rozanowich and Tomer Segev." />
           <meta name="keywords" content="Guerrilla, Music, Psytrance, Genetics, Nutek" />
-          <meta name="og:image" content={ProfileImg} />
+          <meta name="og:image" content="https://guerrillatrance.com/static/media/profileLow.a1c15d6a.jpg" />
           <meta name="og:title" content='Guerrilla - Music' />
           <meta name="og:description" content='Guerrilla is an emerging duo formed
           by Niv Rozanowich and Tomer Segev.' />
