@@ -3,13 +3,19 @@ import styled from 'styled-components';
 import '../styles/bio.css';
 import Card from './Card'
 import Logo from '../Navbar/Logo';
-import GeneticsImg from '../images/releases-images/artwork-3000x3000.png'
+import GeneticsImg from '../images/releases-images/artwork-3000x3000-min.png'
+import { Helmet } from "react-helmet";
 
 
 export const About = ()=> {
     
     return (
         <Div>
+            <Helmet>
+            <title>Guerrilla - Music</title>
+            <meta name="description" content="Guerrilla is an emerging duo formed
+            by Niv Rozanowich and Tomer Segev." />
+            </Helmet>
             {/* <Title>About</Title> */}
            <LogoPlacer>
                <Logo />

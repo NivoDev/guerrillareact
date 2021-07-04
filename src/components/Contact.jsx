@@ -7,6 +7,7 @@ import ReCAPTCHA from "react-google-recaptcha";
 import { ErrorMessage } from '@hookform/error-message';
 
 import '../styles/form.css';
+import { Helmet } from "react-helmet";
 init("user_yEiGV7iy51IYDUTt6sCPm");
 
 
@@ -46,9 +47,14 @@ export const Contact = ()=> {
     })};
 return (
   <>
+  <Helmet>
+    <title>Guerrilla - Contact</title>
+    <meta name="description" content="Check out guerrilla's music on your favorite platform." />      
+  </Helmet>
           {!isSubmitted ?
                     
     <Div>
+      
       <Title>Contact us</Title>
         <form id="contact-form" onSubmit={handleSubmit(onSubmit)}>
         <input type="hidden" 

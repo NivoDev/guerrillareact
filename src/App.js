@@ -7,6 +7,7 @@ import  { Navigator }  from './Navbar/Nav';
 import { HomePage } from './components/HomePage';
 import { Footer } from './components/Footer';
 import Loader  from './components/Loader.js'
+import { Helmet } from 'react-helmet';
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -24,6 +25,12 @@ function App() {
         <Loader />
         ) : (
       <Router>
+        <Helmet>
+          <title>Guerrilla - Music</title>
+          <meta name="description" content="Guerrilla is an emerging duo formed
+          by Niv Rozanowich and Tomer Segev." />
+          <meta name="keywords" content="Guerrilla, Music, Psytrance, Genetics, Nutek" />
+        </Helmet>
         <Navigator />      
         <Switch>
         <Route exact path="/">

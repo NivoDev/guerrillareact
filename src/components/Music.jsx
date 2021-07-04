@@ -1,9 +1,14 @@
 import React from 'react'
+import { Helmet } from 'react-helmet';
 import styled from 'styled-components'
 
 export const Music = ()=> {
     return (
         <>
+        <Helmet>
+        <title>Guerrilla - Music</title>
+        <meta name="description" content="Check out guerrilla's music on your favorite platform." />
+        </Helmet>
             <Title>Releases</Title>              
             <Main>
                 <Wrapper>
