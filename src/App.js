@@ -22,23 +22,23 @@ function App() {
   },[])
   return (
     <>
-    {
-      loading ? (
-        <Loader />
-        ) : (
-      <Router>
         <Helmet>
           <title>Guerrilla - Music</title>
           <meta name="description" content="Guerrilla is an emerging duo formed
           by Niv Rozanowich and Tomer Segev." />
           <meta name="keywords" content="Guerrilla, Music, Psytrance, Genetics, Nutek" />
+          <meta name="og:title" content="Guerrilla - Music" />
+          <meta name="og:description" content="Guerrilla is an emerging duo formed
+          by Niv Rozanowich and Tomer Segev." />
           <meta name="og:image" content="https://guerrillatrance.com/static/media/profileLow.a1c15d6a.jpg" />
-          <meta name="og:title" content='Guerrilla - Music' />
-          <meta name="og:description" content='Guerrilla is an emerging duo formed
-          by Niv Rozanowich and Tomer Segev.' />
           <meta name="fb:app_id" content="1337322356737912" />
 
         </Helmet>
+    {
+      loading ? (
+        <Loader />
+        ) : (
+      <Router>
         <Navigator />      
         <Switch>
         <Route exact path="/">
