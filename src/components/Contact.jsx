@@ -72,7 +72,6 @@ return (
                 value:"2",
                 message:'Name is too short'
                 }})}
-              placeholder="Name"
               maxLength='20'
               aria-invalid={
                 errors.user_name ? "true" : "false"
@@ -88,7 +87,6 @@ return (
                   value: email_regex, 
                   message: 'Please enter a valid email'} })
               }
-              placeholder="Email"
               aria-invalid={errors.user_name ? "true" : "false"}
               /><br></br>
               <ErrorMessage errors={errors} role="alert" name="user_email" />
@@ -101,7 +99,6 @@ return (
                   name="message"
                   autoComplete="off"
                   maxLength="150"
-                  placeholder="Your message"
                   {...register("message", { required: true })}
                   /> <br></br>             
                   <ErrorMessage errors={errors} role="alert" name="message" />
