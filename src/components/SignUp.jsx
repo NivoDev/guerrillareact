@@ -50,7 +50,7 @@ const SignUp = () => {
       <Newsletter>
         {!isSubmitted ? (
           <form onSubmit={handleSubmit(onSubmit)}>
-            <h1>Sign in to our newsletter</h1>
+            <h1>Sign up to our newsletter</h1>
             <Input
               placeholder="Your name"
               style={{
@@ -66,7 +66,7 @@ const SignUp = () => {
               })}
             />
 
-            {errors.name && <span role="alert">{errors.name.message}</span>}
+            {errors.name && <Span>{errors.name.message}</Span>}
 
             <Input
               placeholder="Your email"
@@ -89,7 +89,7 @@ const SignUp = () => {
               })}
             />
 
-            {errors.email && <span role="alert">{errors.email.message}</span>}
+            {errors.email && <Span>{errors.email.message}</Span>}
             <Button type="submit" />
           </form>
         ) : (
@@ -101,6 +101,9 @@ const SignUp = () => {
 };
 
 export default SignUp;
+const Span = styled.span`
+  color: red;
+`;
 
 const Newsletter = styled.div`
   display: flex;
