@@ -45,6 +45,34 @@ export const Music = () => {
         <Wrapper>
           <Song>
             <Link
+              href="https://nutekrecords.com/nutek/genetics.php"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://i1.sndcdn.com/artworks-c8mJLHnrWATRqGKf-nBjiFw-t500x500.jpg"
+                alt="genetics-album"
+              ></img>
+              <SongName>
+                {" "}
+                Genetics - Album <br></br>
+                <Date>02 July 2021</Date>
+              </SongName>
+            </Link>
+            <IFrame
+              title="Genetics Album"
+              src="https://open.spotify.com/embed/album/7nDu2Gbic4w1SJK9xQuNkO?utm_source=generator"
+              width="300"
+              height="158"
+              frameBorder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></IFrame>
+          </Song>
+        </Wrapper>
+        <Wrapper>
+          <Song>
+            <Link
               href="https://distrokid.com/hyperfollow/guerrilla/prophecy"
               target="_blank"
               rel="noreferrer"

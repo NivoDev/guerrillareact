@@ -99,10 +99,33 @@ export const Footer = () => {
         </Social>
       </Socials>
       <SignUp />
+      <Copyright>
+        <p>
+          Copyright &copy; 2022 All Rights Reserved by
+          <a href="#">Guerrilla</a>.
+        </p>
+      </Copyright>
     </Foot>
   );
 };
-
+const Copyright = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-style: italic;
+  color: white;
+  font-family: "Amita", cursive;
+  p {
+    font-size: 16px;
+  }
+  a {
+    font-size: 20px;
+    text-decoration: none;
+    color: white;
+    margin: 5px;
+    cursor: pointer;
+  }
+`;
 const Foot = styled.div`
   display: flex;
   flex-direction: column;
