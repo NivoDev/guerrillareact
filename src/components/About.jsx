@@ -26,29 +26,29 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://nutekrecords.com/nutek/anarchy.php"
+              href="https://nutekrecords.com/nutek/la_vida.php"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://i1.sndcdn.com/artworks-pQ9p9q2zLi3mxkyQ-aLzFSA-t500x500.jpg"
-                alt="anarchy"
+                src="https://i1.sndcdn.com/artworks-IEuYESzEzaM5Itth-7IwwyA-t500x500.jpg"
+                alt="la_vida"
               ></img>
               <SongName>
                 {" "}
-                Anarchy EP <br></br>
-                <Date>2 Feb 2022</Date>
+                La Vida <br></br>
+                <Date>16 Sep 2022</Date>
               </SongName>
             </Link>
             <IFrame
-              title="Anarchy EP"
-              src="https://open.spotify.com/embed/album/38o0KoGicmTC8Emg1dDyac?utm_source=generator"
+              title="La Vida"
+              src="https://open.spotify.com/embed/track/5ASZkRalVQrOhsKJ4N6YYc"
               width="300"
-              height="158"
-              frameBorder="0"
+              height="80"
+              frameborder="0"
               allowtransparency="true"
               allow="encrypted-media"
-            />
+            ></IFrame>
           </Song>
         </Wrapper>
         <br />

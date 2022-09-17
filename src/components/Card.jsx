@@ -22,7 +22,7 @@ const Card = () => {
         sections and top notch production.
         <br />
         <br />
-        Check out our latest EP <br />
+        Check out our latest release <br />
         Stream & Download here
         {/* <a href="https://open.spotify.com/artist/1M3dLhsbP7HfxUHCxNCQq6" rel="noreferrer" target="_blank"> Spotify </a>  
                 <a href="https://www.youtube.com/channel/UC7L3nLa8wIVy8hPHAWap_9w" rel="noreferrer" target="_blank"> Youtube </a>  
