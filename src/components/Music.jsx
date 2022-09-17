@@ -31,7 +31,7 @@ export const Music = () => {
                 <Date>16 Sep 2022</Date>
               </SongName>
             </Link>
-            <IFrame
+            <iframe
               title="La Vida"
               src="https://open.spotify.com/embed/track/5ASZkRalVQrOhsKJ4N6YYc"
               width="300"
@@ -39,7 +39,7 @@ export const Music = () => {
               frameborder="0"
               allowtransparency="true"
               allow="encrypted-media"
-            ></IFrame>
+            ></iframe>
           </Song>
         </Wrapper>
         <Wrapper>
@@ -115,7 +115,7 @@ export const Music = () => {
                 <Date>12 Oct 2020</Date>
               </SongName>
             </Link>
-            <IFrame
+            <iframe
               title="Prophecy"
               src="https://open.spotify.com/embed/track/2JKeuzEejAoXyWUpewmmRt"
               width="300"
@@ -123,7 +123,7 @@ export const Music = () => {
               frameborder="0"
               allowtransparency="true"
               allow="encrypted-media"
-            ></IFrame>
+            ></iframe>
           </Song>
         </Wrapper>
         <Wrapper>
