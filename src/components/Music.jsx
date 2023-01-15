@@ -17,6 +17,34 @@ export const Music = () => {
         <Wrapper>
           <Song>
             <Link
+              href="https://nutekrecords.com/nutek/guerrilla_-_boom_-_p.r.o.g._remix.php"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://i1.sndcdn.com/artworks-wNbzQxQfb1l4SWb2-Hd410Q-t500x500.jpg"
+                alt="guerrilla-boom-prog-remix"
+              ></img>
+              <SongName>
+                {" "}
+                Boom (P.R.O.G Remix) <br></br>
+                <Date>6 Jan 2023</Date>
+              </SongName>
+            </Link>
+            <iframe
+              title="Boom (P.R.O.G Remix)"
+              src="https://open.spotify.com/embed/track/1GGW1VVrplWyphWbNlL9gi"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </Song>
+        </Wrapper>
+        <Wrapper>
+          <Song>
+            <Link
               href="https://nutekrecords.com/nutek/la_vida.php"
               target="_blank"
               rel="noreferrer"

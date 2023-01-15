@@ -26,23 +26,23 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://nutekrecords.com/nutek/la_vida.php"
+              href="https://nutekrecords.com/nutek/guerrilla_-_boom_-_p.r.o.g._remix.php"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://i1.sndcdn.com/artworks-IEuYESzEzaM5Itth-7IwwyA-t500x500.jpg"
-                alt="la_vida"
+                src="https://i1.sndcdn.com/artworks-wNbzQxQfb1l4SWb2-Hd410Q-t500x500.jpg"
+                alt="guerrilla-boom-prog-remix"
               ></img>
               <SongName>
                 {" "}
-                La Vida <br></br>
-                <Date>16 Sep 2022</Date>
+                Boom (P.R.O.G Remix) <br></br>
+                <Date>6 Jan 2023</Date>
               </SongName>
             </Link>
             <iframe
-              title="La Vida"
-              src="https://open.spotify.com/embed/track/5ASZkRalVQrOhsKJ4N6YYc"
+              title="Boom (P.R.O.G Remix)"
+              src="https://open.spotify.com/embed/track/1GGW1VVrplWyphWbNlL9gi"
               width="300"
               height="80"
               frameborder="0"
