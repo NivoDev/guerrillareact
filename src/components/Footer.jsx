@@ -123,6 +123,9 @@ const Copyright = styled.div`
   }
   a {
     font-size: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: white;
     margin: 5px;
