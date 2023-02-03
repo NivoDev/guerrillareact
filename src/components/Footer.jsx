@@ -33,7 +33,10 @@ export const Footer = () => {
         >
           <GrYoutube />{" "}
         </Social>
-        <Social href="https://www.nutekrecords.com/nutek/guerilla.php">
+        <Social
+          href="https://www.nutekrecords.com/nutek/guerilla.php"
+          target="_blank"
+        >
           <svg
             className="nutekLogo"
             version="1.0"
@@ -101,7 +104,7 @@ export const Footer = () => {
       <SignUp />
       <Copyright>
         <p>
-          Copyright &copy; 2022 All Rights Reserved by
+          Copyright &copy; 2023 All Rights Reserved by
           <a href="#">Guerrilla</a>.
         </p>
       </Copyright>

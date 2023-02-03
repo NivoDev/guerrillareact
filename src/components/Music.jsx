@@ -17,6 +17,35 @@ export const Music = () => {
         <Wrapper>
           <Song>
             <Link
+              href="https://nutekrecords.com/nutek/king_of_the_north_-_guerrilla_rmx.php"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://nutekrecords.com/releases/NUEP262_xb.jpg"
+                alt="king-of-the-north-guerrilla-remix"
+              ></img>
+              <SongName>
+                {" "}
+                P.R.O.G & AIRESIS - King of the north (Guerrilla Remix){" "}
+                <br></br>
+                <Date>3 Feb 2023</Date>
+              </SongName>
+            </Link>
+            <iframe
+              title="King of the north (Guerrilla Remix)"
+              src="https://open.spotify.com/embed/track/3OH8XcAYNtCJaQjzOTrzga"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </Song>
+        </Wrapper>
+        <Wrapper>
+          <Song>
+            <Link
               href="https://nutekrecords.com/nutek/guerrilla_-_boom_-_p.r.o.g._remix.php"
               target="_blank"
               rel="noreferrer"
