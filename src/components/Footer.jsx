@@ -119,7 +119,7 @@ const Copyright = styled.div`
   color: white;
   font-family: "Amita", cursive;
   p {
-    font-size: 16px;
+    font-size: 14px;
   }
   a {
     font-size: 20px;
