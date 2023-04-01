@@ -105,7 +105,7 @@ export const Footer = () => {
       <Copyright>
         <p>
           Copyright &copy; 2023 All Rights Reserved by
-          <a href="#">Guerrilla</a>.
+          <a href="#">Guerrilla</a>
         </p>
       </Copyright>
     </Foot>
