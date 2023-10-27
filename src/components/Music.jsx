@@ -14,6 +14,35 @@ export const Music = () => {
       </Helmet>
       <Title>Releases</Title>
       <Main>
+      <Wrapper>
+          <Song>
+            <Link
+              href="https://nutekrecords.com/nutek/guerrilla_and_gk_music_-_kryptonite.php"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://i1.sndcdn.com/artworks-JxOpMRrO8U9Y6NPM-8cTukw-t500x500.jpg"
+                alt="kryptonite-feat-gkmusic"
+              ></img>
+              <SongName>
+                {" "}
+                Krytonite (Feat. GK Music){" "}
+                <br></br>
+                <Date>27 Oct 2023</Date>
+              </SongName>
+            </Link>
+            <iframe
+              title="Kryptonite (Feat. GK Music)"
+              src="https://open.spotify.com/embed/track/2zHVGorDUDoDibuRep1ikc"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </Song>
+        </Wrapper>
         <Wrapper>
           <Song>
             <Link

@@ -26,24 +26,24 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://nutekrecords.com/nutek/king_of_the_north_-_guerrilla_rmx.php"
+              href="https://nutekrecords.com/nutek/guerrilla_and_gk_music_-_kryptonite.php"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://nutekrecords.com/releases/NUEP262_xb.jpg"
-                alt="king-of-the-north-guerrilla-remix"
+                src="https://i1.sndcdn.com/artworks-JxOpMRrO8U9Y6NPM-8cTukw-t500x500.jpg"
+                alt="kryptonite-feat-gkmusic"
               ></img>
               <SongName>
                 {" "}
-                P.R.O.G & AIRESIS - King of the north (Guerrilla Remix){" "}
+                Krytonite (Feat. GK Music){" "}
                 <br></br>
-                <Date>3 Feb 2023</Date>
+                <Date>27 Oct 2023</Date>
               </SongName>
             </Link>
             <iframe
-              title="King of the north (Guerrilla Remix)"
-              src="https://open.spotify.com/embed/track/3OH8XcAYNtCJaQjzOTrzga"
+              title="Kryptonite (Feat. GK Music)"
+              src="https://open.spotify.com/embed/track/2zHVGorDUDoDibuRep1ikc"
               width="300"
               height="80"
               frameborder="0"
