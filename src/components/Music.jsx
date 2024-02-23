@@ -17,6 +17,35 @@ export const Music = () => {
       <Wrapper>
           <Song>
             <Link
+              href="https://fanlink.to/NUEP294"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://i1.sndcdn.com/artworks-v1GV21tlAONvlIRV-5k8KCQ-t500x500.jpg"
+                alt="time-goddess"
+              ></img>
+              <SongName>
+                {" "}
+                Time Goddess{" "}
+                <br></br>
+                <Date>23 Feb 2024</Date>
+              </SongName>
+            </Link>
+            <iframe
+              title="Time Goddess"
+              src="https://open.spotify.com/embed/track/0d2aUo7MsGM7IxwNM8TyQE"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </Song>
+        </Wrapper>
+      <Wrapper>
+          <Song>
+            <Link
               href="https://nutekrecords.com/nutek/guerrilla_and_gk_music_-_kryptonite.php"
               target="_blank"
               rel="noreferrer"

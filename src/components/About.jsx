@@ -26,24 +26,24 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://nutekrecords.com/nutek/guerrilla_and_gk_music_-_kryptonite.php"
+              href="https://fanlink.to/NUEP294"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://i1.sndcdn.com/artworks-JxOpMRrO8U9Y6NPM-8cTukw-t500x500.jpg"
-                alt="kryptonite-feat-gkmusic"
+                src="https://i1.sndcdn.com/artworks-v1GV21tlAONvlIRV-5k8KCQ-t500x500.jpg"
+                alt="time-goddess"
               ></img>
               <SongName>
                 {" "}
-                Krytonite (Feat. GK Music){" "}
+                Time Goddess{" "}
                 <br></br>
-                <Date>27 Oct 2023</Date>
+                <Date>23 Feb 2024</Date>
               </SongName>
             </Link>
             <iframe
-              title="Kryptonite (Feat. GK Music)"
-              src="https://open.spotify.com/embed/track/2zHVGorDUDoDibuRep1ikc"
+              title="Time Goddess"
+              src="https://open.spotify.com/embed/track/0d2aUo7MsGM7IxwNM8TyQE"
               width="300"
               height="80"
               frameborder="0"
