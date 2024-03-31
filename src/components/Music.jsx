@@ -17,6 +17,35 @@ export const Music = () => {
       <Wrapper>
           <Song>
             <Link
+              href="https://distrokid.com/hyperfollow/guerrilla/wellerman"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://i1.sndcdn.com/artworks-7naTQBWzte5ooDfk-Liz9WA-t500x500.png"
+                alt="Wellerman remix"
+              ></img>
+              <SongName>
+                {" "}
+                Wellerman{" "}
+                <br></br>
+                <Date>31 Mar 2024</Date>
+              </SongName>
+            </Link>
+            <iframe
+              title="Wellerman"
+              src="https://open.spotify.com/embed/track/5kEGGVhaqGQ3O6PpgkKchP"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </Song>
+        </Wrapper>
+      <Wrapper>
+          <Song>
+            <Link
               href="https://fanlink.to/NUEP294"
               target="_blank"
               rel="noreferrer"
