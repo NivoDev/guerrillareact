@@ -26,24 +26,24 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://fanlink.to/NUEP294"
+              href="https://nutekrecords.com/nutek/supernova.php"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://i1.sndcdn.com/artworks-v1GV21tlAONvlIRV-5k8KCQ-t500x500.jpg"
-                alt="time-goddess"
+                src="https://i1.sndcdn.com/artworks-FaEo7Xt2HKuBsjwm-l7c08A-t500x500.png"
+                alt="Supernova"
               ></img>
               <SongName>
                 {" "}
-                Time Goddess{" "}
+                Supernova{" "}
                 <br></br>
-                <Date>23 Feb 2024</Date>
+                <Date>24 May 2024</Date>
               </SongName>
             </Link>
             <iframe
-              title="Time Goddess"
-              src="https://open.spotify.com/embed/track/0d2aUo7MsGM7IxwNM8TyQE"
+              title="Supernova"
+              src="https://open.spotify.com/embed/track/3LZQl9DJCcpX3uTcec8dGX"
               width="300"
               height="80"
               frameborder="0"

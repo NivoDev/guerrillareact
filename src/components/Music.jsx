@@ -13,7 +13,35 @@ export const Music = () => {
         />
       </Helmet>
       <Title>Releases</Title>
-      <Main>
+      <Main><Wrapper>
+          <Song>
+            <Link
+              href="https://nutekrecords.com/nutek/supernova.php"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <img
+                src="https://i1.sndcdn.com/artworks-FaEo7Xt2HKuBsjwm-l7c08A-t500x500.png"
+                alt="Supernova"
+              ></img>
+              <SongName>
+                {" "}
+                Supernova{" "}
+                <br></br>
+                <Date>24 May 2024</Date>
+              </SongName>
+            </Link>
+            <iframe
+              title="Supernova"
+              src="https://open.spotify.com/embed/track/3LZQl9DJCcpX3uTcec8dGX"
+              width="300"
+              height="80"
+              frameborder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            ></iframe>
+          </Song>
+        </Wrapper>
       <Wrapper>
           <Song>
             <Link
