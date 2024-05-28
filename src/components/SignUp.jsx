@@ -28,7 +28,7 @@ const SignUp = () => {
     setIsSubmitted(true);
     try {
       const response = await fetch(
-        "https://v1.nocodeapi.com/nivo/google_sheets/rpRmEOzQUiakvjuT?tabId=Sheet1",
+        "https://v1.nocodeapi.com/nivo/google_sheets/DrQnzFtwVZkhWHln?tabId=Sheet1",
         {
           method: "POST",
           headers: {
