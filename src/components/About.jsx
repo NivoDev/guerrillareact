@@ -26,30 +26,22 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://www.nutekrecords.com/nutek/geronimo_and_guerrilla_-_create.php"
+              href="https://soundcloud.com/guerrillatrance/its-a-monster-remix"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://i1.sndcdn.com/artworks-Ie4vrm72Gc9UwTjS-1Y1trw-t500x500.png"
-                alt="Supernova"
+                src="https://i1.sndcdn.com/artworks-9xRyQb314iB4OHCo-qASVgA-t500x500.png"
+                alt="It's a monster"
               ></img>
               <SongName>
                 {" "}
-                Create Ft. Geronimo{" "}
+                Rising Dust - It's a monster (Guerrilla Remix){" "}
                 <br></br>
-                <Date>21 Mar 2025</Date>
+                <Date>19 Feb 2025</Date>
               </SongName>
             </Link>
-            <iframe
-              title="Create Ft. Geronimo"
-              src="https://open.spotify.com/embed/track/2qGJceUMrhkNSj1yMlJaWy"
-              width="300"
-              height="80"
-              frameborder="0"
-              allowtransparency="true"
-              allow="encrypted-media"
-            ></iframe>
+            <iframe width="100%" height="120" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2037953716&color=%23ff5500&inverse=false&auto_play=false&show_user=true"></iframe>
           </Song>
         </Wrapper>
         <br />
