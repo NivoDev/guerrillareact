@@ -26,24 +26,24 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://nutekrecords.com/nutek/supernova.php"
+              href="https://www.nutekrecords.com/nutek/geronimo_and_guerrilla_-_create.php"
               target="_blank"
               rel="noreferrer"
             >
               <img
-                src="https://i1.sndcdn.com/artworks-FaEo7Xt2HKuBsjwm-l7c08A-t500x500.png"
+                src="https://i1.sndcdn.com/artworks-Ie4vrm72Gc9UwTjS-1Y1trw-t500x500.png"
                 alt="Supernova"
               ></img>
               <SongName>
                 {" "}
-                Supernova{" "}
+                Create Ft. Geronimo{" "}
                 <br></br>
-                <Date>24 May 2024</Date>
+                <Date>21 Mar 2025</Date>
               </SongName>
             </Link>
             <iframe
-              title="Supernova"
-              src="https://open.spotify.com/embed/track/3LZQl9DJCcpX3uTcec8dGX"
+              title="Create Ft. Geronimo"
+              src="https://open.spotify.com/embed/track/2qGJceUMrhkNSj1yMlJaWy"
               width="300"
               height="80"
               frameborder="0"
