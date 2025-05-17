@@ -30,7 +30,7 @@ function App() {
         />
         <meta
           name="keywords"
-          content="Guerrilla, Music, Psytrance, Genetics, Nutek"
+          content="Guerrilla, Music, Psytrance, Nutek"
         />
         <meta name="og:title" content="Guerrilla - Music" />
         <meta
@@ -40,7 +40,7 @@ function App() {
         />
         <meta
           name="og:image"
-          content="https://guerrillatrance.com/static/media/profileLow.a1c15d6a.jpg"
+          content="https://guerrillatrance.com/static/media/GuerrillaProfile2025.13d42265.jpg"
         />
         <meta name="fb:app_id" content="1337322356737912" />
       </Helmet>
