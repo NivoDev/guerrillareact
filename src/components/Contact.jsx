@@ -169,7 +169,7 @@ export const Contact = () => {
 
           <div className="recaptcha-container">
             <ReCAPTCHA
-              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
+              sitekey="6Lf7XUcbAAAAAIdi-1HVwY6mpPXpN08jhQKxoEfc"
               onChange={handleRecaptcha}
               theme="dark"
               onErrored={() => {
