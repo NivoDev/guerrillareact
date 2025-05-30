@@ -19,6 +19,7 @@ function App() {
       setLoading(false);
     }, 1000);
   }, []);
+
   return (
     <>
       <Helmet>
@@ -44,6 +45,9 @@ function App() {
         />
         <meta name="fb:app_id" content="1337322356737912" />
       </Helmet>
+      <div className="background-container">
+        <div className="background-image" />
+      </div>
       {loading ? (
         <Loader />
       ) : (
