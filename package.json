@@ -2,6 +2,10 @@
   "name": "guerrillareact",
   "version": "0.1.0",
   "private": true,
+  "engines": {
+    "node": ">=20.0.0",
+    "npm": ">=7.0.0"
+  },
   "dependencies": {
     "@hookform/error-message": "^2.0.0",
     "@netlify/functions": "^0.7.2",
@@ -18,7 +22,7 @@
     "react-icons": "^4.2.0",
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "4.0.3",
+    "react-scripts": "^3.0.1",
     "react-spinners": "^0.11.0",
     "react-spotify-api": "^3.0.0",
     "shortid": "^2.2.16",

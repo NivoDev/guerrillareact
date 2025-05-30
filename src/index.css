@@ -1,10 +1,13 @@
+html {
+  height: 100%;
+  overflow-x: hidden;
+}
 
-
-body{
+body {
   margin: 0;
   padding: 0;
-  width: 100vw;
-  height: 100vh;
+  min-height: 100%;
+  width: 100%;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
@@ -13,22 +16,43 @@ body{
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
   background-image: url("/src/images/backgroundguerrilla.jpg");
-    background-size: cover;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  position: relative;
 }
-@media (max-width: 768px){
+
+/* Fix for mobile Safari */
+@supports (-webkit-touch-callout: none) {
   body {
-    box-sizing: border-box;
+    background-attachment: scroll;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
     background-image: url("/src/images/mobilebackground.jpg");
     background-size: cover;
-    background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
+    /* Remove fixed attachment on mobile for better performance */
+    background-attachment: scroll;
+  }
   
-
+  /* Add a pseudo-element to prevent white flash */
+  body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url("/src/images/mobilebackground.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: -1;
   }
 }
 
