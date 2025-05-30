@@ -1,11 +1,9 @@
-import React, { useState, useCallback } from "react";
+import React, { useState, useCallback, useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { init, sendForm } from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import "../styles/contact.css";
-
-init("user_yEiGV7iy51IYDUTt6sCPm");
 
 export const Contact = () => {
   const [isSubmitted, setIsSubmitted] = useState(false);
@@ -47,18 +45,28 @@ export const Contact = () => {
     generateContactNumber();
 
     try {
-      const response = await sendForm(
-        "service_y1gtueh",
-        "template_yyxyh5a",
-        "#contact-form"
-      );
+      const response = await Promise.race([
+        sendForm(
+          "service_y1gtueh",
+          "template_yyxyh5a",
+          "#contact-form"
+        ),
+        new Promise((_, reject) => 
+          setTimeout(() => reject(new Error("Request timed out")), 10000)
+        )
+      ]);
+
       if (response.status === 200) {
         setIsSubmitted(true);
       } else {
         throw new Error("Failed to send message");
       }
     } catch (error) {
-      setSubmitError("Failed to send message. Please try again later.");
+      setSubmitError(
+        error.message === "Request timed out"
+          ? "Request timed out. Please try again."
+          : "Failed to send message. Please try again later."
+      );
       console.error("Form submission error:", error);
     } finally {
       setIsLoading(false);
@@ -79,11 +87,16 @@ export const Contact = () => {
   return (
     <>
       <Helmet>
-        <title>Guerrilla - Contact</title>
+        <title>Contact Guerrilla - Booking & Collaboration Inquiries</title>
         <meta
           name="description"
-          content="Get in touch with Guerrilla. Send us your message, booking inquiries, or collaboration proposals."
+          content="Get in touch with Guerrilla for bookings, collaborations, or any inquiries. We're always excited to connect with fans and fellow artists in the psytrance scene."
         />
+        <meta name="keywords" content="Contact Guerrilla, psytrance booking, music collaboration, Guerrilla contact form, psytrance artist contact" />
+        <meta property="og:title" content="Contact Guerrilla - Booking & Collaboration Inquiries" />
+        <meta property="og:description" content="Get in touch with Guerrilla for bookings, collaborations, or any inquiries. We're always excited to connect with fans and fellow artists." />
+        <meta name="twitter:title" content="Contact Guerrilla - Booking & Collaboration Inquiries" />
+        <meta name="twitter:description" content="Get in touch with Guerrilla for bookings, collaborations, or any inquiries. We're always excited to connect with fans and fellow artists." />
       </Helmet>
       
       <div className="contact-container">
@@ -156,9 +169,13 @@ export const Contact = () => {
 
           <div className="recaptcha-container">
             <ReCAPTCHA
-              sitekey="6LfXXbQpAAAAABPEXXEYGZxPYDxXxXXXXXXXXXXX"
+              sitekey="6LeIxAcTAAAAAJcZVRqyHh71UMIEGNQ_MXjiZKhI"
               onChange={handleRecaptcha}
               theme="dark"
+              onErrored={() => {
+                console.error("reCAPTCHA error occurred");
+                setSubmitError("Error loading reCAPTCHA. Please refresh the page.");
+              }}
             />
           </div>
 

@@ -1,5 +1,5 @@
 import React from "react";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { FaPlay } from "react-icons/fa";
 import styled from "styled-components";
 import Title from "./Title";
@@ -8,11 +8,16 @@ export const Music = () => {
   return (
     <PageWrapper>
       <Helmet>
-        <title>Guerrilla - Music</title>
+        <title>Guerrilla - Latest Psytrance Releases & Tracks</title>
         <meta
           name="description"
-          content="Check out guerrilla's music on your favorite platform."
+          content="Explore Guerrilla's latest psytrance releases, featuring powerful progressive beats and unique collaborations. Stream our music on Spotify, SoundCloud, and other platforms."
         />
+        <meta name="keywords" content="Guerrilla music, psytrance releases, progressive psytrance, electronic dance music, Nutek Records releases" />
+        <meta property="og:title" content="Guerrilla - Latest Psytrance Releases & Tracks" />
+        <meta property="og:description" content="Explore Guerrilla's latest psytrance releases, featuring powerful progressive beats and unique collaborations." />
+        <meta name="twitter:title" content="Guerrilla - Latest Psytrance Releases & Tracks" />
+        <meta name="twitter:description" content="Explore Guerrilla's latest psytrance releases, featuring powerful progressive beats and unique collaborations." />
       </Helmet>
       <Title>Releases</Title>
       <MusicGrid>
@@ -893,8 +898,8 @@ const MusicCard = styled.div`
   width: 280px;
   display: flex;
   flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
+  padding: 16px;
+  gap: 16px;
   box-sizing: border-box;
 
   @media (max-width: 768px) {
@@ -912,31 +917,32 @@ const Link = styled.a`
   color: white;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   width: 100%;
+  gap: 16px;
   box-sizing: border-box;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
   border-radius: 12px;
   overflow: hidden;
   box-sizing: border-box;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CoverImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
   display: block;
   transition: transform 0.3s ease-in-out;
-  border-radius: 12px;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
 
   ${ImageContainer}:hover & {
     transform: scale(1.05);
@@ -971,10 +977,11 @@ const PlayerWrapper = styled.div`
   background: rgba(0, 0, 0, 0.2);
   border-radius: 10px;
   overflow: hidden;
-  margin-top: auto;
+  width: 100%;
   
   iframe {
     display: block;
+    width: 100%;
     margin: 0;
   }
 `;

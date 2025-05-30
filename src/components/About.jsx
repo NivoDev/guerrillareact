@@ -3,7 +3,7 @@ import styled from "styled-components";
 import "../styles/bio.css";
 import Card from "./Card";
 import Logo from "../Navbar/Logo";
-import { Helmet } from "react-helmet";
+import { Helmet } from "react-helmet-async";
 import { FaPlay } from "react-icons/fa";
 import { useLocation } from 'react-router-dom';
 
@@ -80,7 +80,7 @@ const PageWrapper = styled.div`
 `;
 
 const P = styled.h1`
-position: relative;
+    position: relative;
     font-family: 'Rubik', sans-serif;
     letter-spacing: 1.5px;
     display:flex;
@@ -123,12 +123,6 @@ const LogoPlacer = styled.div`
     // }
     `;
 
-const Div = styled.div`
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-`;
 const Main = styled.div`
   display: flex;
   justify-content: center;

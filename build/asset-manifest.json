@@ -1,21 +1,17 @@
 {
   "files": {
-    "main.css": "/static/css/main.21a0fa0a.css",
-    "main.js": "/static/js/main.98911132.js",
-    "static/media/artwork-3000x3000-min.png": "/static/media/artwork-3000x3000-min.42f23d7c5babc1054960.png",
+    "main.css": "/static/css/main.d4dcce1f.css",
+    "main.js": "/static/js/main.ab264108.js",
     "static/media/backgroundguerrilla.jpg": "/static/media/backgroundguerrilla.91acc15fd550105b81f9.jpg",
     "static/media/mobilebackground.jpg": "/static/media/mobilebackground.d89c1372d3b2544b742e.jpg",
-    "static/media/profileLow.jpg": "/static/media/profileLow.a1c15d6a57495e3da568.jpg",
     "static/media/backgroundguerrilla.webp": "/static/media/backgroundguerrilla.053707b0bda5b774e1c3.webp",
     "static/media/Guerrilla-White-LOGO.png": "/static/media/Guerrilla-White-LOGO.78edc22a820133682b49.png",
     "static/media/mobilebackground.webp": "/static/media/mobilebackground.3c18988431659c8dcf9f.webp",
     "static/media/GuerrillaProfile2025.jpg": "/static/media/GuerrillaProfile2025.13d422651a23a5246b05.jpg",
-    "index.html": "/index.html",
-    "main.21a0fa0a.css.map": "/static/css/main.21a0fa0a.css.map",
-    "main.98911132.js.map": "/static/js/main.98911132.js.map"
+    "index.html": "/index.html"
   },
   "entrypoints": [
-    "static/css/main.21a0fa0a.css",
-    "static/js/main.98911132.js"
+    "static/css/main.d4dcce1f.css",
+    "static/js/main.ab264108.js"
   ]
 }
