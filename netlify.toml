@@ -3,7 +3,8 @@
   publish = "build"
 
 [context.staging]
-  environment = { NODE_VERSION = "20", NODE_OPTIONS = "--openssl-legacy-provider" }
+  command = "export CI=false && export NODE_OPTIONS='--openssl-legacy-provider' && npm run build"
+  environment = { NODE_VERSION = "20" }
 
 [[redirects]]
   from = "/*"
