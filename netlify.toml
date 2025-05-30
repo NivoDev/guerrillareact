@@ -13,11 +13,9 @@
 
 [context.production]
   command = "npm run build"
-  environment = { NODE_OPTIONS = "--openssl-legacy-provider" }
 
 [context.staging]
   command = "npm run build"
-  environment = { NODE_OPTIONS = "--openssl-legacy-provider" }
 
 # Production context: all deploys from the Production branch set in your site's
 # deploy contexts will inherit these settings.
