@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import {
   FaFacebookF,
@@ -105,7 +105,7 @@ export const Footer = () => {
       <Copyright>
         <p>
           Copyright &copy; 2025 All Rights Reserved by
-          <a href="#">Guerrilla</a>
+          <a href="/">Guerrilla</a>
         </p>
       </Copyright>
     </Foot>

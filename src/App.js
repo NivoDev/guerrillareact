@@ -4,11 +4,9 @@ import { About } from "./components/About";
 import { Music } from "./components/Music";
 import { Contact } from "./components/Contact";
 import { Navigator } from "./Navbar/Nav";
-import { HomePage } from "./components/HomePage";
 import { Footer } from "./components/Footer";
 import Loader from "./components/Loader.js";
 import { Helmet } from "react-helmet";
-import ProfileImg from "./images/profileLow.jpg";
 
 function App() {
   const [loading, setLoading] = useState(false);

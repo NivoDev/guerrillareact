@@ -61,7 +61,15 @@ export const Music = () => {
                 <Date>19 Feb 2025</Date>
               </SongName>
             </Link>
-            <iframe width="100%" height="80" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2037953716&color=%23ff5500&inverse=false&auto_play=false&show_user=true"></iframe>
+            <iframe 
+              width="100%" 
+              height="80" 
+              scrolling="no" 
+              frameborder="no" 
+              allow="autoplay" 
+              title="It's a monster (Guerrilla Remix) - SoundCloud Player"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2037953716&color=%23ff5500&inverse=false&auto_play=false&show_user=true">
+            </iframe>
           </Song>
         </Wrapper>
         <Wrapper>
