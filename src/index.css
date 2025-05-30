@@ -18,21 +18,21 @@ body {
   box-sizing: border-box;
   position: relative;
   overflow-x: hidden;
+  background-color: #000; /* Fallback color */
 }
 
-/* Static background container */
+/* Main background container */
 .background-container {
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  top: -10%;  /* Extend beyond viewport */
+  left: -10%;
+  width: 120%;  /* Make container larger than viewport */
+  height: 120%;
   z-index: -1;
   overflow: hidden;
-  pointer-events: none; /* Allows clicking through to content */
 }
 
-/* Static background image */
+/* Background image with optimized performance */
 .background-image {
   position: absolute;
   top: 0;
@@ -43,9 +43,12 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  -webkit-transform: none; /* Remove all transforms */
-  transform: none;
-  transition: none; /* Remove transitions */
+  transform: scale(1.2); /* Slightly larger to prevent white edges */
+  will-change: transform;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  -webkit-transform: translate3d(0,0,0) scale(1.2);
+  transform: translate3d(0,0,0) scale(1.2);
 }
 
 /* Content wrapper to ensure content scrolls over background */
@@ -70,6 +73,11 @@ body {
     .background-image {
       background-image: url("/src/images/mobilebackground.jpg");
     }
+  }
+  
+  /* Add a background color that matches your image */
+  body {
+    background-color: #000; /* Adjust this color to match your background image */
   }
 }
 
