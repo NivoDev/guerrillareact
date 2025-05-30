@@ -226,22 +226,24 @@ const Song = styled.div`
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  padding-bottom: 100%;
   border-radius: 12px;
   overflow: hidden;
   box-sizing: border-box;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 `;
 
 const CoverImage = styled.img`
-  position: absolute;
-  top: 0;
-  left: 0;
   width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
+  height: auto;
   display: block;
   transition: transform 0.3s ease-in-out;
+  image-rendering: -webkit-optimize-contrast;
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  -webkit-font-smoothing: subpixel-antialiased;
   border-radius: 12px;
 
   ${ImageContainer}:hover & {
