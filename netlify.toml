@@ -1,16 +1,11 @@
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
-
 [build]
   command = "npm run build"
   publish = "build"
 
-# Only apply special configuration to staging branch
 [context.staging]
-  command = "bash ./scripts/build-staging.sh"
-  publish = "build"
+  environment = { NODE_VERSION = "20", NODE_OPTIONS = "--openssl-legacy-provider" }
 
-[context.staging.environment]
-  NODE_VERSION = "20" 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200 
