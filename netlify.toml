@@ -1,0 +1,15 @@
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[build]
+  command = "npm run build"
+  publish = "build"
+
+# Only apply special configuration to staging branch
+[context.staging]
+  command = "NODE_OPTIONS='--openssl-legacy-provider' npm run build"
+
+[context.staging.environment]
+  NODE_VERSION = "20" 
