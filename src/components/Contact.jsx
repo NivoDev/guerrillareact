@@ -1,6 +1,6 @@
-import React, { useState, useCallback, useEffect } from "react";
+import React, { useState, useCallback } from "react";
 import { useForm } from "react-hook-form";
-import { init, sendForm } from "emailjs-com";
+import { sendForm } from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import { Helmet } from "react-helmet-async";
 import "../styles/contact.css";
