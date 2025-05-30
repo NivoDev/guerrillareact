@@ -1,3 +1,54 @@
-svg{
-    
+.footer {
+  padding: 4rem 2rem;
+  background: rgba(13, 12, 34, 0.3);
+  backdrop-filter: blur(10px);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-links {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: 3rem;
+}
+
+.social-links a {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+.copyright {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+.copyright p {
+  margin: 0.5rem 0;
+}
+
+.brand {
+  font-weight: 600;
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 3rem 1rem;
+  }
+
+  .social-links {
+    gap: 1.5rem;
+  }
+
+  .social-links a {
+    font-size: 1.25rem;
+  }
 }

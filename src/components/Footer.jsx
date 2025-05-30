@@ -8,8 +8,7 @@ import {
 } from "react-icons/fa";
 import { GrInstagram, GrYoutube } from "react-icons/gr";
 import "../styles/footer.css";
-import SignUp from "./SignUp";
-// import ThankYou from "./ThankYou";
+import NewsletterSignup from './NewsletterSignup';
 
 export const Footer = () => {
   return (
@@ -101,16 +100,17 @@ export const Footer = () => {
           <FaTwitter />{" "}
         </Social>
       </Socials>
-      <SignUp />
+      <NewsletterSignup />
       <Copyright>
         <p>
-          Copyright &copy; 2025 All Rights Reserved by
+          Copyright &copy; {new Date().getFullYear()} All Rights Reserved by
           <a href="/">Guerrilla</a>
         </p>
       </Copyright>
     </Foot>
   );
 };
+
 const Copyright = styled.div`
   display: flex;
   justify-content: center;
@@ -132,6 +132,7 @@ const Copyright = styled.div`
     cursor: pointer;
   }
 `;
+
 const Foot = styled.div`
   display: flex;
   flex-direction: column;
@@ -145,6 +146,7 @@ const Foot = styled.div`
   justify-content: center;
   height: 100%;
 `;
+
 const Social = styled.a`
   color: white;
   padding: 0.4em;

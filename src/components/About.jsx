@@ -3,12 +3,16 @@ import styled from "styled-components";
 import "../styles/bio.css";
 import Card from "./Card";
 import Logo from "../Navbar/Logo";
-import GeneticsImg from "../images/releases-images/artwork-3000x3000-min.png";
 import { Helmet } from "react-helmet";
+import { FaPlay } from "react-icons/fa";
+import { useLocation } from 'react-router-dom';
 
 export const About = () => {
+  const location = useLocation();
+  const isHomePage = location.pathname === '/';
+
   return (
-    <Div>
+    <PageWrapper>
       <Helmet>
         <title>Guerrilla - Music</title>
         <meta
@@ -17,10 +21,11 @@ export const About = () => {
             by Niv Rozanowich and Tomer Segev."
         />
       </Helmet>
-      {/* <Title>About</Title> */}
-      <LogoPlacer>
-        <Logo />
-      </LogoPlacer>
+      {!isHomePage && (
+        <LogoPlacer>
+          <Logo />
+        </LogoPlacer>
+      )}
       <Main>
         <Card />
         <Wrapper>
@@ -30,34 +35,49 @@ export const About = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <img
-                src="https://i1.sndcdn.com/artworks-9xRyQb314iB4OHCo-qASVgA-t500x500.png"
-                alt="It's a monster"
-              ></img>
-              <SongName>
-                {" "}
-                Rising Dust - It's a monster (Guerrilla Remix){" "}
-                <br></br>
+              <ImageContainer>
+                <CoverImage
+                  src="https://i1.sndcdn.com/artworks-9xRyQb314iB4OHCo-qASVgA-t500x500.png"
+                  alt="It's a monster"
+                />
+                <PlayOverlay>
+                  <PlayIcon>
+                    <FaPlay color="white" size={24} />
+                  </PlayIcon>
+                </PlayOverlay>
+              </ImageContainer>
+              <div>
+                <SongName>
+                  Rising Dust - It's a monster (Guerrilla Remix)
+                </SongName>
                 <Date>19 Feb 2025</Date>
-              </SongName>
+              </div>
             </Link>
-            <iframe 
-              width="100%" 
-              height="120" 
-              scrolling="no" 
-              frameborder="no" 
-              allow="autoplay" 
-              title="Its a monster (Guerrilla Remix)"
-              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2037953716&color=%23ff5500&inverse=false&auto_play=false&show_user=true">
-            </iframe>
+            <PlayerWrapper>
+              <iframe 
+                width="100%" 
+                height="80" 
+                scrolling="no" 
+                frameBorder="no" 
+                allow="autoplay" 
+                title="Its a monster (Guerrilla Remix)"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2037953716&color=%23ff5500&inverse=false&auto_play=false&show_user=true"
+              />
+            </PlayerWrapper>
           </Song>
         </Wrapper>
         <br />
         <P>Stay tuned on Guerrilla's channels</P>
       </Main>
-    </Div>
+    </PageWrapper>
   );
 };
+
+const PageWrapper = styled.div`
+  padding-top: 80px;
+  min-height: 100vh;
+  width: 100%;
+`;
 
 const P = styled.h1`
 position: relative;
@@ -130,58 +150,41 @@ const Main = styled.div`
 // `;
 
 const SongName = styled.h2`
-  color: black;
-  font-size: large;
-  &:hover {
-    font-size: x-large;
-  }
-  animation: appear 3s linear;
-
-  @keyframes appear {
-    0% {
-      color: white;
-    }
-    100% {
-      color: black;
-    }
-  }
+  color: white;
+  font-size: 1rem;
+  font-weight: 600;
+  text-align: center;
 `;
 
 const Link = styled.a`
+  text-decoration: none;
+  color: white;
   display: flex;
-  color: black;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  font-size: large;
+  gap: 1rem;
+  width: 100%;
+  box-sizing: border-box;
 `;
 
 const Date = styled.h3`
-  font-size: 16px;
-  color: black;
-`;
-const IFrame = styled.iframe`
-  display: block;
-  position: abolute;
-  justify-content: center;
-  align-items: center;
-  bottom: 0;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.6);
+  text-align: center;
 `;
 
 const Wrapper = styled.div`
-  width: 300px;
-  color: white;
-  height: 100%;
-  color: #000;
+  width: 280px;
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: center;
   justify-content: space-between;
+  box-sizing: border-box;
 
-  // border: 3px solid #333333;
-  // border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
-  letter-spacing: 0.1ch;
+  @media (max-width: 768px) {
+    width: 250px;
+  }
 `;
 
 // const Main = styled.div`
@@ -206,31 +209,101 @@ const Wrapper = styled.div`
 //     `;
 
 const Song = styled.div`
+  background: rgba(13, 12, 34, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease-in-out;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
-  color: black;
-  z-index: 1;
+  width: 100%;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  min-width: 80%;
-  width: 300px;
-  max-height: 550px;
+  padding: 1rem;
+  gap: 1rem;
+  box-sizing: border-box;
 
-  &::before {
-    content: "";
-    position: absolute;
-    top: 0;
-
-    z-index: -8;
-    bottom: 0;
-    left: 0;
-    border-radius: 10px;
-    right: 0;
-    opacity: 0.4;
-    background-color: #fff;
+  &:hover {
+    transform: translateY(-5px);
+    border-color: rgba(255, 255, 255, 0.2);
   }
-  &iframe {
-    bottom: 0;
-    display: absolute;
+`;
+
+const ImageContainer = styled.div`
+  position: relative;
+  width: 100%;
+  padding-bottom: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  box-sizing: border-box;
+`;
+
+const CoverImage = styled.img`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform 0.3s ease-in-out;
+  border-radius: 12px;
+
+  ${ImageContainer}:hover & {
+    transform: scale(1.05);
+  }
+`;
+
+const PlayOverlay = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  border-radius: 12px;
+
+  ${ImageContainer}:hover & {
+    opacity: 1;
+  }
+`;
+
+const PlayIcon = styled.div`
+  width: 60px;
+  height: 60px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(5px);
+  border: 2px solid rgba(255, 255, 255, 0.5);
+  transform: scale(0.8);
+  transition: all 0.3s ease-in-out;
+
+  ${ImageContainer}:hover & {
+    transform: scale(1);
+  }
+
+  svg {
+    opacity: 0.9;
+  }
+`;
+
+const PlayerWrapper = styled.div`
+  background: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-top: auto;
+  
+  iframe {
+    display: block;
+    margin: 0;
   }
 `;
