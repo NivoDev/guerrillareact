@@ -9,6 +9,10 @@ status= 200
 [build]
   command = "npm run build"
   publish = "build"
+  environment = { NODE_VERSION = "20" }
+
+[build.environment]
+  NODE_OPTIONS = "--openssl-legacy-provider"
 
 [context.production]
   command = "npm run build"
@@ -20,11 +24,13 @@ status= 200
 # deploy contexts will inherit these settings.
 [context.production.environment]
   REACT_APP_ENV = "production"
+  NODE_OPTIONS = "--openssl-legacy-provider"
 
 # Deploy Preview context: all deploys generated from a pull/merge request will
 # inherit these settings.
 [context.staging.environment]
   REACT_APP_ENV = "staging"
+  NODE_OPTIONS = "--openssl-legacy-provider"
 
 # Branch Deploy context: all deploys that are not from a pull/merge request or
 # from the Production branch will inherit these settings.
