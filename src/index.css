@@ -39,7 +39,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background-image: url("/src/images/backgroundguerrilla.webp");
+  background-image: url("./images/backgroundguerrilla.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -58,20 +58,20 @@ body {
 }
 
 /* Fallback for non-WebP browsers */
-@supports not (background-image: url("/src/images/backgroundguerrilla.webp")) {
+@supports not (background-image: url("./images/backgroundguerrilla.webp")) {
   .background-image {
-    background-image: url("/src/images/backgroundguerrilla.jpg");
+    background-image: url("./images/backgroundguerrilla.jpg");
   }
 }
 
 @media (max-width: 768px) {
   .background-image {
-    background-image: url("/src/images/mobilebackground.webp");
+    background-image: url("./images/mobilebackground.webp");
   }
   
-  @supports not (background-image: url("/src/images/mobilebackground.webp")) {
+  @supports not (background-image: url("./images/mobilebackground.webp")) {
     .background-image {
-      background-image: url("/src/images/mobilebackground.jpg");
+      background-image: url("./images/mobilebackground.jpg");
     }
   }
   
