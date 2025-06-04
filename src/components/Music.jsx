@@ -163,7 +163,7 @@ export const Music = () => {
 
         <MusicCard>
           <Link
-            href="https://fanlink.to/NUEP294"
+            href="https://www.nutekrecords.com/nutek/guerrilla_-_time_goddess.php"
             target="_blank"
             rel="noreferrer"
           >
