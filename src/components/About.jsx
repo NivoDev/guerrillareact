@@ -31,14 +31,14 @@ export const About = () => {
         <Wrapper>
           <Song>
             <Link
-              href="https://soundcloud.com/guerrillatrance/its-a-monster-remix"
+              href="https://soundcloud.com/guerrillatrance/super-set-2025"
               target="_blank"
               rel="noreferrer"
             >
               <ImageContainer>
                 <CoverImage
-                  src="https://i1.sndcdn.com/artworks-9xRyQb314iB4OHCo-qASVgA-t500x500.png"
-                  alt="It's a monster"
+                  src="https://i1.sndcdn.com/artworks-JC29gtnezIp4Lk5x-Pc0PPg-t500x500.png"
+                  alt="Guerrilla - Super Set 2025"
                 />
                 <PlayOverlay>
                   <PlayIcon>
@@ -48,11 +48,16 @@ export const About = () => {
               </ImageContainer>
               <div>
                 <SongName>
-                  Rising Dust - It's a monster (Guerrilla Remix)
+                  Guerrilla - Super Set 2025
                 </SongName>
-                <Date>19 Feb 2025</Date>
+                <Date>09 Aug 2025</Date>
               </div>
             </Link>
+            <TrackDescription>
+              An exclusive 60-minute set featuring Guerrilla's music – originals, remixes, and unreleased gems.
+              A deep dive into the Guerrilla sound: powerful basslines, psychedelic atmospheres, and pure dancefloor energy.
+              Turn up the volume, close your eyes, and let the trip begin.
+            </TrackDescription>
             <PlayerWrapper>
               <iframe 
                 width="100%" 
@@ -60,8 +65,8 @@ export const About = () => {
                 scrolling="no" 
                 frameBorder="no" 
                 allow="autoplay" 
-                title="Its a monster (Guerrilla Remix)"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2037953716&color=%23ff5500&inverse=false&auto_play=false&show_user=true"
+                title="Guerrilla - Super Set 2025"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2150543730&color=%23ff5500&inverse=false&auto_play=false&show_user=true"
               />
             </PlayerWrapper>
           </Song>
@@ -221,6 +226,15 @@ const Song = styled.div`
     transform: translateY(-5px);
     border-color: rgba(255, 255, 255, 0.2);
   }
+`;
+
+const TrackDescription = styled.p`
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.4;
+  padding: 0 10px;
 `;
 
 const ImageContainer = styled.div`

@@ -21,6 +21,40 @@ export const Music = () => {
       </Helmet>
       <Title>Releases</Title>
       <MusicGrid>
+      <MusicCard>
+          <Link
+            href="https://soundcloud.com/guerrillatrance/super-set-2025"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ImageContainer>
+              <CoverImage
+                src="https://i1.sndcdn.com/artworks-JC29gtnezIp4Lk5x-Pc0PPg-t500x500.png"
+                alt="Guerrilla - Super Set 2025"
+              />
+              <PlayOverlay>
+                <PlayIcon>
+                  <FaPlay color="white" size={24} />
+                </PlayIcon>
+              </PlayOverlay>
+            </ImageContainer>
+            <MusicInfo>
+              <MusicTitle>Guerrilla - Super Set 2025</MusicTitle>
+              <MusicDate>09 Aug 2025</MusicDate>
+            </MusicInfo>
+          </Link>
+          <PlayerWrapper>
+          <iframe 
+              width="100%" 
+              height="80" 
+              scrolling="no" 
+              frameBorder="no" 
+              allow="autoplay" 
+              title="It's a monster (Guerrilla Remix) - SoundCloud Player"
+              src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2150543730&color=%23ff5500&inverse=false&auto_play=false&show_user=true"
+            />
+          </PlayerWrapper>
+        </MusicCard>
         <MusicCard>
           <Link
             href="https://www.nutekrecords.com/nutek/geronimo_and_guerrilla_-_create.php"
