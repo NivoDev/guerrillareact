@@ -1,0 +1,4 @@
+/.netlify/functions/*   404
+/api/*                  404
+http://*                https://:splat  301!
+/*                      /index.html     200
