@@ -27,6 +27,15 @@ export const Navigator = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
+                        <ExternalNavLink
+                            href="https://atomic-rose.com/product/psychedelic-horizons"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                        >
+                            Sample packs
+                        </ExternalNavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink to='/contact' $isActive={location.pathname === '/contact'}>
                             Contact
                         </NavLink>
@@ -136,6 +145,38 @@ const NavLink = styled(Link)`
         left: 50%;
         transform: translateX(-50%);
         width: ${props => props.$isActive ? '30%' : '0'};
+        height: 2px;
+        background: white;
+        transition: all 0.3s ease-in-out;
+        border-radius: 2px;
+    }
+
+    &:hover {
+        color: #fff;
+
+        &::before {
+            width: 30%;
+        }
+    }
+`;
+
+const ExternalNavLink = styled.a`
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 0.5rem 1.5rem;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+    display: block;
+
+    &::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
         height: 2px;
         background: white;
         transition: all 0.3s ease-in-out;

@@ -2,108 +2,133 @@ import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const BeforeAfterPlayer = ({ title, beforeSrc, afterSrc }) => {
-  const audioRef = useRef(null);
+  const beforeRef = useRef(null);
+  const afterRef = useRef(null);
   const [version, setVersion] = useState("before");
-
-  const savedTimeOnToggleRef = useRef(0);
-  const resumeAfterToggleRef = useRef(false);
-  const pendingSeekRef = useRef(false);
-
-  const currentSrc = version === "before" ? beforeSrc : afterSrc;
 
   const switchVersion = useCallback(
     (next) => {
       if (next === version) return;
-      const el = audioRef.current;
-      if (el) {
-        savedTimeOnToggleRef.current = el.currentTime;
-        resumeAfterToggleRef.current = !el.paused;
-        pendingSeekRef.current = true;
+      const before = beforeRef.current;
+      const after = afterRef.current;
+      if (!before || !after) return;
+
+      const active = version === "before" ? before : after;
+      const target = next === "before" ? before : after;
+      const t = active.currentTime;
+      const wasPlaying = !active.paused;
+
+      active.pause();
+      const dur = target.duration;
+      const safeT =
+        !Number.isNaN(dur) && dur > 0
+          ? Math.min(Math.max(0, t), Math.max(0, dur - 0.01))
+          : t;
+      target.currentTime = safeT;
+      if (wasPlaying) {
+        target.play().catch(() => {});
       }
       setVersion(next);
     },
     [version]
   );
 
-  // After version (src) changes, restore playback position and resume if needed.
+  // Keep inactive track locked to active position while playing (reduces switch latency).
   useEffect(() => {
-    if (!pendingSeekRef.current) return;
-    const el = audioRef.current;
-    if (!el) {
-      pendingSeekRef.current = false;
-      return;
-    }
+    const before = beforeRef.current;
+    const after = afterRef.current;
+    if (!before || !after) return;
 
-    const saved = savedTimeOnToggleRef.current;
-    const shouldPlay = resumeAfterToggleRef.current;
+    const active = version === "before" ? before : after;
+    const inactive = version === "before" ? after : before;
 
-    const applySeekAndMaybePlay = () => {
-      pendingSeekRef.current = false;
-      const dur = el.duration;
-      if (!Number.isNaN(dur) && dur > 0) {
-        el.currentTime = Math.min(
-          Math.max(0, saved),
-          Math.max(0, dur - 0.01)
-        );
-      } else {
-        el.currentTime = saved;
-      }
-      if (shouldPlay) {
-        el.play().catch(() => {});
+    const onTimeUpdate = () => {
+      if (active.paused) return;
+      const t = active.currentTime;
+      const idur = inactive.duration;
+      if (!Number.isNaN(idur) && idur > 0) {
+        const sync = Math.min(Math.max(0, t), Math.max(0, idur - 0.01));
+        if (Math.abs(inactive.currentTime - sync) > 0.12) {
+          inactive.currentTime = sync;
+        }
       }
     };
 
-    if (el.readyState >= 1) {
-      applySeekAndMaybePlay();
-    } else {
-      el.addEventListener("loadedmetadata", applySeekAndMaybePlay, {
-        once: true,
-      });
-    }
+    active.addEventListener("timeupdate", onTimeUpdate);
+    return () => active.removeEventListener("timeupdate", onTimeUpdate);
   }, [version, beforeSrc, afterSrc]);
 
-  // Only one audio on the page plays at a time (other A/B players + any <audio>).
+  // Only one <audio> on the page plays at a time.
   useEffect(() => {
-    const el = audioRef.current;
-    if (!el) return;
+    const before = beforeRef.current;
+    const after = afterRef.current;
+    if (!before || !after) return;
 
-    const onPlay = () => {
+    const onPlay = (e) => {
+      const el = e.target;
       document.querySelectorAll("audio").forEach((a) => {
-        if (a !== el && !a.paused) {
-          a.pause();
-        }
+        if (a !== el && !a.paused) a.pause();
       });
     };
 
-    el.addEventListener("play", onPlay);
-    return () => el.removeEventListener("play", onPlay);
-  }, []);
+    before.addEventListener("play", onPlay);
+    after.addEventListener("play", onPlay);
+    return () => {
+      before.removeEventListener("play", onPlay);
+      after.removeEventListener("play", onPlay);
+    };
+  }, [beforeSrc, afterSrc]);
+
+  const sliderValue = version === "before" ? 0 : 1;
 
   return (
     <PlayerCard>
       <TrackTitle>{title}</TrackTitle>
-      <ToggleRow role="group" aria-label="Before or after mix version">
-        <ToggleBtn
-          type="button"
-          $active={version === "before"}
-          aria-pressed={version === "before"}
-          onClick={() => switchVersion("before")}
-        >
-          Before
-        </ToggleBtn>
-        <ToggleBtn
-          type="button"
-          $active={version === "after"}
-          aria-pressed={version === "after"}
-          onClick={() => switchVersion("after")}
-        >
-          After
-        </ToggleBtn>
-      </ToggleRow>
+
+      <SliderRow>
+        <EndLabel $align="left">Before</EndLabel>
+        <SliderWrap>
+          <SliderInput
+            type="range"
+            min={0}
+            max={1}
+            step={1}
+            value={sliderValue}
+            onChange={(e) => {
+              const v = Number(e.target.value);
+              switchVersion(v === 0 ? "before" : "after");
+            }}
+            aria-valuetext={
+              version === "before" ? "Before mix" : "After mix"
+            }
+            aria-label="Switch between before and after audio"
+          />
+        </SliderWrap>
+        <EndLabel $align="right">After</EndLabel>
+      </SliderRow>
+
       <ActiveLabel>
         Playing: <strong>{version === "before" ? "Before" : "After"}</strong>
       </ActiveLabel>
-      <audio ref={audioRef} controls preload="metadata" src={currentSrc} />
+
+      <AudioStack>
+        <audio
+          ref={beforeRef}
+          src={beforeSrc}
+          preload="auto"
+          controls
+          hidden={version !== "before"}
+          aria-hidden={version !== "before"}
+        />
+        <audio
+          ref={afterRef}
+          src={afterSrc}
+          preload="auto"
+          controls
+          hidden={version !== "after"}
+          aria-hidden={version !== "after"}
+        />
+      </AudioStack>
     </PlayerCard>
   );
 };
@@ -124,11 +149,6 @@ const PlayerCard = styled.div`
   &:hover {
     border-color: rgba(255, 255, 255, 0.2);
   }
-
-  audio {
-    width: 100%;
-    margin-top: 0.25rem;
-  }
 `;
 
 const TrackTitle = styled.h3`
@@ -139,35 +159,94 @@ const TrackTitle = styled.h3`
   text-align: center;
 `;
 
-const ToggleRow = styled.div`
-  display: flex;
-  gap: 0.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
+const SliderRow = styled.div`
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 0.65rem 0.85rem;
+  width: 100%;
+  max-width: 420px;
+  margin: 0 auto;
 `;
 
-const ToggleBtn = styled.button`
-  padding: 0.5rem 1.25rem;
-  border-radius: 8px;
-  border: 1px solid
-    ${(p) => (p.$active ? "rgba(255,255,255,0.5)" : "rgba(255,255,255,0.2)")};
-  background: ${(p) =>
-    p.$active
-      ? "linear-gradient(135deg, rgba(102, 126, 234, 0.5) 0%, rgba(118, 75, 162, 0.5) 100%)"
-      : "rgba(255,255,255,0.08)"};
-  color: #fff;
-  font-size: 0.9rem;
+const EndLabel = styled.span`
+  font-size: 0.78rem;
   font-weight: 600;
-  cursor: pointer;
-  transition: all 0.2s ease;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  text-align: ${(p) => (p.$align === "left" ? "left" : "right")};
+`;
 
-  &:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.6);
-    outline-offset: 2px;
+const SliderWrap = styled.div`
+  position: relative;
+  height: 28px;
+  display: flex;
+  align-items: center;
+`;
+
+const SliderInput = styled.input`
+  width: 100%;
+  height: 8px;
+  margin: 0;
+  appearance: none;
+  -webkit-appearance: none;
+  background: linear-gradient(
+    90deg,
+    rgba(80, 90, 140, 0.6) 0%,
+    rgba(118, 75, 162, 0.75) 50%,
+    rgba(180, 120, 200, 0.55) 100%
+  );
+  border-radius: 999px;
+  outline: none;
+  cursor: pointer;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e8e4ff 0%, #a89fd9 45%, #6b5fa8 100%);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.15);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
   }
 
-  &:hover {
-    border-color: rgba(255, 255, 255, 0.35);
+  &::-webkit-slider-thumb:hover {
+    transform: scale(1.06);
+    box-shadow: 0 3px 14px rgba(102, 126, 234, 0.45);
+  }
+
+  &::-webkit-slider-thumb:active {
+    transform: scale(0.98);
+  }
+
+  &::-moz-range-track {
+    height: 8px;
+    background: linear-gradient(
+      90deg,
+      rgba(80, 90, 140, 0.6) 0%,
+      rgba(118, 75, 162, 0.75) 50%,
+      rgba(180, 120, 200, 0.55) 100%
+    );
+    border-radius: 999px;
+  }
+
+  &::-moz-range-thumb {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background: linear-gradient(145deg, #e8e4ff 0%, #a89fd9 45%, #6b5fa8 100%);
+    border: 2px solid rgba(255, 255, 255, 0.85);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+    cursor: pointer;
+  }
+
+  &:focus-visible {
+    outline: 2px solid rgba(255, 255, 255, 0.45);
+    outline-offset: 4px;
   }
 `;
 
@@ -180,6 +259,21 @@ const ActiveLabel = styled.p`
   strong {
     color: #fff;
     font-weight: 600;
+  }
+`;
+
+const AudioStack = styled.div`
+  position: relative;
+  width: 100%;
+  margin-top: 0.25rem;
+
+  audio {
+    width: 100%;
+    display: block;
+  }
+
+  audio[hidden] {
+    display: none !important;
   }
 `;
 

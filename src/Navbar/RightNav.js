@@ -16,6 +16,14 @@ const RightNav = ({ open, toggle }) => {
       <NavLink to="/mix-master-services" $isActive={location.pathname === '/mix-master-services'} onClick={toggle}>
         Mix & Master
       </NavLink>
+      <ExternalNavLink
+        href="https://atomic-rose.com/product/psychedelic-horizons"
+        target="_blank"
+        rel="noopener noreferrer"
+        onClick={toggle}
+      >
+        Sample packs
+      </ExternalNavLink>
       <NavLink to="/contact" $isActive={location.pathname === '/contact'} onClick={toggle}>
         Contact
       </NavLink>
@@ -58,6 +66,32 @@ const NavLink = styled(Link)`
   border-radius: 8px;
   transition: all 0.3s ease-in-out;
   background: ${props => props.$isActive ? 'rgba(255, 255, 255, 0.1)' : 'transparent'};
+
+  &:hover {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+  }
+`;
+
+const ExternalNavLink = styled.a`
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  font-weight: 500;
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+  transition: all 0.3s ease-in-out;
+  background: transparent;
 
   &:hover {
     color: #fff;
