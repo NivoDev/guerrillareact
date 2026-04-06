@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
-const BeforeAfterPlayer = ({ title, beforeSrc, afterSrc }) => {
+const BeforeAfterPlayer = ({ title, subtitle, beforeSrc, afterSrc }) => {
   const beforeRef = useRef(null);
   const afterRef = useRef(null);
   const [version, setVersion] = useState("before");
@@ -83,7 +83,10 @@ const BeforeAfterPlayer = ({ title, beforeSrc, afterSrc }) => {
 
   return (
     <PlayerCard>
-      <TrackTitle>{title}</TrackTitle>
+      <TrackTitleBlock>
+        <TrackTitle>{title}</TrackTitle>
+        {subtitle ? <TrackSubtitle>{subtitle}</TrackSubtitle> : null}
+      </TrackTitleBlock>
 
       <ToggleRow>
         <EndLabel $align="left">Before</EndLabel>
@@ -146,11 +149,28 @@ const PlayerCard = styled.div`
   }
 `;
 
+const TrackTitleBlock = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+`;
+
 const TrackTitle = styled.h3`
   color: #fff;
   font-size: 1rem;
   font-weight: 600;
   margin: 0;
+  text-align: center;
+`;
+
+const TrackSubtitle = styled.p`
+  margin: 0;
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
   text-align: center;
 `;
 

@@ -266,6 +266,7 @@ export const MixMasterServices = () => {
             <BeforeAfterPlayer
               key={t.id}
               title={t.title}
+              subtitle={t.subtitle}
               beforeSrc={t.before}
               afterSrc={t.after}
             />
@@ -285,7 +286,10 @@ export const MixMasterServices = () => {
             vocals).
           </PriceLine>
           <PriceLine>
-            <strong>Stereo mastering</strong> — <PriceEm>$65</PriceEm>
+            <strong>Stereo mastering</strong> — <PriceEm>$65</PriceEm>. Send a
+            single stereo mix with headroom: aim for about{" "}
+            <strong>-12 LUFS</strong> integrated (not brick-wall limited) so we
+            can master properly.
           </PriceLine>
           <FinePrint>
             Mix &amp; master totals are based on channel count after we review
@@ -354,6 +358,37 @@ export const MixMasterServices = () => {
               Stems and mixes: <strong>44.1 kHz, 16-bit WAV</strong> (or
               higher bit depth if you already work that way). Label tracks
               clearly; avoid MP3 for multitrack material.
+            </FaqAnswer>
+          </FaqItem>
+          <FaqItem>
+            <FaqSummary>
+              How should I prepare stems and avoid duplicate channels?
+            </FaqSummary>
+            <FaqAnswer>
+              Don&apos;t send the same audio twice under different names. For
+              example: if you export a solo <strong>kick</strong> stem, don&apos;t
+              also include that kick inside a <strong>drums</strong> or{" "}
+              <strong>drums + bass</strong> group — pick one approach (individual
+              stems <em>or</em> grouped stems) and stay consistent. Same idea for
+              vocals, FX, and parallel buses: avoid overlapping group prints with
+              the same sources broken out separately. If you print time-based FX
+              (reverb/delay) as their own stems, make sure the dry paths
+              aren&apos;t already carrying that wetness in a way that doubles up
+              when summed. Clear naming and one coherent folder structure help us
+              work faster and keep your quote accurate.
+            </FaqAnswer>
+          </FaqItem>
+          <FaqItem>
+            <FaqSummary>
+              What loudness should my stereo mix be for mastering?
+            </FaqSummary>
+            <FaqAnswer>
+              For <strong>stereo mastering</strong>, export your mix at roughly{" "}
+              <strong>-12 LUFS</strong> integrated loudness, with real headroom
+              on the master bus — not slammed into a limiter. That gives us room
+              for EQ, dynamics, and loudness in mastering. If your mix is already
+              very loud or clipped, back off the master chain or send a
+              pre-limiter bounce if you have one.
             </FaqAnswer>
           </FaqItem>
           <FaqItem>
