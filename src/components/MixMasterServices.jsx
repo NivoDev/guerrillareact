@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
-import { useForm } from "react-hook-form";
+import { useForm, Controller } from "react-hook-form";
 import { sendForm } from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
@@ -62,12 +62,17 @@ export const MixMasterServices = () => {
   const {
     register,
     handleSubmit,
+    control,
     formState: { errors },
   } = useForm({
     defaultValues: {
       service: "",
       genre: "",
       track_status: "",
+      bpm: "",
+      stem_count: "",
+      reference_url: "",
+      notes: "",
     },
   });
 
@@ -462,23 +467,26 @@ export const MixMasterServices = () => {
                   )}
                 </div>
 
+                {/* Fields below omit name= so EmailJS sendForm only receives user_name, user_email, contact_number, message (all other data is inside message). */}
                 <div className="form-group">
                   <label htmlFor="mm_service">Service</label>
-                  <select
-                    id="mm_service"
-                    {...register("service", {
-                      required: "Please select a service",
-                    })}
-                  >
-                    <option value="" disabled>
-                      Select a service
-                    </option>
-                    {SERVICE_OPTIONS.map((o) => (
-                      <option key={o.value} value={o.label}>
-                        {o.label}
-                      </option>
-                    ))}
-                  </select>
+                  <Controller
+                    name="service"
+                    control={control}
+                    rules={{ required: "Please select a service" }}
+                    render={({ field }) => (
+                      <select id="mm_service" value={field.value} onChange={field.onChange} onBlur={field.onBlur} ref={field.ref}>
+                        <option value="" disabled>
+                          Select a service
+                        </option>
+                        {SERVICE_OPTIONS.map((o) => (
+                          <option key={o.value} value={o.label}>
+                            {o.label}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                  />
                   {errors.service && (
                     <div className="error-message visible">
                       {errors.service.message}
@@ -488,19 +496,23 @@ export const MixMasterServices = () => {
 
                 <div className="form-group">
                   <label htmlFor="mm_genre">Genre</label>
-                  <select
-                    id="mm_genre"
-                    {...register("genre", { required: "Please select genre" })}
-                  >
-                    <option value="" disabled>
-                      Select genre
-                    </option>
-                    {GENRE_OPTIONS.map((o) => (
-                      <option key={o.value} value={o.label}>
-                        {o.label}
-                      </option>
-                    ))}
-                  </select>
+                  <Controller
+                    name="genre"
+                    control={control}
+                    rules={{ required: "Please select genre" }}
+                    render={({ field }) => (
+                      <select id="mm_genre" value={field.value} onChange={field.onChange} onBlur={field.onBlur} ref={field.ref}>
+                        <option value="" disabled>
+                          Select genre
+                        </option>
+                        {GENRE_OPTIONS.map((o) => (
+                          <option key={o.value} value={o.label}>
+                            {o.label}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                  />
                   {errors.genre && (
                     <div className="error-message visible">
                       {errors.genre.message}
@@ -510,12 +522,22 @@ export const MixMasterServices = () => {
 
                 <div className="form-group">
                   <label htmlFor="mm_bpm">BPM</label>
-                  <input
-                    id="mm_bpm"
-                    type="text"
-                    inputMode="numeric"
-                    placeholder="e.g. 138"
-                    {...register("bpm", { required: "BPM is required" })}
+                  <Controller
+                    name="bpm"
+                    control={control}
+                    rules={{ required: "BPM is required" }}
+                    render={({ field }) => (
+                      <input
+                        id="mm_bpm"
+                        type="text"
+                        inputMode="numeric"
+                        placeholder="e.g. 138"
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={field.onBlur}
+                        ref={field.ref}
+                      />
+                    )}
                   />
                   {errors.bpm && (
                     <div className="error-message visible">
@@ -526,21 +548,23 @@ export const MixMasterServices = () => {
 
                 <div className="form-group">
                   <label htmlFor="mm_track_status">Track status</label>
-                  <select
-                    id="mm_track_status"
-                    {...register("track_status", {
-                      required: "Please select track status",
-                    })}
-                  >
-                    <option value="" disabled>
-                      Select status
-                    </option>
-                    {TRACK_STATUS_OPTIONS.map((o) => (
-                      <option key={o.value} value={o.label}>
-                        {o.label}
-                      </option>
-                    ))}
-                  </select>
+                  <Controller
+                    name="track_status"
+                    control={control}
+                    rules={{ required: "Please select track status" }}
+                    render={({ field }) => (
+                      <select id="mm_track_status" value={field.value} onChange={field.onChange} onBlur={field.onBlur} ref={field.ref}>
+                        <option value="" disabled>
+                          Select status
+                        </option>
+                        {TRACK_STATUS_OPTIONS.map((o) => (
+                          <option key={o.value} value={o.label}>
+                            {o.label}
+                          </option>
+                        ))}
+                      </select>
+                    )}
+                  />
                   {errors.track_status && (
                     <div className="error-message visible">
                       {errors.track_status.message}
@@ -550,13 +574,21 @@ export const MixMasterServices = () => {
 
                 <div className="form-group">
                   <label htmlFor="mm_stem_count">Number of stems</label>
-                  <input
-                    id="mm_stem_count"
-                    type="text"
-                    placeholder="e.g. 12 or N/A"
-                    {...register("stem_count", {
-                      required: "This field is required",
-                    })}
+                  <Controller
+                    name="stem_count"
+                    control={control}
+                    rules={{ required: "This field is required" }}
+                    render={({ field }) => (
+                      <input
+                        id="mm_stem_count"
+                        type="text"
+                        placeholder="e.g. 12 or N/A"
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={field.onBlur}
+                        ref={field.ref}
+                      />
+                    )}
                   />
                   {errors.stem_count && (
                     <div className="error-message visible">
@@ -567,25 +599,44 @@ export const MixMasterServices = () => {
 
                 <div className="form-group">
                   <label htmlFor="mm_reference_url">Reference track (URL)</label>
-                  <input
-                    id="mm_reference_url"
-                    type="url"
-                    placeholder="https://…"
-                    {...register("reference_url")}
+                  <Controller
+                    name="reference_url"
+                    control={control}
+                    render={({ field }) => (
+                      <input
+                        id="mm_reference_url"
+                        type="url"
+                        placeholder="https://…"
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={field.onBlur}
+                        ref={field.ref}
+                      />
+                    )}
                   />
                 </div>
 
                 <div className="form-group">
                   <label htmlFor="mm_notes">Message</label>
-                  <textarea
-                    id="mm_notes"
-                    {...register("notes", {
+                  <Controller
+                    name="notes"
+                    control={control}
+                    rules={{
                       required: "Message is required",
                       maxLength: {
                         value: 2000,
                         message: "Message cannot exceed 2000 characters",
                       },
-                    })}
+                    }}
+                    render={({ field }) => (
+                      <textarea
+                        id="mm_notes"
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={field.onBlur}
+                        ref={field.ref}
+                      />
+                    )}
                   />
                   {errors.notes && (
                     <div className="error-message visible">
