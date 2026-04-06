@@ -13,6 +13,9 @@ const RightNav = ({ open, toggle }) => {
       <NavLink to="/music" $isActive={location.pathname === '/music'} onClick={toggle}>
         Music
       </NavLink>
+      <NavLink to="/mix-master-services" $isActive={location.pathname === '/mix-master-services'} onClick={toggle}>
+        Mix & Master
+      </NavLink>
       <NavLink to="/contact" $isActive={location.pathname === '/contact'} onClick={toggle}>
         Contact
       </NavLink>

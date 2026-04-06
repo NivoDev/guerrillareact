@@ -22,6 +22,11 @@ export const Navigator = () => {
                         </NavLink>
                     </NavItem>
                     <NavItem>
+                        <NavLink to='/mix-master-services' $isActive={location.pathname === '/mix-master-services'}>
+                            Mix & Master
+                        </NavLink>
+                    </NavItem>
+                    <NavItem>
                         <NavLink to='/contact' $isActive={location.pathname === '/contact'}>
                             Contact
                         </NavLink>

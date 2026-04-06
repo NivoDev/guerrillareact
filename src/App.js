@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { About } from "./components/About";
 import { Music } from "./components/Music";
 import { Contact } from "./components/Contact";
+import { MixMasterServices } from "./components/MixMasterServices";
 import { Navigator } from "./Navbar/Nav";
 import { Footer } from "./components/Footer";
 import Loader from "./components/Loader.js";
@@ -50,6 +51,9 @@ function App() {
               </Route>
               <Route path="/contact">
                 <Contact />
+              </Route>
+              <Route path="/mix-master-services">
+                <MixMasterServices />
               </Route>
             </Switch>
             <Footer />
