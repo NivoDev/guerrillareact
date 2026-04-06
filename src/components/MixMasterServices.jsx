@@ -1,7 +1,7 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useForm } from "react-hook-form";
-import { send } from "emailjs-com";
+import { sendForm } from "emailjs-com";
 import ReCAPTCHA from "react-google-recaptcha";
 import styled from "styled-components";
 import Title from "./Title";
@@ -49,7 +49,7 @@ function buildEmailMessage(data) {
     "Upload link: Please use Dropbox or Google Drive with “Anyone with the link” access.",
     "",
     "Message:",
-    data.message,
+    data.notes,
   ].join("\n");
 }
 
@@ -71,6 +71,9 @@ export const MixMasterServices = () => {
     },
   });
 
+  const contactNumberRef = useRef(null);
+  const messageHiddenRef = useRef(null);
+
   const handleRecaptcha = useCallback((value) => {
     setIsVerified(!!value);
   }, []);
@@ -88,14 +91,16 @@ export const MixMasterServices = () => {
     const contactNumber = numStr.substring(numStr.length - 6);
     const compiledMessage = buildEmailMessage(data);
 
+    if (contactNumberRef.current) {
+      contactNumberRef.current.value = contactNumber;
+    }
+    if (messageHiddenRef.current) {
+      messageHiddenRef.current.value = compiledMessage;
+    }
+
     try {
       const response = await Promise.race([
-        send(EMAIL_SERVICE, EMAIL_TEMPLATE, {
-          user_name: data.user_name,
-          user_email: data.user_email,
-          message: compiledMessage,
-          contact_number: contactNumber,
-        }),
+        sendForm(EMAIL_SERVICE, EMAIL_TEMPLATE, "#mix-master-services-form"),
         new Promise((_, reject) =>
           setTimeout(() => reject(new Error("Request timed out")), 10000)
         ),
@@ -107,12 +112,14 @@ export const MixMasterServices = () => {
         throw new Error("Failed to send");
       }
     } catch (error) {
+      const detail =
+        error && typeof error.text === "string" ? error.text : "";
       setSubmitError(
         error.message === "Request timed out"
           ? "Request timed out. Please try again."
           : "Failed to send message. Please try again later."
       );
-      console.error("Form submission error:", error);
+      console.error("Form submission error:", error, detail || "");
     } finally {
       setIsLoading(false);
     }
@@ -396,10 +403,23 @@ export const MixMasterServices = () => {
             <div className="contact-container">
               <h1 className="visually-hidden">Mix &amp; Master inquiry</h1>
               <form
+                id="mix-master-services-form"
                 className="contact-form"
                 onSubmit={handleSubmit(onSubmit)}
                 noValidate
               >
+                <input
+                  type="hidden"
+                  name="contact_number"
+                  ref={contactNumberRef}
+                  defaultValue=""
+                />
+                <input
+                  type="hidden"
+                  name="message"
+                  ref={messageHiddenRef}
+                  defaultValue=""
+                />
                 <div className="form-group">
                   <label htmlFor="mm_user_name">Name</label>
                   <input
@@ -556,10 +576,10 @@ export const MixMasterServices = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="mm_message">Message</label>
+                  <label htmlFor="mm_notes">Message</label>
                   <textarea
-                    id="mm_message"
-                    {...register("message", {
+                    id="mm_notes"
+                    {...register("notes", {
                       required: "Message is required",
                       maxLength: {
                         value: 2000,
@@ -567,9 +587,9 @@ export const MixMasterServices = () => {
                       },
                     })}
                   />
-                  {errors.message && (
+                  {errors.notes && (
                     <div className="error-message visible">
-                      {errors.message.message}
+                      {errors.notes.message}
                     </div>
                   )}
                 </div>
