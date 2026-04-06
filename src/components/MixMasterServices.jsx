@@ -45,8 +45,9 @@ function buildEmailMessage(data) {
     `Track status: ${data.track_status}`,
     `Number of stems: ${data.stem_count}`,
     `Reference track URL: ${data.reference_url || "—"}`,
+    `Upload link (Dropbox / Google Drive): ${data.upload_link || "—"}`,
     "",
-    "Upload link: Please use Dropbox or Google Drive with “Anyone with the link” access.",
+    "Reminder: share the folder or file with “Anyone with the link” so we can download your audio.",
     "",
     "Message:",
     data.notes,
@@ -72,6 +73,7 @@ export const MixMasterServices = () => {
       bpm: "",
       stem_count: "",
       reference_url: "",
+      upload_link: "",
       notes: "",
     },
   });
@@ -400,9 +402,9 @@ export const MixMasterServices = () => {
         <FormSection id="mix-master-contact">
           <Title>Send Your Track</Title>
           <FormIntro>
-            Use the form below. Upload your audio via Dropbox or Google Drive
-            and set sharing to <strong>Anyone with the link</strong>, then paste
-            the link in your message or reference field.
+            Use the form below. Upload your audio to Dropbox or Google Drive,
+            set sharing to <strong>Anyone with the link</strong>, then paste
+            that link in the <strong>Upload link</strong> field.
           </FormIntro>
           <FormOuter>
             <div className="contact-container">
@@ -614,6 +616,43 @@ export const MixMasterServices = () => {
                       />
                     )}
                   />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="mm_upload_link">Upload link (Dropbox or Google Drive)</label>
+                  <FieldHint>
+                    Share your Dropbox or Google Drive folder or file with{" "}
+                    <strong>Anyone with the link</strong>, then paste the link
+                    here.
+                  </FieldHint>
+                  <Controller
+                    name="upload_link"
+                    control={control}
+                    rules={{
+                      required: "Please enter a link to your audio files",
+                      pattern: {
+                        value: /^https?:\/\/.+/i,
+                        message: "Enter a valid URL starting with http:// or https://",
+                      },
+                    }}
+                    render={({ field }) => (
+                      <input
+                        id="mm_upload_link"
+                        type="url"
+                        placeholder="https://www.dropbox.com/… or https://drive.google.com/…"
+                        value={field.value}
+                        onChange={field.onChange}
+                        onBlur={field.onBlur}
+                        ref={field.ref}
+                        autoComplete="off"
+                      />
+                    )}
+                  />
+                  {errors.upload_link && (
+                    <div className="error-message visible">
+                      {errors.upload_link.message}
+                    </div>
+                  )}
                 </div>
 
                 <div className="form-group">
@@ -1023,6 +1062,13 @@ const FormIntro = styled.p`
   font-size: 0.95rem;
   line-height: 1.5;
   margin: -0.5rem 0 1.25rem;
+`;
+
+const FieldHint = styled.p`
+  margin: 0 0 0.75rem;
+  font-size: 0.85rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.6);
 `;
 
 const FormOuter = styled.div`

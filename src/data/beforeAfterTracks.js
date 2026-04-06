@@ -1,23 +1,23 @@
 /**
- * Add MP3s to public/audio/ using: {id}_before.mp3 / {id}_after.mp3
+ * Files in public/audio/ — paths are served from site root as /audio/...
  */
 export const BEFORE_AFTER_TRACKS = [
   {
-    id: "clubnight",
-    title: "Progressive club mix — kick & bass focus",
-    before: "/audio/clubnight_before.mp3",
-    after: "/audio/clubnight_after.mp3",
+    id: "ktrina-me1",
+    title: "KTRINA — EYES ON ME (example 1)",
+    before: "/audio/KTRINA-EYES_ON_ME1_before.mp3",
+    after: "/audio/KTRINA-EYES_ON_ME1_after.mp3",
   },
   {
-    id: "festival",
-    title: "Festival peak — width & punch",
-    before: "/audio/festival_before.mp3",
-    after: "/audio/festival_after.mp3",
+    id: "ktrina-me2",
+    title: "KTRINA — EYES ON ME (example 2)",
+    before: "/audio/KTRINA-EYES_ON_ME2_before.mp3",
+    after: "/audio/KTRINA-EYES_ON_ME2_after.mp3",
   },
   {
-    id: "forest",
-    title: "Forest groove — clarity & low-end glue",
-    before: "/audio/forest_before.mp3",
-    after: "/audio/forest_after.mp3",
+    id: "nivo-boomba",
+    title: "Nivo — Boomba",
+    before: "/audio/Nivo-Boomba_before.mp3",
+    after: "/audio/Nivo-Boomba_after.mp3",
   },
 ];
