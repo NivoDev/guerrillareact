@@ -91,6 +91,7 @@ const BeforeAfterPlayer = ({ title, beforeSrc, afterSrc }) => {
           type="button"
           role="switch"
           aria-checked={isAfter}
+          $on={isAfter}
           aria-label="Switch between before and after mix"
           onClick={() =>
             switchVersion(isAfter ? "before" : "after")
@@ -174,7 +175,7 @@ const EndLabel = styled.span`
   min-width: 3.25rem;
 `;
 
-/* Binary toggle: pill track + white thumb (Before = left, After = right). */
+/* Binary toggle: gray when Before; purple gradient (matches CTA) when After. */
 const SwitchButton = styled.button`
   position: relative;
   width: 3.5rem;
@@ -182,14 +183,27 @@ const SwitchButton = styled.button`
   padding: 0;
   border: none;
   border-radius: 999px;
-  background: #4a4d5c;
-  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.45);
+  background: ${(p) =>
+    p.$on
+      ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
+      : "#4a4d5c"};
+  box-shadow: ${(p) =>
+    p.$on
+      ? "inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 0 14px rgba(118, 75, 162, 0.45)"
+      : "inset 0 1px 4px rgba(0, 0, 0, 0.45)"};
   cursor: pointer;
   flex-shrink: 0;
-  transition: background 0.2s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease;
 
   &:hover {
-    background: #555a6b;
+    background: ${(p) =>
+      p.$on
+        ? "linear-gradient(135deg, #7588f0 0%, #8559b6 100%)"
+        : "#555a6b"};
+    box-shadow: ${(p) =>
+      p.$on
+        ? "inset 0 1px 3px rgba(0, 0, 0, 0.22), 0 0 18px rgba(118, 75, 162, 0.55)"
+        : "inset 0 1px 4px rgba(0, 0, 0, 0.45)"};
   }
 
   &:focus-visible {
