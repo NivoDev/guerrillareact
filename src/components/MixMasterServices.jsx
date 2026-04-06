@@ -43,7 +43,7 @@ function buildEmailMessage(data) {
     `Genre: ${data.genre}`,
     `BPM: ${data.bpm}`,
     `Track status: ${data.track_status}`,
-    `Number of stems: ${data.stem_count}`,
+    `Number of stems / channels: ${data.stem_count}`,
     `Reference track URL: ${data.reference_url || "—"}`,
     `Upload link (Dropbox / Google Drive): ${data.upload_link || "—"}`,
     "",
@@ -275,20 +275,26 @@ export const MixMasterServices = () => {
         <Title>Pricing</Title>
         <FrostedPanel>
           <PriceLine>
-            <strong>Mix + master</strong> — from <PriceEm>$180</PriceEm> per
-            track (project-dependent)
+            <strong>Mix + master</strong> — from <PriceEm>$250</PriceEm> per
+            track. Final price depends on how many channels you send; we&apos;ll
+            quote after you submit.
           </PriceLine>
           <PriceLine>
-            <strong>Stem master</strong> — from <PriceEm>$120</PriceEm>
+            <strong>Stem mastering</strong> — <PriceEm>$120</PriceEm> for up to{" "}
+            <strong>10 channels</strong> (e.g. drums, kick, bass, FX, leads,
+            vocals).
           </PriceLine>
           <PriceLine>
-            <strong>Stereo master</strong> — from <PriceEm>$65</PriceEm>
+            <strong>Stereo mastering</strong> — <PriceEm>$65</PriceEm>
           </PriceLine>
           <FinePrint>
-            Final quotes depend on stem count, length, and revision scope. No
-            card is charged on this site — once we agree on the work, we send a
-            secure payment link. We accept all major credit card issuers (Visa,
-            Mastercard, American Express, and more).
+            Mix &amp; master totals are based on channel count after we review
+            your files. Stem mastering covers up to 10 channels at the rate
+            above; other cases we quote separately. Stereo master is a single
+            stereo file. Final quotes also depend on length and revision scope.
+            No card is charged on this site — once we agree on the work, we send
+            a secure payment link. We accept all major credit card issuers
+            (Visa, Mastercard, American Express, and more).
           </FinePrint>
         </FrostedPanel>
 
@@ -575,7 +581,13 @@ export const MixMasterServices = () => {
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="mm_stem_count">Number of stems</label>
+                  <label htmlFor="mm_stem_count">
+                    Number of stems / channels
+                  </label>
+                  <FieldHint>
+                    Used to scope mix projects and stem packages — list an
+                    approximate count (e.g. kick, bass, drums, leads).
+                  </FieldHint>
                   <Controller
                     name="stem_count"
                     control={control}
@@ -584,7 +596,7 @@ export const MixMasterServices = () => {
                       <input
                         id="mm_stem_count"
                         type="text"
-                        placeholder="e.g. 12 or N/A"
+                        placeholder="e.g. 8, or N/A for stereo-only"
                         value={field.value}
                         onChange={field.onChange}
                         onBlur={field.onBlur}
