@@ -34,7 +34,7 @@ const TRACK_STATUS_OPTIONS = [
   { value: "rough", label: "Rough mix / arrangement locked" },
   { value: "mixed", label: "Self-mixed, needs polish" },
   { value: "master-only", label: "Ready for mastering only" },
-  { value: "unsure", label: "Not sure — need guidance" },
+  { value: "unsure", label: "Not sure - need guidance" },
 ];
 
 function buildEmailMessage(data) {
@@ -44,8 +44,8 @@ function buildEmailMessage(data) {
     `BPM: ${data.bpm}`,
     `Track status: ${data.track_status}`,
     `Number of stems / channels: ${data.stem_count}`,
-    `Reference track URL: ${data.reference_url || "—"}`,
-    `Upload link (Dropbox / Google Drive): ${data.upload_link || "—"}`,
+    `Reference track URL: ${data.reference_url || "-"}`,
+    `Upload link (Dropbox / Google Drive): ${data.upload_link || "-"}`,
     "",
     "Reminder: share the folder or file with “Anyone with the link” so we can download your audio.",
     "",
@@ -139,7 +139,7 @@ export const MixMasterServices = () => {
           <title>Mix &amp; Master Services | Guerrilla</title>
           <meta
             name="description"
-            content="Professional psytrance mixing and mastering by Guerrilla — club-ready low-end, clean mixes, festival-grade loudness. 15+ years of experience."
+            content="Professional psytrance mixing and mastering by Guerrilla - club-ready low-end, clean mixes, festival-grade loudness. 15+ years of experience."
           />
           <link
             rel="canonical"
@@ -165,7 +165,7 @@ export const MixMasterServices = () => {
         <title>Mix &amp; Master Services | Guerrilla</title>
         <meta
           name="description"
-          content="Professional psytrance mixing & mastering — powerful low-end, clean stereo image, festival-grade loudness. 15+ years of experience. Book Guerrilla for club-ready masters."
+          content="Professional psytrance mixing & mastering - powerful low-end, clean stereo image, festival-grade loudness. 15+ years of experience. Book Guerrilla for club-ready masters."
         />
         <meta
           name="keywords"
@@ -174,7 +174,7 @@ export const MixMasterServices = () => {
         <meta property="og:title" content="Mix & Master Services | Guerrilla" />
         <meta
           property="og:description"
-          content="Club-ready psytrance mixes & masters — kick & bass, width, and loudness dialed for the floor. 15+ years of experience."
+          content="Club-ready psytrance mixes & masters - kick & bass, width, and loudness dialed for the floor. 15+ years of experience."
         />
         <meta property="og:type" content="website" />
         <meta
@@ -220,7 +220,7 @@ export const MixMasterServices = () => {
             <PanelTitle>Built for the floor</PanelTitle>
             <BodyText>
               For over fifteen years we&apos;ve lived inside psytrance production
-              — not generic EDM templates. We specialize in the relationship
+              - not generic EDM templates. We specialize in the relationship
               between kick and bass, stereo width that stays powerful on big
               systems, midrange clarity that cuts through the mud, and masters
               that translate from studio monitors to club stacks and festival
@@ -259,7 +259,7 @@ export const MixMasterServices = () => {
 
         <Title>Hear the Difference</Title>
         <SectionSubtitle>
-          A/B each track — same position is kept when you switch.
+          A/B each track - same position is kept when you switch.
         </SectionSubtitle>
         <AudioGrid>
           {BEFORE_AFTER_TRACKS.map((t) => (
@@ -276,17 +276,17 @@ export const MixMasterServices = () => {
         <Title>Pricing</Title>
         <FrostedPanel>
           <PriceLine>
-            <strong>Mix + master</strong> — from <PriceEm>$250</PriceEm> per
+            <strong>Mix + master</strong> - from <PriceEm>$250</PriceEm> per
             track. Final price depends on how many channels you send; we&apos;ll
             quote after you submit.
           </PriceLine>
           <PriceLine>
-            <strong>Stem mastering</strong> — <PriceEm>$120</PriceEm> for up to{" "}
+            <strong>Stem mastering</strong> - <PriceEm>$120</PriceEm> for up to{" "}
             <strong>10 channels</strong> (e.g. drums, kick, bass, FX, leads,
             vocals).
           </PriceLine>
           <PriceLine>
-            <strong>Stereo mastering</strong> — <PriceEm>$65</PriceEm>. Send a
+            <strong>Stereo mastering</strong> - <PriceEm>$65</PriceEm>. Send a
             single stereo mix with headroom: aim for about{" "}
             <strong>-12 LUFS</strong> integrated (not brick-wall limited) so we
             can master properly.
@@ -296,7 +296,7 @@ export const MixMasterServices = () => {
             your files. Stem mastering covers up to 10 channels at the rate
             above; other cases we quote separately. Stereo master is a single
             stereo file. Final quotes also depend on length and revision scope.
-            No card is charged on this site — once we agree on the work, we send
+            No card is charged on this site - once we agree on the work, we send
             a secure payment link. We accept all major credit card issuers
             (Visa, Mastercard, American Express, and more).
           </FinePrint>
@@ -304,7 +304,7 @@ export const MixMasterServices = () => {
 
         <Strip>
           <StripText>
-            Pay when you&apos;re ready — secure link · Major cards accepted
+            Pay when you&apos;re ready - secure link · Major cards accepted
           </StripText>
         </Strip>
 
@@ -314,35 +314,35 @@ export const MixMasterServices = () => {
             <li>
               <StepNum>1</StepNum>
               <span>
-                <strong>Send your track</strong> — stems or stereo, plus notes
+                <strong>Send your track</strong> - stems or stereo, plus notes
                 &amp; reference link.
               </span>
             </li>
             <li>
               <StepNum>2</StepNum>
               <span>
-                <strong>Analysis</strong> — we listen for phase, low-end, and
+                <strong>Analysis</strong> - we listen for phase, low-end, and
                 translation issues.
               </span>
             </li>
             <li>
               <StepNum>3</StepNum>
               <span>
-                <strong>Mixing &amp; mastering</strong> — iterative passes
+                <strong>Mixing &amp; mastering</strong> - iterative passes
                 toward club-ready sound.
               </span>
             </li>
             <li>
               <StepNum>4</StepNum>
               <span>
-                <strong>Preview</strong> — you get a watermarked or limited
+                <strong>Preview</strong> - you get a watermarked or limited
                 preview to approve direction.
               </span>
             </li>
             <li>
               <StepNum>5</StepNum>
               <span>
-                <strong>Revisions &amp; delivery</strong> — tweaks within the
+                <strong>Revisions &amp; delivery</strong> - tweaks within the
                 agreed scope, then masters. After approval we send a payment
                 link for the balance; then final files.
               </span>
@@ -368,7 +368,7 @@ export const MixMasterServices = () => {
               Don&apos;t send the same audio twice under different names. For
               example: if you export a solo <strong>kick</strong> stem, don&apos;t
               also include that kick inside a <strong>drums</strong> or{" "}
-              <strong>drums + bass</strong> group — pick one approach (individual
+              <strong>drums + bass</strong> group - pick one approach (individual
               stems <em>or</em> grouped stems) and stay consistent. Same idea for
               vocals, FX, and parallel buses: avoid overlapping group prints with
               the same sources broken out separately. If you print time-based FX
@@ -385,7 +385,7 @@ export const MixMasterServices = () => {
             <FaqAnswer>
               For <strong>stereo mastering</strong>, export your mix at roughly{" "}
               <strong>-12 LUFS</strong> integrated loudness, with real headroom
-              on the master bus — not slammed into a limiter. That gives us room
+              on the master bus - not slammed into a limiter. That gives us room
               for EQ, dynamics, and loudness in mastering. If your mix is already
               very loud or clipped, back off the master chain or send a
               pre-limiter bounce if you have one.
@@ -395,7 +395,7 @@ export const MixMasterServices = () => {
             <FaqSummary>How fast is turnaround?</FaqSummary>
             <FaqAnswer>
               Typical stereo master: a few business days. Full mixes with
-              revisions depend on complexity — we&apos;ll quote a timeline with
+              revisions depend on complexity - we&apos;ll quote a timeline with
               your project.
             </FaqAnswer>
           </FaqItem>
@@ -404,14 +404,14 @@ export const MixMasterServices = () => {
             <FaqAnswer>
               Each package includes a defined number of revision rounds within
               the quoted scope. Major arrangement changes may count as a new
-              phase — we&apos;ll spell that out up front.
+              phase - we&apos;ll spell that out up front.
             </FaqAnswer>
           </FaqItem>
           <FaqItem>
             <FaqSummary>Why psytrance-focused?</FaqSummary>
             <FaqAnswer>
               Hypnotic grooves and rolling bass need different decisions than
-              pop or techno templates. We mix and master with that context —
+              pop or techno templates. We mix and master with that context -
               so your track feels right on a psy floor.
             </FaqAnswer>
           </FaqItem>
@@ -620,7 +620,7 @@ export const MixMasterServices = () => {
                     Number of stems / channels
                   </label>
                   <FieldHint>
-                    Used to scope mix projects and stem packages — list an
+                    Used to scope mix projects and stem packages - list an
                     approximate count (e.g. kick, bass, drums, leads).
                   </FieldHint>
                   <Controller

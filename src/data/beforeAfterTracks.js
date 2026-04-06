@@ -1,5 +1,5 @@
 /**
- * Files in public/audio/ — paths are served from site root as /audio/...
+ * Files in public/audio/ - paths are served from site root as /audio/...
  */
 export const BEFORE_AFTER_TRACKS = [
   {

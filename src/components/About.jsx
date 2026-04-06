@@ -54,7 +54,7 @@ export const About = () => {
               </div>
             </Link>
             <TrackDescription>
-              An exclusive 60-minute set featuring Guerrilla's music – originals, remixes, and unreleased gems.
+              An exclusive 60-minute set featuring Guerrilla's music - originals, remixes, and unreleased gems.
               A deep dive into the Guerrilla sound: powerful basslines, psychedelic atmospheres, and pure dancefloor energy.
               Turn up the volume, close your eyes, and let the trip begin.
             </TrackDescription>
