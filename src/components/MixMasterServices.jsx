@@ -259,7 +259,7 @@ export const MixMasterServices = () => {
 
         <Title>Hear the Difference</Title>
         <SectionSubtitle>
-          A/B each example — same position is kept when you switch.
+          A/B each track — same position is kept when you switch.
         </SectionSubtitle>
         <AudioGrid>
           {BEFORE_AFTER_TRACKS.map((t) => (

@@ -1,9 +1,13 @@
-import React, { useCallback, useRef, useState } from "react";
+import React, { useCallback, useEffect, useRef, useState } from "react";
 import styled from "styled-components";
 
 const BeforeAfterPlayer = ({ title, beforeSrc, afterSrc }) => {
   const audioRef = useRef(null);
   const [version, setVersion] = useState("before");
+
+  const savedTimeOnToggleRef = useRef(0);
+  const resumeAfterToggleRef = useRef(false);
+  const pendingSeekRef = useRef(false);
 
   const currentSrc = version === "before" ? beforeSrc : afterSrc;
 
@@ -11,36 +15,69 @@ const BeforeAfterPlayer = ({ title, beforeSrc, afterSrc }) => {
     (next) => {
       if (next === version) return;
       const el = audioRef.current;
-      if (!el) {
-        setVersion(next);
-        return;
+      if (el) {
+        savedTimeOnToggleRef.current = el.currentTime;
+        resumeAfterToggleRef.current = !el.paused;
+        pendingSeekRef.current = true;
       }
-
-      const savedTime = el.currentTime;
-      const wasPlaying = !el.paused;
-
       setVersion(next);
-      const nextSrc = next === "before" ? beforeSrc : afterSrc;
-
-      const onMeta = () => {
-        el.removeEventListener("loadedmetadata", onMeta);
-        const dur = el.duration;
-        if (!Number.isNaN(dur) && dur > 0) {
-          el.currentTime = Math.min(Math.max(0, savedTime), dur - 0.01);
-        } else {
-          el.currentTime = savedTime;
-        }
-        if (wasPlaying) {
-          el.play().catch(() => {});
-        }
-      };
-
-      el.addEventListener("loadedmetadata", onMeta);
-      el.src = nextSrc;
-      el.load();
     },
-    [version, beforeSrc, afterSrc]
+    [version]
   );
+
+  // After version (src) changes, restore playback position and resume if needed.
+  useEffect(() => {
+    if (!pendingSeekRef.current) return;
+    const el = audioRef.current;
+    if (!el) {
+      pendingSeekRef.current = false;
+      return;
+    }
+
+    const saved = savedTimeOnToggleRef.current;
+    const shouldPlay = resumeAfterToggleRef.current;
+
+    const applySeekAndMaybePlay = () => {
+      pendingSeekRef.current = false;
+      const dur = el.duration;
+      if (!Number.isNaN(dur) && dur > 0) {
+        el.currentTime = Math.min(
+          Math.max(0, saved),
+          Math.max(0, dur - 0.01)
+        );
+      } else {
+        el.currentTime = saved;
+      }
+      if (shouldPlay) {
+        el.play().catch(() => {});
+      }
+    };
+
+    if (el.readyState >= 1) {
+      applySeekAndMaybePlay();
+    } else {
+      el.addEventListener("loadedmetadata", applySeekAndMaybePlay, {
+        once: true,
+      });
+    }
+  }, [version, beforeSrc, afterSrc]);
+
+  // Only one audio on the page plays at a time (other A/B players + any <audio>).
+  useEffect(() => {
+    const el = audioRef.current;
+    if (!el) return;
+
+    const onPlay = () => {
+      document.querySelectorAll("audio").forEach((a) => {
+        if (a !== el && !a.paused) {
+          a.pause();
+        }
+      });
+    };
+
+    el.addEventListener("play", onPlay);
+    return () => el.removeEventListener("play", onPlay);
+  }, []);
 
   return (
     <PlayerCard>
