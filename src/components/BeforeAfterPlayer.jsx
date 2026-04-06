@@ -79,33 +79,27 @@ const BeforeAfterPlayer = ({ title, beforeSrc, afterSrc }) => {
     };
   }, [beforeSrc, afterSrc]);
 
-  const sliderValue = version === "before" ? 0 : 1;
+  const isAfter = version === "after";
 
   return (
     <PlayerCard>
       <TrackTitle>{title}</TrackTitle>
 
-      <SliderRow>
+      <ToggleRow>
         <EndLabel $align="left">Before</EndLabel>
-        <SliderWrap>
-          <SliderInput
-            type="range"
-            min={0}
-            max={1}
-            step={1}
-            value={sliderValue}
-            onChange={(e) => {
-              const v = Number(e.target.value);
-              switchVersion(v === 0 ? "before" : "after");
-            }}
-            aria-valuetext={
-              version === "before" ? "Before mix" : "After mix"
-            }
-            aria-label="Switch between before and after audio"
-          />
-        </SliderWrap>
+        <SwitchButton
+          type="button"
+          role="switch"
+          aria-checked={isAfter}
+          aria-label="Switch between before and after mix"
+          onClick={() =>
+            switchVersion(isAfter ? "before" : "after")
+          }
+        >
+          <SwitchThumb $on={isAfter} />
+        </SwitchButton>
         <EndLabel $align="right">After</EndLabel>
-      </SliderRow>
+      </ToggleRow>
 
       <ActiveLabel>
         Playing: <strong>{version === "before" ? "Before" : "After"}</strong>
@@ -159,14 +153,15 @@ const TrackTitle = styled.h3`
   text-align: center;
 `;
 
-const SliderRow = styled.div`
-  display: grid;
-  grid-template-columns: auto 1fr auto;
+const ToggleRow = styled.div`
+  display: flex;
   align-items: center;
-  gap: 0.65rem 0.85rem;
+  justify-content: center;
+  gap: 0.75rem;
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
+  flex-wrap: wrap;
 `;
 
 const EndLabel = styled.span`
@@ -176,78 +171,45 @@ const EndLabel = styled.span`
   text-transform: uppercase;
   color: rgba(255, 255, 255, 0.55);
   text-align: ${(p) => (p.$align === "left" ? "left" : "right")};
+  min-width: 3.25rem;
 `;
 
-const SliderWrap = styled.div`
+/* Binary toggle: pill track + white thumb (Before = left, After = right). */
+const SwitchButton = styled.button`
   position: relative;
-  height: 28px;
-  display: flex;
-  align-items: center;
-`;
-
-const SliderInput = styled.input`
-  width: 100%;
-  height: 8px;
-  margin: 0;
-  appearance: none;
-  -webkit-appearance: none;
-  background: linear-gradient(
-    90deg,
-    rgba(80, 90, 140, 0.6) 0%,
-    rgba(118, 75, 162, 0.75) 50%,
-    rgba(180, 120, 200, 0.55) 100%
-  );
+  width: 3.5rem;
+  height: 1.75rem;
+  padding: 0;
+  border: none;
   border-radius: 999px;
-  outline: none;
+  background: #4a4d5c;
+  box-shadow: inset 0 1px 4px rgba(0, 0, 0, 0.45);
   cursor: pointer;
-  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.35);
+  flex-shrink: 0;
+  transition: background 0.2s ease;
 
-  &::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #e8e4ff 0%, #a89fd9 45%, #6b5fa8 100%);
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.15);
-    transition: transform 0.15s ease, box-shadow 0.15s ease;
-  }
-
-  &::-webkit-slider-thumb:hover {
-    transform: scale(1.06);
-    box-shadow: 0 3px 14px rgba(102, 126, 234, 0.45);
-  }
-
-  &::-webkit-slider-thumb:active {
-    transform: scale(0.98);
-  }
-
-  &::-moz-range-track {
-    height: 8px;
-    background: linear-gradient(
-      90deg,
-      rgba(80, 90, 140, 0.6) 0%,
-      rgba(118, 75, 162, 0.75) 50%,
-      rgba(180, 120, 200, 0.55) 100%
-    );
-    border-radius: 999px;
-  }
-
-  &::-moz-range-thumb {
-    width: 22px;
-    height: 22px;
-    border-radius: 50%;
-    background: linear-gradient(145deg, #e8e4ff 0%, #a89fd9 45%, #6b5fa8 100%);
-    border: 2px solid rgba(255, 255, 255, 0.85);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
-    cursor: pointer;
+  &:hover {
+    background: #555a6b;
   }
 
   &:focus-visible {
     outline: 2px solid rgba(255, 255, 255, 0.45);
-    outline-offset: 4px;
+    outline-offset: 3px;
   }
+`;
+
+const SwitchThumb = styled.span`
+  position: absolute;
+  top: 50%;
+  left: 3px;
+  width: 1.375rem;
+  height: 1.375rem;
+  margin-top: -0.6875rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  transition: transform 0.2s ease;
+  transform: translateX(${(p) => (p.$on ? "1.75rem" : "0")});
 `;
 
 const ActiveLabel = styled.p`
