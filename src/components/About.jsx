@@ -17,8 +17,7 @@ export const About = () => {
         <title>Guerrilla - Music</title>
         <meta
           name="description"
-          content="Guerrilla is an emerging duo formed
-            by Niv Rozanowich and Tomer Segev."
+          content="Guerrilla is an emerging duo formed by Niv Rozanowich and Tomer Segev."
         />
       </Helmet>
       {!isHomePage && (
@@ -28,8 +27,21 @@ export const About = () => {
       )}
       <Main>
         <Card />
+
+        <SectionDivider aria-hidden="true">
+          <svg viewBox="0 0 320 16" xmlns="http://www.w3.org/2000/svg">
+            <line x1="6" y1="8" x2="140" y2="8" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+            <line x1="180" y1="8" x2="314" y2="8" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+            <path d="M148 8 L160 1 L172 8 L160 15 Z" fill="currentColor" />
+            <circle cx="6" cy="8" r="2" fill="currentColor" />
+            <circle cx="314" cy="8" r="2" fill="currentColor" />
+          </svg>
+        </SectionDivider>
+
         <Wrapper>
           <Song>
+            <CornerOrnament aria-hidden="true">+</CornerOrnament>
+            <CornerOrnament $right aria-hidden="true">+</CornerOrnament>
             <Link
               href="https://soundcloud.com/guerrillatrance/super-set-2025"
               target="_blank"
@@ -42,242 +54,156 @@ export const About = () => {
                 />
                 <PlayOverlay>
                   <PlayIcon>
-                    <FaPlay color="white" size={24} />
+                    <FaPlay color="var(--bone)" size={22} />
                   </PlayIcon>
                 </PlayOverlay>
               </ImageContainer>
-              <div>
-                <SongName>
-                  Guerrilla - Super Set 2025
-                </SongName>
-                <Date>09 Aug 2025</Date>
-              </div>
+              <Meta>
+                <SongName>Guerrilla — Super Set 2025</SongName>
+                <DateLine>09 Aug 2025 · 60 minutes</DateLine>
+              </Meta>
             </Link>
             <TrackDescription>
-              An exclusive 60-minute set featuring Guerrilla's music - originals, remixes, and unreleased gems.
-              A deep dive into the Guerrilla sound: powerful basslines, psychedelic atmospheres, and pure dancefloor energy.
-              Turn up the volume, close your eyes, and let the trip begin.
+              An exclusive 60-minute set featuring Guerrilla&apos;s music —
+              originals, remixes, and unreleased gems. A deep dive into the
+              Guerrilla sound: powerful basslines, psychedelic atmospheres,
+              and pure dancefloor energy. Turn up the volume, close your
+              eyes, and let the trip begin.
             </TrackDescription>
             <PlayerWrapper>
-              <iframe 
-                width="100%" 
-                height="80" 
-                scrolling="no" 
-                frameBorder="no" 
-                allow="autoplay" 
+              <iframe
+                width="100%"
+                height="80"
+                scrolling="no"
+                frameBorder="no"
+                allow="autoplay"
                 title="Guerrilla - Super Set 2025"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2150543730&color=%23ff5500&inverse=false&auto_play=false&show_user=true"
+                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2150543730&color=%23a78bfa&inverse=false&auto_play=false&show_user=true"
               />
             </PlayerWrapper>
           </Song>
         </Wrapper>
-        <br />
-        <P>Stay tuned on Guerrilla's channels</P>
+
       </Main>
     </PageWrapper>
   );
 };
 
 const PageWrapper = styled.div`
-  padding-top: 80px;
+  padding-top: 96px;
   min-height: 100vh;
   width: 100%;
 `;
 
-const P = styled.h1`
-    position: relative;
-    font-family: 'Rubik', sans-serif;
-    letter-spacing: 1.5px;
-    display:flex;
-    flex-direction: column;
-    flex-flow: wrap;
-    color:white;
-    // text-transform:uppercase;
-    font-weight:bold;
-    font-size: 20px;
-    align-items: center;
-    justify-content: center;
-    max-width:600px;
-    width:80%;
-    line-height:25px;
-    transform: translateY(2rem);
-    animation: fadeInUp 4s ease forwards;
-    a{
-        padding:10px;
-        -webkit-tap-highlight-color: transparent;
-        font-size: 24px;
-        text-decoration:none;
-        position:relative;
-        color:white;
-        cursor:pointer;
-        
-    }
-        @keyframes fadeInUp {
-                to {
-                opacity: 1;
-                transform: translateY(0);
-                }
-    `;
 const LogoPlacer = styled.div`
-    display;flex;
-    position:relative;
-    padding-top:20px;
-
-    // @media (min-width: 768px){
-    //    display:none;
-    // }
-    `;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+`;
 
 const Main = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 15px;
+  padding: 0 1rem 2rem;
 `;
 
-// const Title = styled.h1`
-// padding-top:10px;
-// display:flex;
-// justify-content: center;
-// align-items: center;
-// font-family: Roboto Slab;
-// font-size: 50px;
-// @media (max-width: 768px) {
-//     display:none;
-// }
-// `;
+const SectionDivider = styled.div`
+  width: 320px;
+  max-width: 80%;
+  margin: 1rem auto 1.25rem;
+  color: var(--saffron);
+  opacity: 0.85;
+  filter: drop-shadow(0 0 10px rgba(167, 139, 250, 0.35));
 
-const SongName = styled.h2`
-  color: white;
-  font-size: 1rem;
-  font-weight: 600;
-  text-align: center;
+  svg { display: block; width: 100%; height: auto; }
+`;
+
+const Wrapper = styled.div`
+  width: min(100%, 360px);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  align-items: stretch;
+  animation: fadeInUp 1s ease forwards;
+`;
+
+const Song = styled.div`
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(20, 18, 50, 0.85), rgba(13, 12, 34, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: border-color 0.35s ease, transform 0.35s ease, box-shadow 0.35s ease;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: var(--shadow-warm);
+
+  &:hover {
+    transform: translateY(-4px);
+    border-color: var(--border-hot);
+    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(167, 139, 250, 0.25) inset;
+  }
+`;
+
+const CornerOrnament = styled.span`
+  position: absolute;
+  top: 0.5rem;
+  ${({ $right }) => $right ? 'right: 0.6rem;' : 'left: 0.6rem;'}
+  color: var(--saffron);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
+  opacity: 0.7;
+  pointer-events: none;
 `;
 
 const Link = styled.a`
   text-decoration: none;
-  color: white;
+  color: var(--bone);
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
-  width: 100%;
-  box-sizing: border-box;
-`;
-
-const Date = styled.h3`
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
-  text-align: center;
-`;
-
-const Wrapper = styled.div`
-  width: 280px;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  align-items: center;
-  justify-content: space-between;
-  box-sizing: border-box;
-
-  @media (max-width: 768px) {
-    width: 250px;
-  }
-`;
-
-// const Main = styled.div`
-//     width:min(100%, 80rem);
-//     display:flex;
-//     flex-wrap:wrap;
-//     color:white;
-//     justify-content: center;
-//     align-items: center;
-//     margin: 5em auto;
-//     gap:2.5em;
-//     `;
-
-// const Title = styled.h1`
-//     padding-top:10px;
-//     display:flex;
-//     color:white;
-//     justify-content: center;
-//     align-items: center;
-//     font-family: Roboto Slab;
-//     font-size: 50px;
-//     `;
-
-const Song = styled.div`
-  background: rgba(13, 12, 34, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  position: relative;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  padding: 1rem;
-  gap: 1rem;
-  box-sizing: border-box;
-
-  &:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
-  }
-`;
-
-const TrackDescription = styled.p`
-  color: rgba(255, 255, 255, 0.8);
-  font-size: 0.9rem;
-  text-align: center;
-  margin-top: 10px;
-  line-height: 1.4;
-  padding: 0 10px;
+  gap: 0.85rem;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
-  box-sizing: border-box;
-  background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(167, 139, 250, 0.18);
 `;
 
 const CoverImage = styled.img`
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease-in-out;
-  image-rendering: -webkit-optimize-contrast;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
-  border-radius: 12px;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: saturate(0.95) contrast(1.05);
 
   ${ImageContainer}:hover & {
     transform: scale(1.05);
+    filter: saturate(1.1) contrast(1.08);
   }
 `;
 
 const PlayOverlay = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease-in-out;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 9, 28, 0.4), rgba(10, 9, 28, 0.05) 70%);
+  transition: opacity 0.35s ease;
   z-index: 2;
-  border-radius: 12px;
 
   ${ImageContainer}:hover & {
     opacity: 1;
@@ -287,33 +213,67 @@ const PlayOverlay = styled.div`
 const PlayIcon = styled.div`
   width: 60px;
   height: 60px;
-  background: rgba(255, 255, 255, 0.2);
+  background: rgba(167, 139, 250, 0.22);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(5px);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(167, 139, 250, 0.65);
   transform: scale(0.8);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.35s ease, background 0.3s ease;
+  box-shadow: 0 0 32px rgba(167, 139, 250, 0.45);
 
   ${ImageContainer}:hover & {
     transform: scale(1);
-  }
-
-  svg {
-    opacity: 0.9;
+    background: rgba(167, 139, 250, 0.32);
   }
 `;
 
+const Meta = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+`;
+
+const SongName = styled.h2`
+  font-family: var(--font-display);
+  color: var(--bone);
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-align: center;
+  margin: 0;
+`;
+
+const DateLine = styled.p`
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--sand-muted);
+  margin: 0;
+`;
+
+const TrackDescription = styled.p`
+  color: var(--sand-soft);
+  font-size: 0.92rem;
+  text-align: center;
+  margin: 0.25rem 0 0.5rem;
+  line-height: 1.55;
+  padding: 0 0.25rem;
+`;
+
 const PlayerWrapper = styled.div`
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  background: rgba(10, 9, 28, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 2px;
   overflow: hidden;
   margin-top: auto;
-  
+
   iframe {
     display: block;
     margin: 0;
   }
 `;
+

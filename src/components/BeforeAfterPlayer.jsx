@@ -132,20 +132,34 @@ const BeforeAfterPlayer = ({ title, subtitle, beforeSrc, afterSrc }) => {
 };
 
 const PlayerCard = styled.div`
-  background: rgba(13, 12, 34, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.25rem;
+  position: relative;
+  background: linear-gradient(180deg, rgba(20, 18, 50, 0.85), rgba(13, 12, 34, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1.35rem;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
+  gap: 0.85rem;
   width: 100%;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+
+  &::before, &::after {
+    content: "+";
+    position: absolute;
+    top: 0.45rem;
+    color: var(--saffron);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    opacity: 0.6;
+  }
+  &::before { left: 0.55rem; }
+  &::after  { right: 0.55rem; }
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.2);
+    border-color: var(--border-hot);
+    box-shadow: 0 18px 36px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(167, 139, 250, 0.2) inset;
   }
 `;
 
@@ -157,28 +171,32 @@ const TrackTitleBlock = styled.div`
 `;
 
 const TrackTitle = styled.h3`
-  color: #fff;
+  font-family: var(--font-display);
+  color: var(--bone);
   font-size: 1rem;
   font-weight: 600;
+  letter-spacing: 0.08em;
   margin: 0;
   text-align: center;
 `;
 
 const TrackSubtitle = styled.p`
   margin: 0;
-  font-size: 0.8rem;
+  font-family: var(--font-display);
+  font-size: 0.7rem;
   font-weight: 500;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.32em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: var(--saffron);
   text-align: center;
+  text-indent: 0.32em;
 `;
 
 const ToggleRow = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.85rem;
   width: 100%;
   max-width: 420px;
   margin: 0 auto;
@@ -186,49 +204,46 @@ const ToggleRow = styled.div`
 `;
 
 const EndLabel = styled.span`
-  font-size: 0.78rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
+  font-family: var(--font-display);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.28em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
+  color: var(--sand-muted);
   text-align: ${(p) => (p.$align === "left" ? "left" : "right")};
   min-width: 3.25rem;
 `;
 
-/* Binary toggle: gray when Before; purple gradient (matches CTA) when After. */
+/* Binary toggle: cool stone when Before; warm ember when After. */
 const SwitchButton = styled.button`
   position: relative;
-  width: 3.5rem;
-  height: 1.75rem;
+  width: 3.6rem;
+  height: 1.8rem;
   padding: 0;
-  border: none;
+  border: 1px solid ${(p) => (p.$on ? "rgba(167, 139, 250, 0.55)" : "var(--border)")};
   border-radius: 999px;
   background: ${(p) =>
     p.$on
-      ? "linear-gradient(135deg, #667eea 0%, #764ba2 100%)"
-      : "#4a4d5c"};
+      ? "linear-gradient(135deg, var(--clay) 0%, var(--ember) 55%, var(--ochre) 100%)"
+      : "rgba(40, 38, 70, 0.85)"};
   box-shadow: ${(p) =>
     p.$on
-      ? "inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 0 14px rgba(118, 75, 162, 0.45)"
-      : "inset 0 1px 4px rgba(0, 0, 0, 0.45)"};
+      ? "inset 0 1px 3px rgba(0, 0, 0, 0.25), 0 0 18px rgba(167, 139, 250, 0.45)"
+      : "inset 0 1px 4px rgba(0, 0, 0, 0.5)"};
   cursor: pointer;
   flex-shrink: 0;
-  transition: background 0.25s ease, box-shadow 0.25s ease;
+  transition: background 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
 
   &:hover {
-    background: ${(p) =>
-      p.$on
-        ? "linear-gradient(135deg, #7588f0 0%, #8559b6 100%)"
-        : "#555a6b"};
     box-shadow: ${(p) =>
       p.$on
-        ? "inset 0 1px 3px rgba(0, 0, 0, 0.22), 0 0 18px rgba(118, 75, 162, 0.55)"
-        : "inset 0 1px 4px rgba(0, 0, 0, 0.45)"};
+        ? "inset 0 1px 3px rgba(0, 0, 0, 0.22), 0 0 24px rgba(167, 139, 250, 0.6)"
+        : "inset 0 1px 4px rgba(0, 0, 0, 0.5), 0 0 8px rgba(167, 139, 250, 0.18)"};
   }
 
   &:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.45);
-    outline-offset: 3px;
+    outline: 1px dashed var(--saffron);
+    outline-offset: 4px;
   }
 `;
 
@@ -236,12 +251,12 @@ const SwitchThumb = styled.span`
   position: absolute;
   top: 50%;
   left: 3px;
-  width: 1.375rem;
-  height: 1.375rem;
-  margin-top: -0.6875rem;
+  width: 1.4rem;
+  height: 1.4rem;
+  margin-top: -0.7rem;
   border-radius: 50%;
-  background: #fff;
-  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+  background: var(--bone);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
   transition: transform 0.2s ease;
   transform: translateX(${(p) => (p.$on ? "1.75rem" : "0")});
 `;
@@ -249,12 +264,17 @@ const SwitchThumb = styled.span`
 const ActiveLabel = styled.p`
   margin: 0;
   text-align: center;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.75);
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 0.9rem;
+  color: var(--sand-muted);
 
   strong {
-    color: #fff;
+    color: var(--saffron);
+    font-style: normal;
+    font-family: var(--font-display);
     font-weight: 600;
+    letter-spacing: 0.08em;
   }
 `;
 
@@ -266,6 +286,7 @@ const AudioStack = styled.div`
   audio {
     width: 100%;
     display: block;
+    filter: sepia(0.25) hue-rotate(-12deg) saturate(0.9);
   }
 
   audio[hidden] {

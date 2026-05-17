@@ -19,7 +19,7 @@ export const Music = () => {
         <meta name="twitter:title" content="Guerrilla - Latest Psytrance Releases & Tracks" />
         <meta name="twitter:description" content="Explore Guerrilla's latest psytrance releases, featuring powerful progressive beats and unique collaborations." />
       </Helmet>
-      <Title>Releases</Title>
+      <Title eyebrow="Discography">Releases</Title>
       <MusicGrid>
       <MusicCard>
           <Link
@@ -900,119 +900,129 @@ export const Music = () => {
 };
 
 const PageWrapper = styled.div`
-  padding-top: 80px; // Adjust this value based on your navbar height
+  padding-top: 96px;
   min-height: 100vh;
   width: 100%;
 `;
 
 const MusicGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 280px));
-  gap: 2.5rem;
-  padding: 2rem;
-  max-width: 1400px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  padding: 1.5rem 2rem 3rem;
+  max-width: 1280px;
   margin: 0 auto;
   justify-content: center;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 250px));
-    gap: 2rem;
-    padding: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    padding: 1rem 1rem 2rem;
   }
 `;
 
 const MusicCard = styled.div`
-  background: rgba(13, 12, 34, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  overflow: hidden;
-  transition: all 0.3s ease-in-out;
-  border: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
-  width: 280px;
+  background:
+    linear-gradient(180deg, rgba(20, 18, 50, 0.85), rgba(13, 12, 34, 0.92));
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  overflow: hidden;
+  transition: transform 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
   display: flex;
   flex-direction: column;
-  padding: 16px;
-  gap: 16px;
-  box-sizing: border-box;
+  padding: 1rem;
+  gap: 1rem;
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.45);
 
-  @media (max-width: 768px) {
-    width: 250px;
+  /* Tribal corner glyphs */
+  &::before, &::after {
+    content: "+";
+    position: absolute;
+    top: 0.4rem;
+    color: var(--saffron);
+    font-family: var(--font-display);
+    font-size: 0.85rem;
+    opacity: 0.6;
+    pointer-events: none;
   }
+  &::before { left: 0.55rem; }
+  &::after  { right: 0.55rem; }
 
   &:hover {
-    transform: translateY(-5px);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-6px);
+    border-color: var(--border-hot);
+    box-shadow: 0 22px 50px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(167, 139, 250, 0.25) inset;
   }
 `;
 
 const Link = styled.a`
   text-decoration: none;
-  color: white;
+  color: var(--bone);
   display: flex;
   flex-direction: column;
   width: 100%;
-  gap: 16px;
-  box-sizing: border-box;
+  gap: 0.85rem;
 `;
 
 const ImageContainer = styled.div`
   position: relative;
   width: 100%;
-  border-radius: 12px;
+  border-radius: 2px;
   overflow: hidden;
-  box-sizing: border-box;
   background: transparent;
   display: flex;
   align-items: center;
   justify-content: center;
+  border: 1px solid rgba(167, 139, 250, 0.18);
 `;
 
 const CoverImage = styled.img`
   width: 100%;
   height: auto;
   display: block;
-  transition: transform 0.3s ease-in-out;
-  image-rendering: -webkit-optimize-contrast;
-  transform: translateZ(0);
-  backface-visibility: hidden;
-  -webkit-font-smoothing: subpixel-antialiased;
+  transition: transform 0.5s ease, filter 0.5s ease;
+  filter: saturate(0.92) contrast(1.04);
 
   ${ImageContainer}:hover & {
     transform: scale(1.05);
+    filter: saturate(1.1) contrast(1.08);
   }
 `;
 
 const MusicInfo = styled.div`
-  color: white;
+  color: var(--bone);
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 100%;
   text-align: center;
-  box-sizing: border-box;
-  gap: 0.5rem;
+  gap: 0.25rem;
 `;
 
 const MusicTitle = styled.div`
-  font-size: 1rem;
+  font-family: var(--font-display);
+  font-size: 0.95rem;
   font-weight: 600;
-  color: white;
+  letter-spacing: 0.05em;
+  color: var(--bone);
   text-align: center;
 `;
 
 const MusicDate = styled.div`
+  font-family: var(--font-accent);
+  font-style: italic;
   font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.6);
+  color: var(--sand-muted);
   text-align: center;
 `;
 
 const PlayerWrapper = styled.div`
-  background: rgba(0, 0, 0, 0.2);
-  border-radius: 10px;
+  background: rgba(10, 9, 28, 0.55);
+  border: 1px solid var(--border);
+  border-radius: 2px;
   overflow: hidden;
   width: 100%;
-  
+
   iframe {
     display: block;
     width: 100%;
@@ -1022,17 +1032,14 @@ const PlayerWrapper = styled.div`
 
 const PlayOverlay = styled.div`
   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
+  inset: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
-  transition: all 0.3s ease-in-out;
+  background: radial-gradient(circle at 50% 50%, rgba(10, 9, 28, 0.4), rgba(10, 9, 28, 0.05) 70%);
+  transition: opacity 0.35s ease;
   z-index: 2;
-  border-radius: 12px;
 
   ${ImageContainer}:hover & {
     opacity: 1;
@@ -1040,25 +1047,25 @@ const PlayOverlay = styled.div`
 `;
 
 const PlayIcon = styled.div`
-  width: 60px;
-  height: 60px;
-  background: rgba(255, 255, 255, 0.2);
+  width: 58px;
+  height: 58px;
+  background: rgba(167, 139, 250, 0.22);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   backdrop-filter: blur(5px);
-  border: 2px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(167, 139, 250, 0.6);
   transform: scale(0.8);
-  transition: all 0.3s ease-in-out;
+  transition: transform 0.35s ease, background 0.3s ease;
+  box-shadow: 0 0 28px rgba(167, 139, 250, 0.4);
 
   ${ImageContainer}:hover & {
     transform: scale(1);
+    background: rgba(167, 139, 250, 0.32);
   }
 
-  svg {
-    opacity: 0.9;
-  }
+  svg { opacity: 0.95; }
 `;
 
 export default Music;

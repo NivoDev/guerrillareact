@@ -1,3 +1,47 @@
+/* -------------------------------------------------------------
+   Guerrilla — Navy-purple design system
+   Global tokens, base typography, background treatment, helpers.
+   ------------------------------------------------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Cormorant+Garamond:ital,wght@0,500;1,500;1,600&family=Manrope:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* core navy-purple palette */
+  --bg-deep: #0d0c22;
+  --bg-warm: #1a1835;
+  --bg-panel: rgba(13, 12, 34, 0.78);
+  --bg-panel-soft: rgba(13, 12, 34, 0.55);
+  --bg-panel-strong: rgba(10, 9, 28, 0.88);
+
+  /* accents (the original #667eea → #764ba2 family) */
+  --clay: #667eea;     /* periwinkle (gradient start) */
+  --ember: #7c5fd0;    /* mid mauve */
+  --ochre: #764ba2;    /* deep mauve (gradient end) */
+  --saffron: #a78bfa;  /* light violet — highlight / glow */
+  --moss: #8b5cf6;
+  --jungle: #6d4ec1;
+
+  /* text + lines */
+  --bone: #f0eeff;
+  --sand: #c4b5fd;
+  --sand-soft: rgba(240, 238, 255, 0.85);
+  --sand-muted: rgba(240, 238, 255, 0.62);
+  --sand-faint: rgba(240, 238, 255, 0.4);
+  --border: rgba(196, 181, 253, 0.22);
+  --border-hot: rgba(167, 139, 250, 0.55);
+
+  /* typography */
+  --font-display: 'Cinzel', 'Marcellus', Georgia, serif;
+  --font-body: 'Manrope', 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-accent: 'Cormorant Garamond', Georgia, serif;
+
+  /* effects */
+  --shadow-warm: 0 18px 38px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(167, 139, 250, 0.06) inset;
+  --glow-ember: 0 0 28px rgba(118, 75, 162, 0.4);
+  --radius-lg: 14px;
+  --radius-md: 10px;
+}
+
 html {
   height: 100%;
   margin: 0;
@@ -9,52 +53,94 @@ body {
   padding: 0;
   min-height: 100vh;
   width: 100%;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-body);
+  font-weight: 400;
+  color: var(--bone);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-tap-highlight-color: transparent;
   box-sizing: border-box;
   position: relative;
   overflow-x: hidden;
-  background-color: #000; /* Fallback color */
+  background-color: var(--bg-deep);
+  letter-spacing: 0.01em;
 }
 
 /* Main background container */
 .background-container {
   position: fixed;
-  top: -10%;  /* Extend beyond viewport */
+  top: -10%;
   left: -10%;
-  width: 120%;  /* Make container larger than viewport */
+  width: 120%;
   height: 120%;
-  z-index: -1;
+  z-index: -2;
   overflow: hidden;
+  pointer-events: none;
 }
 
-/* Background image with optimized performance */
 .background-image {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background-image: url("./images/backgroundguerrilla.webp");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  transform: scale(1.2); /* Slightly larger to prevent white edges */
+  transform: translate3d(0,0,0) scale(1.2);
   will-change: transform;
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
-  -webkit-transform: translate3d(0,0,0) scale(1.2);
-  transform: translate3d(0,0,0) scale(1.2);
 }
 
-/* Content wrapper to ensure content scrolls over background */
+/* Cool color wash + vignette over the background */
+.background-container::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background:
+    radial-gradient(120% 80% at 50% 0%, rgba(167, 139, 250, 0.22), transparent 55%),
+    radial-gradient(140% 100% at 50% 100%, rgba(118, 75, 162, 0.28), transparent 55%),
+    linear-gradient(180deg, rgba(10, 9, 28, 0.45) 0%, rgba(10, 9, 28, 0.72) 60%, rgba(10, 9, 28, 0.92) 100%);
+  pointer-events: none;
+}
+
+/* Subtle film-grain on top of everything (decorative only) */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.10;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' seed='3'/><feColorMatrix values='0 0 0 0 0.85  0 0 0 0 0.85  0 0 0 0 0.95  0 0 0 0.7 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+}
+
 #root {
   position: relative;
   z-index: 1;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  color: var(--bone);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+/* Selection */
+::selection {
+  background: var(--ember);
+  color: var(--bone);
+}
+
+/* Scrollbar (webkit) */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--bg-deep); }
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, var(--clay), var(--bg-warm));
+  border-radius: 8px;
 }
 
 /* Fallback for non-WebP browsers */
@@ -68,16 +154,58 @@ body {
   .background-image {
     background-image: url("./images/mobilebackground.webp");
   }
-  
   @supports not (background-image: url("./images/mobilebackground.webp")) {
     .background-image {
       background-image: url("./images/mobilebackground.jpg");
     }
   }
-  
-  /* Add a background color that matches your image */
   body {
-    background-color: #000; /* Adjust this color to match your background image */
+    background-color: var(--bg-deep);
   }
 }
 
+/* -----------------------------------------------------------------
+   Reusable decorative bits
+   ----------------------------------------------------------------- */
+
+.tribal-divider {
+  --line: var(--border-hot);
+  --dot: var(--saffron);
+  width: 220px;
+  height: 14px;
+  margin: 1rem auto 0;
+  background:
+    radial-gradient(circle at 50% 50%, var(--dot) 0 3px, transparent 4px),
+    linear-gradient(90deg, transparent 0, var(--line) 14%, var(--line) 86%, transparent 100%);
+  background-repeat: no-repeat;
+  background-position: center, center;
+  background-size: 14px 14px, 100% 1.5px;
+  position: relative;
+}
+.tribal-divider::before,
+.tribal-divider::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  width: 6px;
+  height: 6px;
+  margin-top: -3px;
+  background: var(--dot);
+  transform: rotate(45deg);
+  box-shadow: 0 0 12px rgba(167, 139, 250, 0.7);
+}
+.tribal-divider::before { left: 12%; }
+.tribal-divider::after  { right: 12%; }
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(1.5rem); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes slowFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}

@@ -1,11 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 
-const Title = ({ children }) => {
+const Title = ({ children, eyebrow }) => {
   return (
     <TitleWrapper>
+      {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
       <TitleText>{children}</TitleText>
-      <Underline />
+      <Ornament aria-hidden="true">
+        <svg viewBox="0 0 220 16" xmlns="http://www.w3.org/2000/svg">
+          <line x1="6" y1="8" x2="92" y2="8" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+          <line x1="128" y1="8" x2="214" y2="8" stroke="currentColor" strokeWidth="1" opacity="0.7" />
+          <path d="M100 8 L110 2 L120 8 L110 14 Z" fill="currentColor" />
+          <circle cx="6" cy="8" r="2" fill="currentColor" />
+          <circle cx="214" cy="8" r="2" fill="currentColor" />
+        </svg>
+      </Ornament>
     </TitleWrapper>
   );
 };
@@ -15,7 +24,7 @@ export default Title;
 const TitleWrapper = styled.div`
   position: relative;
   text-align: center;
-  padding: 2rem 0 3rem 0;
+  padding: 2.5rem 0 2rem 0;
   margin: 0 0 2rem 0;
   display: flex;
   flex-direction: column;
@@ -23,60 +32,39 @@ const TitleWrapper = styled.div`
   width: 100%;
 `;
 
+const Eyebrow = styled.span`
+  font-family: var(--font-display);
+  font-size: 0.7rem;
+  letter-spacing: 0.55em;
+  text-transform: uppercase;
+  color: var(--saffron);
+  margin-bottom: 0.85rem;
+  text-indent: 0.55em;
+`;
+
 const TitleText = styled.h1`
-  color: white;
-  font-size: 4rem;
-  font-weight: 800;
-  letter-spacing: 0.15em;
+  color: var(--bone);
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 3.4rem);
+  font-weight: 600;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   margin: 0;
   padding: 0;
   position: relative;
-  text-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  
-  @media (max-width: 768px) {
-    font-size: 2.5rem;
-    letter-spacing: 0.1em;
-  }
+  text-shadow: 0 0 28px rgba(167, 139, 250, 0.18);
 `;
 
-const Underline = styled.div`
-  width: 200px;
-  height: 4px;
-  margin-top: 1.5rem;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(255, 255, 255, 0.3) 20%,
-    rgba(255, 255, 255, 0.8) 50%,
-    rgba(255, 255, 255, 0.3) 80%,
-    transparent
-  );
-  border-radius: 2px;
-  position: relative;
-  
-  &::before {
-    content: '';
-    position: absolute;
-    top: -3px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 10px;
-    height: 10px;
-    background: white;
-    border-radius: 50%;
-    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5);
-  }
+const Ornament = styled.div`
+  width: 220px;
+  margin-top: 1.25rem;
+  color: var(--saffron);
+  opacity: 0.85;
 
-  @media (max-width: 768px) {
-    width: 150px;
-    height: 3px;
-    margin-top: 1rem;
-    
-    &::before {
-      width: 8px;
-      height: 8px;
-      top: -2.5px;
-    }
+  svg {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 0 8px rgba(167, 139, 250, 0.4));
   }
-`; 
+`;

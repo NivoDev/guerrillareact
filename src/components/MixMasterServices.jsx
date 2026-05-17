@@ -229,7 +229,7 @@ export const MixMasterServices = () => {
           </FrostedPanel>
         </SectionBlock>
 
-        <Title>Services</Title>
+        <Title eyebrow="What we offer">Services</Title>
         <ServiceGrid>
           <ServiceCard>
             <ServiceCardTitle>Mixing + Mastering</ServiceCardTitle>
@@ -257,7 +257,7 @@ export const MixMasterServices = () => {
           </ServiceCard>
         </ServiceGrid>
 
-        <Title>Hear the Difference</Title>
+        <Title eyebrow="A / B comparison">Hear the Difference</Title>
         <SectionSubtitle>
           A/B each track - same position is kept when you switch.
         </SectionSubtitle>
@@ -273,7 +273,7 @@ export const MixMasterServices = () => {
           ))}
         </AudioGrid>
 
-        <Title>Pricing</Title>
+        <Title eyebrow="Per track">Pricing</Title>
         <FrostedPanel>
           <PriceLine>
             <strong>Mix + master</strong> - from <PriceEm>$250</PriceEm> per
@@ -308,7 +308,7 @@ export const MixMasterServices = () => {
           </StripText>
         </Strip>
 
-        <Title>Process</Title>
+        <Title eyebrow="How it works">Process</Title>
         <ProcessCard>
           <ProcessList>
             <li>
@@ -350,7 +350,7 @@ export const MixMasterServices = () => {
           </ProcessList>
         </ProcessCard>
 
-        <Title>FAQ</Title>
+        <Title eyebrow="Common questions">FAQ</Title>
         <FaqStack>
           <FaqItem>
             <FaqSummary>What file formats should I send?</FaqSummary>
@@ -441,7 +441,7 @@ export const MixMasterServices = () => {
         </BottomCta>
 
         <FormSection id="mix-master-contact">
-          <Title>Send Your Track</Title>
+          <Title eyebrow="Step 1">Send Your Track</Title>
           <FormIntro>
             Use the form below. Upload your audio to Dropbox or Google Drive,
             set sharing to <strong>Anyone with the link</strong>, then paste
@@ -772,7 +772,7 @@ export const MixMasterServices = () => {
 };
 
 const PageWrapper = styled.div`
-  padding-top: 80px;
+  padding-top: 96px;
   min-height: 100vh;
   width: 100%;
 `;
@@ -782,7 +782,7 @@ const Main = styled.main`
   flex-direction: column;
   align-items: center;
   padding: 0 1rem 3rem;
-  max-width: 1400px;
+  max-width: 1280px;
   margin: 0 auto;
   box-sizing: border-box;
 `;
@@ -791,114 +791,156 @@ const Hero = styled.section`
   width: 100%;
   display: flex;
   justify-content: center;
-  padding: 2rem 0 2.5rem;
+  padding: 2.5rem 0 1.5rem;
 `;
 
 const HeroInner = styled.div`
   text-align: center;
-  max-width: 720px;
+  max-width: 740px;
+  position: relative;
+
+  &::before {
+    content: "MIX · MASTER";
+    display: block;
+    font-family: var(--font-display);
+    font-size: 0.72rem;
+    letter-spacing: 0.55em;
+    text-transform: uppercase;
+    color: var(--saffron);
+    margin-bottom: 1.25rem;
+    text-indent: 0.55em;
+  }
 `;
 
 const HeroHeadline = styled.h1`
-  color: #fff;
-  font-size: clamp(1.75rem, 4vw, 2.35rem);
-  font-weight: 800;
-  letter-spacing: 0.04em;
+  font-family: var(--font-display);
+  color: var(--bone);
+  font-size: clamp(2rem, 4.5vw, 2.85rem);
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   line-height: 1.2;
-  margin: 0 0 1rem;
-  text-shadow: 0 0 24px rgba(255, 255, 255, 0.12);
+  margin: 0 0 1.25rem;
+  text-shadow: 0 0 26px rgba(167, 139, 250, 0.2);
 `;
 
 const HeroSub = styled.p`
-  color: rgba(255, 255, 255, 0.88);
-  font-size: 1.05rem;
-  line-height: 1.5;
-  margin: 0 0 1rem;
+  color: var(--sand-soft);
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin: 0 auto 1rem;
+  max-width: 620px;
 `;
 
 const CredLine = styled.p`
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.95rem;
-  margin: 0 0 1.75rem;
+  font-family: var(--font-accent);
   font-style: italic;
+  color: var(--sand-muted);
+  font-size: 1rem;
+  margin: 0 0 2rem;
 `;
 
 const CtaAnchor = styled.a`
   display: inline-block;
   margin-top: 0.25rem;
-  padding: 1rem 2rem;
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  border: none;
-  border-radius: 8px;
-  color: #fff;
-  font-size: 1rem;
+  padding: 1rem 2.2rem;
+  background: linear-gradient(135deg, var(--clay) 0%, var(--ember) 55%, var(--ochre) 100%);
+  border: 1px solid rgba(167, 139, 250, 0.45);
+  border-radius: 2px;
+  color: var(--bone);
+  font-family: var(--font-display);
+  font-size: 0.85rem;
   font-weight: 600;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
   text-decoration: none;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+  text-indent: 0.3em;
+  transition: transform 0.25s ease, box-shadow 0.3s ease, filter 0.3s ease;
+  box-shadow: 0 8px 26px rgba(0, 0, 0, 0.4);
 
   &:hover {
     transform: translateY(-2px);
-    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
-    color: #fff;
+    color: var(--bone);
+    box-shadow: 0 10px 32px rgba(118, 75, 162, 0.4), 0 0 0 1px rgba(167, 139, 250, 0.55) inset;
   }
 
   &:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.7);
-    outline-offset: 3px;
+    outline: 1px dashed var(--saffron);
+    outline-offset: 4px;
   }
 `;
 
 const Strip = styled.div`
   width: 100%;
-  max-width: 900px;
-  margin: 0.5rem 0 1.5rem;
-  padding: 0.85rem 1.25rem;
+  max-width: 880px;
+  margin: 0.75rem 0 1.75rem;
+  padding: 0.9rem 1.25rem;
   text-align: center;
-  background: rgba(13, 12, 34, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 12px;
+  background: rgba(10, 9, 28, 0.55);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+
+  &::before, &::after {
+    content: "•";
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--saffron);
+    font-size: 1rem;
+  }
+  &::before { left: 1rem; }
+  &::after  { right: 1rem; }
 `;
 
 const StripText = styled.p`
   margin: 0;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.95rem;
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--sand-soft);
+  font-size: 0.98rem;
+  letter-spacing: 0.03em;
 `;
 
 const SectionBlock = styled.section`
   width: 100%;
-  max-width: 800px;
-  margin-bottom: 0.5rem;
+  max-width: 820px;
+  margin-bottom: 1rem;
 `;
 
 const FrostedPanel = styled.div`
-  background: rgba(13, 12, 34, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.5rem 1.75rem;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(20, 18, 50, 0.85), rgba(13, 12, 34, 0.92));
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  padding: 1.75rem 2rem;
   width: 100%;
   box-sizing: border-box;
-  transition: border-color 0.3s ease;
+  transition: border-color 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: var(--shadow-warm);
 
   &:hover {
-    border-color: rgba(255, 255, 255, 0.18);
+    border-color: var(--border-hot);
   }
 `;
 
 const PanelTitle = styled.h2`
-  color: #fff;
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-family: var(--font-display);
+  color: var(--bone);
+  font-size: 1.2rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
   margin: 0 0 1rem;
   text-align: center;
+  text-indent: 0.18em;
 `;
 
 const BodyText = styled.p`
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.98rem;
-  line-height: 1.6;
+  color: var(--sand-soft);
+  font-size: 1rem;
+  line-height: 1.7;
   margin: 0;
   text-align: center;
 `;
@@ -908,50 +950,92 @@ const ServiceGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto 2rem;
+  max-width: 1080px;
+  margin: 0 auto 2.5rem;
   padding: 0 0.25rem;
 `;
 
 const ServiceCard = styled.div`
-  background: rgba(13, 12, 34, 0.7);
-  backdrop-filter: blur(10px);
-  border-radius: 15px;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 1.25rem 1.35rem;
-  transition: all 0.3s ease;
+  position: relative;
+  background:
+    linear-gradient(180deg, rgba(20, 18, 50, 0.85), rgba(13, 12, 34, 0.92));
+  border-radius: 4px;
+  border: 1px solid var(--border);
+  padding: 1.5rem 1.5rem 1.75rem;
+  transition: transform 0.35s ease, border-color 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.4);
+
+  /* Corner glyphs */
+  &::before, &::after {
+    content: "+";
+    position: absolute;
+    top: 0.45rem;
+    color: var(--saffron);
+    font-family: var(--font-display);
+    font-size: 0.9rem;
+    opacity: 0.6;
+  }
+  &::before { left: 0.55rem; }
+  &::after  { right: 0.55rem; }
 
   &:hover {
-    transform: translateY(-4px);
-    border-color: rgba(255, 255, 255, 0.2);
+    transform: translateY(-5px);
+    border-color: var(--border-hot);
+    box-shadow: 0 22px 44px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(167, 139, 250, 0.22) inset;
   }
 `;
 
 const ServiceCardTitle = styled.h3`
-  color: #fff;
-  font-size: 1.05rem;
+  font-family: var(--font-display);
+  color: var(--bone);
+  font-size: 0.98rem;
   font-weight: 600;
-  margin: 0 0 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 1rem;
   text-align: center;
+  text-indent: 0.2em;
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 40px;
+    height: 1px;
+    margin: 0.7rem auto 0;
+    background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+  }
 `;
 
 const BulletList = styled.ul`
   margin: 0;
-  padding-left: 1.2rem;
-  color: rgba(255, 255, 255, 0.82);
-  font-size: 0.92rem;
-  line-height: 1.5;
+  padding: 0;
+  list-style: none;
+  color: var(--sand-soft);
+  font-size: 0.95rem;
+  line-height: 1.6;
 
   li {
-    margin-bottom: 0.45rem;
+    position: relative;
+    padding: 0.35rem 0 0.35rem 1.3rem;
+  }
+  li::before {
+    content: "◆";
+    position: absolute;
+    left: 0;
+    top: 0.55rem;
+    font-size: 0.6rem;
+    color: var(--saffron);
   }
 `;
 
 const SectionSubtitle = styled.p`
   text-align: center;
-  color: rgba(255, 255, 255, 0.65);
-  font-size: 0.9rem;
-  margin: -1rem 0 1.25rem;
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--sand-muted);
+  font-size: 0.95rem;
+  margin: -0.75rem 0 1.25rem;
   max-width: 560px;
 `;
 
@@ -960,35 +1044,46 @@ const AudioGrid = styled.div`
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   width: 100%;
-  max-width: 1100px;
-  margin: 0 auto 2.5rem;
+  max-width: 1080px;
+  margin: 0 auto 3rem;
 `;
 
 const PriceLine = styled.p`
-  color: rgba(255, 255, 255, 0.9);
+  color: var(--sand-soft);
   font-size: 1rem;
-  margin: 0 0 0.65rem;
+  margin: 0 0 0.75rem;
   text-align: center;
+  line-height: 1.6;
+
+  strong {
+    color: var(--bone);
+    font-weight: 600;
+  }
 `;
 
 const PriceEm = styled.span`
-  color: #fff;
+  color: var(--saffron);
+  font-family: var(--font-display);
   font-weight: 700;
+  letter-spacing: 0.04em;
+  font-size: 1.1em;
 `;
 
 const FinePrint = styled.p`
-  margin: 1.25rem 0 0;
-  padding-top: 1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  color: rgba(255, 255, 255, 0.68);
+  margin: 1.5rem 0 0;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  color: var(--sand-muted);
   font-size: 0.88rem;
-  line-height: 1.55;
+  line-height: 1.6;
   text-align: center;
+  font-family: var(--font-accent);
+  font-style: italic;
 `;
 
 const ProcessCard = styled(FrostedPanel)`
   max-width: 720px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 3rem;
 `;
 
 const ProcessList = styled.ol`
@@ -997,67 +1092,80 @@ const ProcessList = styled.ol`
   padding: 0;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
+  gap: 1.1rem;
 
   li {
     display: flex;
-    gap: 0.85rem;
+    gap: 1rem;
     align-items: flex-start;
-    color: rgba(255, 255, 255, 0.88);
-    font-size: 0.95rem;
-    line-height: 1.5;
+    color: var(--sand-soft);
+    font-size: 0.97rem;
+    line-height: 1.6;
+  }
+  li strong {
+    color: var(--bone);
+    font-family: var(--font-display);
+    font-weight: 600;
+    letter-spacing: 0.04em;
   }
 `;
 
 const StepNum = styled.span`
   flex-shrink: 0;
-  width: 2rem;
-  height: 2rem;
+  width: 2.1rem;
+  height: 2.1rem;
   border-radius: 50%;
-  background: linear-gradient(
-    135deg,
-    rgba(102, 126, 234, 0.45) 0%,
-    rgba(118, 75, 162, 0.45) 100%
-  );
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background:
+    radial-gradient(circle at 30% 30%, rgba(167, 139, 250, 0.55), rgba(102, 126, 234, 0.35));
+  border: 1px solid var(--border-hot);
   display: flex;
   align-items: center;
   justify-content: center;
+  font-family: var(--font-display);
   font-weight: 700;
-  font-size: 0.9rem;
-  color: #fff;
+  font-size: 0.95rem;
+  color: var(--bone);
+  box-shadow: 0 0 14px rgba(167, 139, 250, 0.3);
 `;
 
 const FaqStack = styled.div`
   width: 100%;
   max-width: 720px;
-  margin: 0 auto 2.5rem;
+  margin: 0 auto 3rem;
 `;
 
 const FaqItem = styled.details`
-  background: rgba(13, 12, 34, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
+  background: rgba(13, 12, 34, 0.6);
+  border: 1px solid var(--border);
+  border-radius: 2px;
   margin-bottom: 0.75rem;
   overflow: hidden;
+  transition: border-color 0.3s ease, background 0.3s ease;
 
+  &[open] {
+    border-color: var(--border-hot);
+    background: rgba(20, 18, 50, 0.78);
+  }
   &[open] summary::after {
     content: "−";
+    color: var(--saffron);
   }
 `;
 
 const FaqSummary = styled.summary`
   cursor: pointer;
-  padding: 1rem 2.5rem 1rem 1.25rem;
-  color: #fff;
-  font-weight: 600;
+  padding: 1.05rem 2.75rem 1.05rem 1.4rem;
+  color: var(--bone);
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
   list-style: none;
   position: relative;
-  font-size: 0.98rem;
+  text-indent: 0.1em;
 
-  &::-webkit-details-marker {
-    display: none;
-  }
+  &::-webkit-details-marker { display: none; }
 
   &::after {
     content: "+";
@@ -1065,34 +1173,55 @@ const FaqSummary = styled.summary`
     right: 1.25rem;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.55);
+    font-size: 1.25rem;
+    color: var(--saffron);
+    font-weight: 400;
   }
 
   &:focus-visible {
-    outline: 2px solid rgba(255, 255, 255, 0.45);
-    outline-offset: -2px;
+    outline: 1px dashed var(--saffron);
+    outline-offset: -3px;
   }
 `;
 
 const FaqAnswer = styled.p`
-  padding: 0 1.25rem 1.15rem;
+  padding: 0 1.4rem 1.25rem;
   margin: 0;
-  color: rgba(255, 255, 255, 0.85);
-  font-size: 0.94rem;
-  line-height: 1.55;
+  color: var(--sand-soft);
+  font-size: 0.95rem;
+  line-height: 1.65;
+
+  strong { color: var(--bone); font-weight: 600; }
+  em     { color: var(--saffron); font-style: italic; }
 `;
 
 const BottomCta = styled.section`
   text-align: center;
-  margin: 1rem 0 2.5rem;
+  margin: 1rem 0 3rem;
+  position: relative;
+
+  &::before, &::after {
+    content: "";
+    display: block;
+    width: 80px;
+    height: 1px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(90deg, transparent, var(--saffron), transparent);
+  }
+  &::after {
+    margin: 1.5rem auto 0;
+  }
 `;
 
 const BottomCtaHeadline = styled.h2`
-  color: #fff;
-  font-size: 1.35rem;
-  font-weight: 700;
-  margin: 0 0 1rem;
+  font-family: var(--font-display);
+  color: var(--bone);
+  font-size: clamp(1.4rem, 3vw, 1.85rem);
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  margin: 0 0 1.25rem;
+  text-indent: 0.15em;
 `;
 
 const FormSection = styled.section`
@@ -1103,19 +1232,23 @@ const FormSection = styled.section`
 `;
 
 const FormIntro = styled.p`
-  max-width: 520px;
+  max-width: 540px;
   text-align: center;
-  color: rgba(255, 255, 255, 0.78);
-  font-size: 0.95rem;
-  line-height: 1.5;
-  margin: -0.5rem 0 1.25rem;
+  color: var(--sand-soft);
+  font-size: 0.98rem;
+  line-height: 1.65;
+  margin: -0.25rem 0 1.5rem;
+
+  strong { color: var(--saffron); font-weight: 600; }
 `;
 
 const FieldHint = styled.p`
   margin: 0 0 0.75rem;
   font-size: 0.85rem;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.6);
+  line-height: 1.5;
+  color: var(--sand-muted);
+  font-family: var(--font-accent);
+  font-style: italic;
 `;
 
 const FormOuter = styled.div`
@@ -1123,13 +1256,8 @@ const FormOuter = styled.div`
   display: flex;
   justify-content: center;
 
-  .contact-form {
-    max-width: 520px;
-  }
-
-  .contact-container {
-    max-width: 640px;
-  }
+  .contact-form { max-width: 520px; }
+  .contact-container { max-width: 660px; margin-top: 0; }
 
   .visually-hidden {
     position: absolute;
