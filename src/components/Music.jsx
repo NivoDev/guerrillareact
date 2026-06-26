@@ -937,6 +937,12 @@ const PageWrapper = styled.div`
   padding-top: 96px;
   min-height: 100vh;
   width: 100%;
+  overflow-x: hidden;
+  box-sizing: border-box;
+
+  @media (max-width: 768px) {
+    padding-top: 80px;
+  }
 `;
 
 const MusicGrid = styled.div`
@@ -945,13 +951,22 @@ const MusicGrid = styled.div`
   gap: 2rem;
   padding: 1.5rem 2rem 3rem;
   max-width: 1280px;
+  width: 100%;
   margin: 0 auto;
   justify-content: center;
+  box-sizing: border-box;
 
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 1.5rem;
     padding: 1rem 1rem 2rem;
+  }
+
+  @media (max-width: 480px) {
+    grid-template-columns: 1fr;
+    max-width: 420px;
+    padding: 1rem 0.75rem 2rem;
+    gap: 1.25rem;
   }
 `;
 
@@ -1035,11 +1050,13 @@ const MusicInfo = styled.div`
 
 const MusicTitle = styled.div`
   font-family: var(--font-display);
-  font-size: 0.95rem;
+  font-size: clamp(0.85rem, 2.5vw, 0.95rem);
   font-weight: 600;
   letter-spacing: 0.05em;
   color: var(--bone);
   text-align: center;
+  width: 100%;
+  word-break: break-word;
 `;
 
 const MusicDate = styled.div`

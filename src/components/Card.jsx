@@ -37,9 +37,9 @@ const Card = () => {
 export default Card;
 
 const Bio = styled.section`
-  width: min(100%, 720px);
+  width: 100%;
   margin: 1rem auto 1.5rem;
-  padding: 1rem;
+  padding: 1rem 0;
   color: var(--bone);
   position: relative;
   display: flex;
@@ -48,6 +48,11 @@ const Bio = styled.section`
   align-items: center;
   text-align: center;
   animation: fadeInUp 1.2s ease forwards;
+
+  @media (max-width: 480px) {
+    margin: 0.5rem auto 1rem;
+    padding: 0.5rem 0;
+  }
 `;
 
 const PortraitWrap = styled.div`
@@ -63,6 +68,11 @@ const PortraitWrap = styled.div`
   @media (max-width: 768px) {
     width: 11rem;
     height: 11rem;
+  }
+
+  @media (min-width: 1024px) {
+    width: 17rem;
+    height: 17rem;
   }
 `;
 
@@ -110,11 +120,19 @@ const Eyebrow = styled.span`
   color: var(--saffron);
   text-indent: 0.45em;
   margin-bottom: 0.5rem;
+  text-align: center;
+  max-width: 100%;
+
+  @media (max-width: 480px) {
+    font-size: 0.62rem;
+    letter-spacing: 0.28em;
+    text-indent: 0.28em;
+  }
 `;
 
 const Name = styled.h1`
   font-family: var(--font-display);
-  font-size: clamp(2.8rem, 8vw, 4.5rem);
+  font-size: clamp(2.2rem, 8vw, 4.5rem);
   font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -122,44 +140,62 @@ const Name = styled.h1`
   color: var(--bone);
   text-shadow: 0 0 32px rgba(167, 139, 250, 0.18);
   text-indent: 0.18em;
+  text-align: center;
+  max-width: 100%;
+
+  @media (max-width: 480px) {
+    letter-spacing: 0.1em;
+    text-indent: 0.1em;
+  }
 `;
 
 const Subtitle = styled.p`
   font-family: var(--font-accent);
   font-style: italic;
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 3vw, 1.1rem);
   margin: 0.4rem 0 1.5rem;
   color: var(--sand-soft);
   letter-spacing: 0.04em;
+  text-align: center;
+  max-width: 100%;
 `;
 
 const Lede = styled.p`
   font-family: var(--font-body);
-  font-size: 1.1rem;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
   line-height: 1.65;
   color: var(--bone);
-  margin: 0.25rem 0 1rem;
-  max-width: 560px;
-  width: 90%;
+  margin: 0.25rem auto 1rem;
+  max-width: 720px;
+  width: 100%;
+  padding: 0 0.25rem;
 `;
 
 const Body = styled.p`
   font-family: var(--font-body);
-  font-size: 0.98rem;
+  font-size: clamp(0.9rem, 2.2vw, 0.98rem);
   line-height: 1.7;
   color: var(--sand-soft);
-  margin: 0 0 1.25rem;
-  max-width: 560px;
-  width: 90%;
+  margin: 0 auto 1.25rem;
+  max-width: 720px;
+  width: 100%;
+  padding: 0 0.25rem;
 `;
 
 const CallOut = styled.p`
   font-family: var(--font-display);
-  font-size: 0.78rem;
+  font-size: clamp(0.65rem, 2vw, 0.78rem);
   letter-spacing: 0.32em;
   text-transform: uppercase;
   color: var(--ember);
-  margin: 0.5rem 0 1.5rem;
+  margin: 0.5rem auto 1.5rem;
+  text-align: center;
+  max-width: 100%;
+  padding: 0 0.5rem;
+
+  @media (max-width: 480px) {
+    letter-spacing: 0.18em;
+  }
 `;
 
 const Em = styled.span`

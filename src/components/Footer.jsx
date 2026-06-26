@@ -55,7 +55,9 @@ export const Footer = () => {
           <FaTwitter />
         </Social>
       </Socials>
-      <NewsletterSignup />
+      <NewsletterWrap>
+        <NewsletterSignup />
+      </NewsletterWrap>
       <Copyright>
         <p>
           © {new Date().getFullYear()} <a href="/">Guerrilla</a> — Carved by the kick. All rights reserved.
@@ -70,6 +72,8 @@ const Foot = styled.footer`
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  box-sizing: border-box;
   padding: 3.5rem 2rem 2.5rem;
   margin-top: 4rem;
   z-index: 11;
@@ -79,7 +83,8 @@ const Foot = styled.footer`
   overflow: hidden;
 
   @media (max-width: 600px) {
-    padding: 2.5rem 0.75rem 2rem;
+    padding: 2.5rem 1rem 2rem;
+    margin-top: 3rem;
   }
 `;
 
@@ -102,6 +107,13 @@ const SocialsLabel = styled.p`
   letter-spacing: 0.45em;
   text-transform: uppercase;
   color: var(--sand-muted);
+  text-align: center;
+  text-indent: 0.45em;
+
+  @media (max-width: 480px) {
+    letter-spacing: 0.3em;
+    text-indent: 0.3em;
+  }
 `;
 
 const Socials = styled.div`
@@ -111,11 +123,19 @@ const Socials = styled.div`
   flex-wrap: nowrap;
   gap: 0.25rem;
   margin-bottom: 2.5rem;
+  width: 100%;
   max-width: 100%;
+  padding: 0 0.25rem;
 
   @media (max-width: 600px) {
     gap: 0.05rem;
     margin-bottom: 2rem;
+  }
+
+  @media (max-width: 360px) {
+    flex-wrap: wrap;
+    max-width: 280px;
+    gap: 0.15rem;
   }
 `;
 
@@ -156,19 +176,32 @@ const Social = styled.a`
   }
 `;
 
+const NewsletterWrap = styled.div`
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 0.5rem;
+  box-sizing: border-box;
+`;
+
 const Copyright = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
   margin-top: 2rem;
+  width: 100%;
+  max-width: 720px;
+  padding: 0 0.5rem;
+  text-align: center;
 
   p {
     font-family: var(--font-accent);
     font-style: italic;
-    font-size: 0.95rem;
+    font-size: clamp(0.85rem, 2.5vw, 0.95rem);
     color: var(--sand-muted);
     margin: 0;
     letter-spacing: 0.03em;
+    line-height: 1.5;
   }
   a {
     color: var(--saffron);

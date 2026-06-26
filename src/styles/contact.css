@@ -5,9 +5,10 @@
 .contact-container {
   position: relative;
   max-width: 640px;
-  width: 90%;
+  width: min(90%, calc(100% - 2rem));
   margin: 7rem auto 4rem;
   padding: 3rem 2.5rem;
+  box-sizing: border-box;
   background:
     linear-gradient(180deg, rgba(20, 18, 50, 0.88), rgba(13, 12, 34, 0.94));
   border: 1px solid var(--border);
@@ -223,6 +224,8 @@
     transform-origin: center;
   }
   .contact-container {
+    width: calc(100% - 1.5rem);
+    margin-top: 5.5rem;
     padding: 2rem 1.25rem;
   }
   .contact-container h1 {

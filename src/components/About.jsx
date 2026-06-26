@@ -86,6 +86,11 @@ const PageWrapper = styled.div`
   padding-top: 96px;
   min-height: 100vh;
   width: 100%;
+  overflow-x: hidden;
+
+  @media (max-width: 768px) {
+    padding-top: 80px;
+  }
 `;
 
 const LogoPlacer = styled.div`
@@ -99,12 +104,24 @@ const Main = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  padding: 0 1rem 2rem;
+  width: min(100%, 960px);
+  margin: 0 auto;
+  padding: 0 1.5rem 2rem;
+  box-sizing: border-box;
+
+  @media (max-width: 480px) {
+    padding: 0 1rem 1.5rem;
+  }
+
+  @media (min-width: 1200px) {
+    width: min(100%, 1040px);
+    padding: 0 2rem 2rem;
+  }
 `;
 
 const SectionDivider = styled.div`
-  width: 320px;
-  max-width: 80%;
+  width: min(480px, 90%);
+  max-width: 100%;
   margin: 1rem auto 1.25rem;
   color: var(--saffron);
   opacity: 0.85;
@@ -114,12 +131,23 @@ const SectionDivider = styled.div`
 `;
 
 const Wrapper = styled.div`
-  width: min(100%, 360px);
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  align-self: center;
   display: flex;
   flex-direction: column;
   position: relative;
   align-items: stretch;
   animation: fadeInUp 1s ease forwards;
+
+  @media (min-width: 768px) {
+    max-width: 560px;
+  }
+
+  @media (min-width: 1024px) {
+    max-width: 640px;
+  }
 `;
 
 const Song = styled.div`
@@ -136,10 +164,22 @@ const Song = styled.div`
   gap: 1rem;
   box-shadow: var(--shadow-warm);
 
-  &:hover {
-    transform: translateY(-4px);
-    border-color: var(--border-hot);
-    box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(167, 139, 250, 0.25) inset;
+  @media (max-width: 480px) {
+    padding: 1rem;
+    gap: 0.85rem;
+  }
+
+  @media (min-width: 1024px) {
+    padding: 1.5rem;
+    gap: 1.25rem;
+  }
+
+  @media (hover: hover) {
+    &:hover {
+      transform: translateY(-4px);
+      border-color: var(--border-hot);
+      box-shadow: 0 24px 48px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(167, 139, 250, 0.25) inset;
+    }
   }
 `;
 
@@ -233,11 +273,13 @@ const Meta = styled.div`
 const SongName = styled.h2`
   font-family: var(--font-display);
   color: var(--bone);
-  font-size: 1.05rem;
+  font-size: clamp(0.95rem, 3.5vw, 1.05rem);
   font-weight: 600;
   letter-spacing: 0.06em;
   text-align: center;
   margin: 0;
+  width: 100%;
+  word-break: break-word;
 `;
 
 const DateLine = styled.p`
