@@ -162,12 +162,23 @@
   margin: 0;
 }
 
-@media (max-width: 400px) {
+@media (max-width: 600px) {
   .newsletter-container {
-    padding: 1.75rem 1.25rem;
+    padding: 2rem 1.25rem;
   }
   .newsletter-container h2 {
-    font-size: 1.2rem;
+    font-size: 1.25rem;
+    letter-spacing: 0.14em;
+  }
+}
+
+@media (max-width: 380px) {
+  .newsletter-container {
+    padding: 1.5rem 1rem;
+  }
+  .newsletter-container h2 {
+    font-size: 1.1rem;
+    letter-spacing: 0.1em;
   }
 }
 

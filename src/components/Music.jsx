@@ -23,6 +23,40 @@ export const Music = () => {
       <MusicGrid>
       <MusicCard>
           <Link
+            href="https://too.fm/7he-cr3w-vol1"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <ImageContainer>
+              <CoverImage
+                src="https://i1.sndcdn.com/artworks-k2jM8daAIrYwRizw-NJQWfQ-t500x500.jpg"
+                alt="Guerrilla - Midnight Bazaar"
+              />
+              <PlayOverlay>
+                <PlayIcon>
+                  <FaPlay color="white" size={24} />
+                </PlayIcon>
+              </PlayOverlay>
+            </ImageContainer>
+            <MusicInfo>
+              <MusicTitle>Guerrilla - Midnight Bazaar</MusicTitle>
+              <MusicDate>26 Jun 2026</MusicDate>
+            </MusicInfo>
+          </Link>
+          <PlayerWrapper>
+            <iframe
+              title="Guerrilla - Midnight Bazaar"
+              src="https://open.spotify.com/embed/track/3bkSivrsibNBFIhQPd8hpS?utm_source=generator"
+              width="100%"
+              height="80"
+              frameBorder="0"
+              allowtransparency="true"
+              allow="encrypted-media"
+            />
+          </PlayerWrapper>
+        </MusicCard>
+      <MusicCard>
+          <Link
             href="https://soundcloud.com/guerrillatrance/super-set-2025"
             target="_blank"
             rel="noreferrer"

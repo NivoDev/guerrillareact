@@ -77,6 +77,10 @@ const Foot = styled.footer`
     radial-gradient(80% 100% at 50% 0%, rgba(102, 126, 234, 0.18), transparent 65%),
     linear-gradient(180deg, transparent 0%, rgba(10, 9, 28, 0.85) 50%, rgba(10, 9, 28, 0.95) 100%);
   overflow: hidden;
+
+  @media (max-width: 600px) {
+    padding: 2.5rem 0.75rem 2rem;
+  }
 `;
 
 const Divider = styled.div`
@@ -104,9 +108,15 @@ const Socials = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
   gap: 0.25rem;
   margin-bottom: 2.5rem;
+  max-width: 100%;
+
+  @media (max-width: 600px) {
+    gap: 0.05rem;
+    margin-bottom: 2rem;
+  }
 `;
 
 const Social = styled.a`
@@ -117,6 +127,7 @@ const Social = styled.a`
   align-items: center;
   justify-content: center;
   border-radius: 50%;
+  flex: 0 0 auto;
   transition: color 0.3s ease, transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
 
   &:hover {
@@ -124,6 +135,24 @@ const Social = styled.a`
     background: rgba(167, 139, 250, 0.08);
     transform: translateY(-3px);
     box-shadow: 0 0 24px rgba(167, 139, 250, 0.3);
+  }
+
+  @media (max-width: 600px) {
+    padding: 0.4rem;
+    font-size: 1.05rem;
+  }
+
+  @media (max-width: 380px) {
+    padding: 0.3rem;
+    font-size: 0.95rem;
+  }
+
+  /* shrink the inline SVG (Nutek logo) on mobile too */
+  @media (max-width: 600px) {
+    .nutekLogo {
+      width: 22px;
+      height: 22px;
+    }
   }
 `;
 

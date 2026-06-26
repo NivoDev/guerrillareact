@@ -43,14 +43,14 @@ export const About = () => {
             <CornerOrnament aria-hidden="true">+</CornerOrnament>
             <CornerOrnament $right aria-hidden="true">+</CornerOrnament>
             <Link
-              href="https://soundcloud.com/guerrillatrance/super-set-2025"
+              href="https://too.fm/7he-cr3w-vol1"
               target="_blank"
               rel="noreferrer"
             >
               <ImageContainer>
                 <CoverImage
-                  src="https://i1.sndcdn.com/artworks-JC29gtnezIp4Lk5x-Pc0PPg-t500x500.png"
-                  alt="Guerrilla - Super Set 2025"
+                  src="https://i1.sndcdn.com/artworks-k2jM8daAIrYwRizw-NJQWfQ-t500x500.jpg"
+                  alt="Guerrilla - Midnight Bazaar"
                 />
                 <PlayOverlay>
                   <PlayIcon>
@@ -59,26 +59,19 @@ export const About = () => {
                 </PlayOverlay>
               </ImageContainer>
               <Meta>
-                <SongName>Guerrilla — Super Set 2025</SongName>
-                <DateLine>09 Aug 2025 · 60 minutes</DateLine>
+                <SongName>Guerrilla - Midnight Bazaar</SongName>
+                <DateLine>26 Jun 2026</DateLine>
               </Meta>
             </Link>
-            <TrackDescription>
-              An exclusive 60-minute set featuring Guerrilla&apos;s music —
-              originals, remixes, and unreleased gems. A deep dive into the
-              Guerrilla sound: powerful basslines, psychedelic atmospheres,
-              and pure dancefloor energy. Turn up the volume, close your
-              eyes, and let the trip begin.
-            </TrackDescription>
             <PlayerWrapper>
               <iframe
+                title="Guerrilla - Midnight Bazaar"
+                src="https://open.spotify.com/embed/track/3bkSivrsibNBFIhQPd8hpS?utm_source=generator"
                 width="100%"
                 height="80"
-                scrolling="no"
-                frameBorder="no"
-                allow="autoplay"
-                title="Guerrilla - Super Set 2025"
-                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2150543730&color=%23a78bfa&inverse=false&auto_play=false&show_user=true"
+                frameBorder="0"
+                allowtransparency="true"
+                allow="encrypted-media"
               />
             </PlayerWrapper>
           </Song>
@@ -253,15 +246,6 @@ const DateLine = styled.p`
   font-size: 0.9rem;
   color: var(--sand-muted);
   margin: 0;
-`;
-
-const TrackDescription = styled.p`
-  color: var(--sand-soft);
-  font-size: 0.92rem;
-  text-align: center;
-  margin: 0.25rem 0 0.5rem;
-  line-height: 1.55;
-  padding: 0 0.25rem;
 `;
 
 const PlayerWrapper = styled.div`
