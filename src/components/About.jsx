@@ -68,7 +68,7 @@ export const About = () => {
                 title="Guerrilla - Midnight Bazaar"
                 src="https://open.spotify.com/embed/track/3bkSivrsibNBFIhQPd8hpS?utm_source=generator"
                 width="100%"
-                height="80"
+                height="158"
                 frameBorder="0"
                 allowtransparency="true"
                 allow="encrypted-media"
