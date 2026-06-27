@@ -48,7 +48,7 @@ export const Music = () => {
               title="Guerrilla - Midnight Bazaar"
               src="https://open.spotify.com/embed/track/3bkSivrsibNBFIhQPd8hpS?utm_source=generator"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -78,12 +78,12 @@ export const Music = () => {
             </MusicInfo>
           </Link>
           <PlayerWrapper>
-          <iframe 
-              width="100%" 
-              height="80" 
-              scrolling="no" 
-              frameBorder="no" 
-              allow="autoplay" 
+          <iframe
+              width="100%"
+              height="158"
+              scrolling="no"
+              frameBorder="no"
+              allow="autoplay"
               title="It's a monster (Guerrilla Remix) - SoundCloud Player"
               src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2150543730&color=%23ff5500&inverse=false&auto_play=false&show_user=true"
             />
@@ -116,7 +116,7 @@ export const Music = () => {
               title="Create Ft. Geronimo"
               src="https://open.spotify.com/embed/track/2qGJceUMrhkNSj1yMlJaWy"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -149,7 +149,7 @@ export const Music = () => {
           <PlayerWrapper>
             <iframe 
               width="100%" 
-              height="80" 
+              height="158" 
               scrolling="no" 
               frameBorder="no" 
               allow="autoplay" 
@@ -186,7 +186,7 @@ export const Music = () => {
               title="Supernova"
               src="https://open.spotify.com/embed/track/3LZQl9DJCcpX3uTcec8dGX"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -221,7 +221,7 @@ export const Music = () => {
               title="Wellerman"
               src="https://open.spotify.com/embed/track/5kEGGVhaqGQ3O6PpgkKchP"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -256,7 +256,7 @@ export const Music = () => {
               title="Time Goddess"
               src="https://open.spotify.com/embed/track/0d2aUo7MsGM7IxwNM8TyQE"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -291,7 +291,7 @@ export const Music = () => {
               title="Kryptonite (Feat. GK Music)"
               src="https://open.spotify.com/embed/track/2zHVGorDUDoDibuRep1ikc"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -326,7 +326,7 @@ export const Music = () => {
               title="King of the north (Guerrilla Remix)"
               src="https://open.spotify.com/embed/track/3OH8XcAYNtCJaQjzOTrzga"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -361,7 +361,7 @@ export const Music = () => {
               title="Boom (P.R.O.G Remix)"
               src="https://open.spotify.com/embed/track/1GGW1VVrplWyphWbNlL9gi"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -396,7 +396,7 @@ export const Music = () => {
               title="La Vida"
               src="https://open.spotify.com/embed/track/5ASZkRalVQrOhsKJ4N6YYc"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -501,7 +501,7 @@ export const Music = () => {
               title="Prophecy"
               src="https://open.spotify.com/embed/track/2JKeuzEejAoXyWUpewmmRt"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -536,7 +536,7 @@ export const Music = () => {
               title="Boom"
               src="https://open.spotify.com/embed/track/5jqgeFJJkCE5oG1rYQynK3"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -571,7 +571,7 @@ export const Music = () => {
               title="My-LSD-Song"
               src="https://open.spotify.com/embed/track/3OiojVDHQMqrOtj7qboyx1"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -606,7 +606,7 @@ export const Music = () => {
               title="Flamenco"
               src="https://open.spotify.com/embed/track/0rPxlj3WjQ75GWmPPJPsat"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -641,7 +641,7 @@ export const Music = () => {
               title="Into-The-Future"
               src="https://open.spotify.com/embed/track/5lmNgxhqAtWzMAmrwTPbQV"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -676,7 +676,7 @@ export const Music = () => {
               title="The-Beast"
               src="https://open.spotify.com/embed/track/7g3uiRJVaemWMd2Fuqo8RD"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -711,7 +711,7 @@ export const Music = () => {
               title="Stardust"
               src="https://open.spotify.com/embed/track/2Dcjox08TAnNzGMEt9fi2H"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -746,7 +746,7 @@ export const Music = () => {
               title="Te-Quiero"
               src="https://open.spotify.com/embed/track/0cTj0KQp3sEAArXRHJl87u"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -781,7 +781,7 @@ export const Music = () => {
               title="Cosmic-Connection"
               src="https://open.spotify.com/embed/track/7qvXilE0A1PdiQCakfhvns"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -816,7 +816,7 @@ export const Music = () => {
               title="Desert-Flow"
               src="https://open.spotify.com/embed/track/3C4MG07Dr5ZZZPynZE0Lip"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -851,7 +851,7 @@ export const Music = () => {
               title="Jinni"
               src="https://open.spotify.com/embed/track/21UP9l4mav2rRLPUYEpKeL"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -886,7 +886,7 @@ export const Music = () => {
               title="Fata-Morgana"
               src="https://open.spotify.com/embed/track/5MgDmV8XC5NXESEaQTKhz7"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -921,7 +921,7 @@ export const Music = () => {
               title="Attactica"
               src="https://open.spotify.com/embed/track/7JDGSWrmkvCDZcopOHuZvK"
               width="100%"
-              height="80"
+              height="158"
               frameBorder="0"
               allowtransparency="true"
               allow="encrypted-media"
@@ -947,7 +947,7 @@ const PageWrapper = styled.div`
 
 const MusicGrid = styled.div`
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
   gap: 2rem;
   padding: 1.5rem 2rem 3rem;
   max-width: 1280px;
@@ -957,7 +957,7 @@ const MusicGrid = styled.div`
   box-sizing: border-box;
 
   @media (max-width: 768px) {
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 1.5rem;
     padding: 1rem 1rem 2rem;
   }
