@@ -101,16 +101,19 @@ const Divider = styled.div`
 `;
 
 const SocialsLabel = styled.p`
-  margin: 0 0 1rem;
+  margin: 0 0 1.4rem;
   font-family: var(--font-display);
-  font-size: 0.72rem;
-  letter-spacing: 0.45em;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.4em;
   text-transform: uppercase;
-  color: var(--sand-muted);
+  color: var(--bone);
   text-align: center;
-  text-indent: 0.45em;
+  text-indent: 0.4em;
+  text-shadow: 0 0 18px rgba(167, 139, 250, 0.45);
 
   @media (max-width: 480px) {
+    font-size: 0.95rem;
     letter-spacing: 0.3em;
     text-indent: 0.3em;
   }
@@ -140,9 +143,9 @@ const Socials = styled.div`
 `;
 
 const Social = styled.a`
-  color: var(--sand);
+  color: var(--bone);
   padding: 0.7rem;
-  font-size: 1.25rem;
+  font-size: 1.75rem;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -157,21 +160,28 @@ const Social = styled.a`
     box-shadow: 0 0 24px rgba(167, 139, 250, 0.3);
   }
 
+  .nutekLogo {
+    width: 30px;
+    height: 30px;
+  }
+
   @media (max-width: 600px) {
-    padding: 0.4rem;
-    font-size: 1.05rem;
+    padding: 0.45rem;
+    font-size: 1.5rem;
+
+    .nutekLogo {
+      width: 26px;
+      height: 26px;
+    }
   }
 
   @media (max-width: 380px) {
-    padding: 0.3rem;
-    font-size: 0.95rem;
-  }
+    padding: 0.35rem;
+    font-size: 1.35rem;
 
-  /* shrink the inline SVG (Nutek logo) on mobile too */
-  @media (max-width: 600px) {
     .nutekLogo {
-      width: 22px;
-      height: 22px;
+      width: 23px;
+      height: 23px;
     }
   }
 `;
